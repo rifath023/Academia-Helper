@@ -62,8 +62,7 @@ export const HeroSection: React.FC = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                Get outstanding essays, reports, and assignments for Business, Finance, Tourism, and more. 
-                Written by dedicated UK & USA experts with guaranteed originality.
+                Our Expert Assignment Help Service provides essays, dissertations, coursework, case studies, reports, and PowerPoint presentations across computer science, business, management, finance, accounting, HRM, psychology, and more. Work is plagiarism-free, affordable, on time, and written by MA & PhD-qualified writers.
               </motion.p>
             </motion.div>
 
