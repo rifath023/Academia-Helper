@@ -1247,7 +1247,7 @@ Remember, academic honesty is a foundation for success. Respecting intellectual 
   readTime: '7 min read',
   category: 'Academic Writing',
   tags: ['Plagiarism', 'Academic Ethics', 'Referencing', 'Turnitin', 'Originality', 'Student Success', 'Avoid Copy-Paste'],
-  image: 'https://images.unsplash.com/photo-1581090700227-7a5585e64f9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://s47434.pcdn.co/wp-content/uploads/2024/06/Plagiarism-Consequences.png.webp',
   author: 'Academia Helper'
 },
 {
@@ -1322,7 +1322,7 @@ Mastering time management is essential for university success. By planning your 
   readTime: '8 min read',
   category: 'Student Success',
   tags: ['Time Management', 'Study Tips', 'University Success', 'Student Productivity', 'Academic Tips', 'Avoid Procrastination', 'Effective Study Techniques'],
-  image: 'https://images.unsplash.com/photo-1588072432836-e10032774350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://www.road2college.com/wp-content/uploads/2019/09/Untitled-design-2020-10-28T142936.436.png.webp',
   author: 'Academia Helper'
 },
 {
@@ -1389,7 +1389,7 @@ Critical thinking is not just an academic requirement—it is a skill that under
   readTime: '7 min read',
   category: 'Academic Skills',
   tags: ['Critical Thinking', 'University Assignments', 'Academic Success', 'Study Skills', 'Analytical Skills', 'Problem Solving', 'Evidence-Based Learning'],
-  image: 'https://images.unsplash.com/photo-1581090700227-7a5585e64f9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://media.istockphoto.com/id/1137923596/photo/serious-mixed-race-male-student-with-serious-face-sitting-at-the-deck-in-library-and-using.jpg?s=612x612&w=0&k=20&c=2hWToVwMUW56qA3Mj-nCZ-X0pY0RyZs08Kp9Wo2D9D4=',
   author: 'Academia Helper'
 },
 
@@ -1461,7 +1461,7 @@ Effective note-taking is not just a study habit—it is a powerful tool to impro
   readTime: '8 min read',
   category: 'Study Skills',
   tags: ['Note-Taking', 'Study Tips', 'Academic Success', 'University Skills', 'Memory Retention', 'Exam Preparation', 'Effective Learning'],
-  image: 'https://images.unsplash.com/photo-1584697964404-425c90c6c94c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://www.shutterstock.com/image-photo/closeup-writing-hands-students-school-600nw-115746919.jpg',
   author: 'Academia Helper'
 },
 
@@ -1532,7 +1532,7 @@ Reading research papers is more than an academic exercise—it is a key to impro
   readTime: '7 min read',
   category: 'Academic Skills',
   tags: ['Research Papers', 'Academic Writing', 'Critical Thinking', 'Study Skills', 'University Assignments', 'Evidence-Based Learning', 'Academic Success'],
-  image: 'https://images.unsplash.com/photo-1581091870622-8b3b2b218a4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://live.stemfellowship.org/wp-content/uploads/2021/03/cc_careers_highlighting-lines-16x9-1.jpg',
   author: 'Academia Helper'
 }, 
 
@@ -1604,7 +1604,7 @@ Avoiding common assignment mistakes is essential for academic success. By unders
   readTime: '8 min read',
   category: 'Study Skills',
   tags: ['Assignment Tips', 'Academic Success', 'Avoid Mistakes', 'University Skills', 'Time Management', 'Research Skills', 'Study Tips'],
-  image: 'https://images.unsplash.com/photo-1596495577886-d920f1fb3c08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://www.studioenglish.com/wp-content/uploads/2024/03/mistakes-in-learning-English.jpg',
   author: 'Academia Helper'
 },
 
@@ -1688,7 +1688,7 @@ Improving presentation skills is a vital step toward making your projects more i
   readTime: '8 min read',
   category: 'Academic Skills',
   tags: ['Presentation Skills', 'Public Speaking', 'Academic Success', 'Project Presentation', 'Communication Skills', 'Student Tips', 'Impactful Presentations'],
-  image: 'https://images.unsplash.com/photo-1581090700227-26db2d7a51c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://mpf.com/wp-content/uploads/2023/04/033023-Presenting-Blog-Image-scaled.jpg',
   author: 'Academia Helper'
 },
 
@@ -1760,7 +1760,7 @@ Mastering research techniques and proper source usage is essential for academic 
   readTime: '9 min read',
   category: 'Study Skills',
   tags: ['Research Techniques', 'Academic Writing', 'Assignment Tips', 'Critical Thinking', 'Source Usage', 'Referencing', 'Study Skills'],
-  image: 'https://images.unsplash.com/photo-1581090700227-26db2d7a51c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://www.avu.education/images/easyblog_articles/30/way-clipart-research-paper-139132-3850968-1.jpg',
   author: 'Academia Helper'
 },
 
@@ -1843,7 +1843,7 @@ Effective data analysis and presentation are key to producing high-quality assig
   readTime: '9 min read',
   category: 'Study Skills',
   tags: ['Data Analysis', 'Assignment Tips', 'Academic Research', 'Presentation Skills', 'Charts and Graphs', 'Study Skills', 'Critical Thinking'],
-  image: 'https://images.unsplash.com/photo-1581091215363-0b40c1a92822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://learn.g2.com/hubfs/Imported%20sitepage%20images/1ZB5giUShe0gw9a6L69qAgsd7wKTQ60ZRoJC5Xq3BIXS517sL6i6mnkAN9khqnaIGzE6FASAusRr7w=w1439-h786.png',
   author: 'Academia Helper'
 },
 
@@ -1922,7 +1922,7 @@ Planning before writing is not just a preparatory step—it is the foundation of
   readTime: '8 min read',
   category: 'Study Skills',
   tags: ['Assignment Planning', 'Time Management', 'Study Skills', 'Academic Success', 'Organizational Tips', 'Student Productivity'],
-  image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://web-static.wrike.com/blog/content/uploads/2022/01/iStock-1224089927-e1641818884847.jpg?av=d4b207c90f9f4996167ec11bd32c5d41',
   author: 'Academia Helper'
 },
 {
@@ -2003,7 +2003,7 @@ Proofreading is an essential skill for academic success. By carefully reviewing 
   readTime: '8 min read',
   category: 'Study Skills',
   tags: ['Proofreading', 'Assignment Tips', 'Academic Writing', 'Editing Skills', 'Study Skills', 'Error Correction', 'Student Success'],
-  image: 'https://images.unsplash.com/photo-1555529771-1222d9c51f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://www.enago.com/academy/wp-content/uploads/2023/06/Proofreading_FI_new.png',
   author: 'Academia Helper'
 },
 
@@ -2084,9 +2084,11 @@ Using visuals and charts in assignments transforms your reports from plain text 
   readTime: '9 min read',
   category: 'Study Skills',
   tags: ['Visuals in Assignments', 'Charts and Graphs', 'Academic Writing', 'Report Writing', 'Data Presentation', 'Study Tips', 'Student Success', 'Assignment Help'],
-  image: 'https://images.unsplash.com/photo-1554774853-b0c3f5c7e0b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://ninjatables.com/wp-content/uploads/2022/10/Marketing-tips-to-Increase-Sales.png',
   author: 'Academia Helper'
 }
+
+
 ];
 
 export const BlogPage: React.FC = () => {
