@@ -63,8 +63,9 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo - Enhanced Design */}
-          <motion.div
-            className="flex items-center space-x-3"
+          <motion.button
+            onClick={() => handleNavClick('/')}
+            className="flex items-center space-x-3 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
@@ -75,7 +76,7 @@ export const Header: React.FC = () => {
             }`}>
               <BookOpen className={`w-6 h-6 ${isScrolled ? 'text-white' : 'text-black'}`} />
             </div>
-            <div>
+            <div className="text-left">
               <span className={`text-xl font-bold transition-colors duration-300 ${
                 isScrolled ? 'text-stone-900' : 'text-white'
               }`}>
@@ -87,7 +88,7 @@ export const Header: React.FC = () => {
                 Expert Writing Services
               </div>
             </div>
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation - Enhanced Styling */}
           <nav className="hidden md:flex items-center space-x-8">
