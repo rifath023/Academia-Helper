@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, User, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, Clock, User, ArrowRight, Tag, MessageCircle, CheckCircle, Sparkles } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { sampleBlogPosts } from './BlogPage'; // Export this from BlogPage
+import { sampleBlogPosts } from './BlogPage';
 
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -14,6 +14,10 @@ export const BlogPostPage: React.FC = () => {
   if (!post) {
     return <Navigate to="/blog" replace />;
   }
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/8801577128417?text=Hi, I need help with my assignment', '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50 to-stone-100 pt-20">
@@ -90,7 +94,69 @@ export const BlogPostPage: React.FC = () => {
               </ReactMarkdown>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-8 pt-8 border-t border-stone-200">
+            {/* Call-to-Action Section */}
+            <motion.div
+              className="mt-12 mb-8 bg-gradient-to-br from-slate-800 via-stone-900 to-slate-900 rounded-2xl p-8 border border-stone-700 shadow-2xl relative overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              {/* Subtle animated background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 animate-pulse"></div>
+              </div>
+
+              <div className="relative z-10 text-center">
+                <motion.div
+                  className="inline-flex items-center justify-center mb-4"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Sparkles className="w-8 h-8 text-green-400" />
+                </motion.div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  Need Expert Help with Your Assignment?
+                </h3>
+                
+                <p className="text-lg text-stone-300 mb-6 max-w-2xl mx-auto">
+                  Don't struggle alone! Get <span className="font-bold text-green-400">affordable, high-quality, and plagiarism-free</span> assignments from our MA & PhD qualified experts. We guarantee <span className="font-bold text-green-400">on-time delivery</span> and support in all subjects!
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                  <div className="flex items-center gap-2 text-stone-200">
+                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <span className="font-medium">24/7 Support</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-stone-200">
+                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <span className="font-medium">100% Original Work</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-stone-200">
+                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <span className="font-medium">Student-Friendly Prices</span>
+                  </div>
+                </div>
+
+                <motion.button
+                  onClick={handleWhatsAppClick}
+                  className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <MessageCircle className="w-6 h-6" />
+                  Chat on WhatsApp Now
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
+
+                <p className="mt-4 text-sm text-stone-400">
+                  📱 WhatsApp: <span className="font-semibold text-green-400">+880 1577 128417</span>
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Tags Section */}
+            <div className="flex flex-wrap gap-2 pt-8 border-t border-stone-200">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
