@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, ArrowRight, Search, Tag } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
 
 interface BlogPost {
   id: string;
+  slug: string;
   title: string;
   excerpt: string;
   content: string;
@@ -16,9 +17,10 @@ interface BlogPost {
   image: string;
 }
 
-const sampleBlogPosts: BlogPost[] = [
+export const sampleBlogPosts: BlogPost[] = [
   {
     id: '1',
+    slug: 'free-tools-accurate-citations',
     title: 'Free Tools and Tricks for Quick and Accurate Citations',
     excerpt: 'Discover the best free tools and expert tricks to create accurate citations quickly in APA, MLA, Harvard, and other academic styles.',
     content: `
@@ -119,6 +121,7 @@ Using free citation tools and applying simple tricks can save time, reduce error
   },
   {
     id: '2',
+    slug: 'why-referencing-important-academic-writing',
     title: 'Why Referencing is Important in Academic Writing',
     excerpt: 'Learn why proper referencing is crucial in academic writing, how it supports credibility, avoids plagiarism, and strengthens your research work.',
     content: `
@@ -181,6 +184,7 @@ Referencing is not just a formality; it is a critical part of academic writing t
   },
   {
     id: '3',
+    slug: 'dissertation-writing-tips',
     title: 'Dissertation Writing Tips: How to Plan, Research, and Write Effectively',
     excerpt: 'Master dissertation writing with practical tips on planning, researching, structuring, and presenting your academic work efficiently.',
     content: `
@@ -262,6 +266,7 @@ Dissertation writing is a rigorous process, but with proper planning, research, 
 ,
   {
     id: '4',
+    slug: 'overtourism-sustainable-travel-solutions',
     title: 'Overtourism: Causes, Impacts, and Sustainable Travel Solutions',
     excerpt: 'Learn about overtourism, its environmental and social impacts, and practical ways to travel responsibly for a sustainable future.',
     content: `Overtourism is one of the most pressing challenges facing global travel today. It happens when popular destinations attract more visitors than they can sustainably handle, leading to environmental damage, cultural erosion, and negative social impacts.
@@ -336,6 +341,7 @@ Overtourism requires cooperation among governments, businesses, communities, and
   },
   {
     id: '5',
+    slug: 'academic-presentation-impactful-professional',
     title: 'How to Make Any Academic Presentation Impactful and Professional',
     excerpt: 'Discover step-by-step strategies to create academic presentations that are clear, engaging, and memorable for students and professionals alike.',
     content: `Creating an effective academic presentation is more than just putting together slides. It's about delivering your ideas with clarity, confidence, and impact.
@@ -414,6 +420,7 @@ Making a strong academic presentation requires preparation, structure, and pract
   },
   {
     id: '6',
+    slug: 'understand-referencing-systems-apa-harvard-mla',
     title: 'How to Easily Understand Referencing Systems: APA 7, Harvard, MLA and More',
     excerpt: 'Learn how to quickly master academic referencing styles such as APA 7, Harvard, and MLA with simple explanations, examples, and tips for students.',
     content: `
@@ -503,6 +510,7 @@ Mastering referencing styles like **APA 7, Harvard, MLA, Chicago, and IEEE** may
   },
   {
     id: '7',
+    slug: 'common-academic-writing-mistakes',
     title: 'Common Mistakes in Academic Writing (and How to Avoid Them)',
     excerpt: 'Discover the most frequent academic writing mistakes students make and learn proven strategies to avoid them for higher grades and professional writing.',
     content: `
@@ -575,6 +583,7 @@ Avoiding common mistakes in academic writing is not difficult—it simply requir
 
   {
     id: '8',
+    slug: 'how-to-write-cover-letter',
     title: 'How to Write a Cover Letter',
     excerpt: 'Learn how to write an effective cover letter that stands out to employers. From structure to tone, this guide covers everything you need to know.',
     content: `A cover letter is often the first impression a potential employer has of you. Unlike a resume, which lists your skills and experiences, a cover letter allows you to showcase your personality, enthusiasm, and motivation for the role. Writing a strong cover letter is crucial for securing job interviews and making your application stand out.
@@ -644,6 +653,7 @@ A well-written cover letter is your opportunity to connect with the employer on 
   },
 {
   id: '9',
+  slug: 'annotated-bibliography-student-guide',
   title: 'What is an Annotated Bibliography? A Complete Student Guide',
   excerpt: 'Understand the purpose, structure, and benefits of annotated bibliographies. Learn how to write them in APA, MLA, and Harvard styles.',
   content: `
@@ -728,6 +738,7 @@ An annotated bibliography is a valuable academic tool that strengthens your rese
 },
 {
   id: '10',
+  slug: 'how-to-write-introduction',
   title: 'How to Write an Introduction Properly',
   excerpt: 'Learn how to write a strong academic introduction that grabs attention, provides context, and sets the tone for your essay or research paper.',
   content: `
@@ -803,6 +814,7 @@ A proper introduction is essential for setting the tone and direction of your ac
 },
 {
   id: '11',
+  slug: 'how-to-write-conclusion',
   title: 'How to Write a Conclusion Properly',
   excerpt: 'Learn how to write a strong academic conclusion that summarizes key points, reinforces your thesis, and leaves a lasting impression on readers.',
   content: `
@@ -878,6 +890,7 @@ A well-crafted conclusion strengthens your academic writing by providing closure
 },
 {
   id: '12',
+  slug: 'mastering-literature-review',
   title: 'Mastering the Literature Review: Structure, Steps, and Writing Tips',
   excerpt: 'Learn how to write an engaging and well-structured literature review. Discover the key steps, structure, and strategies to make your academic writing stronger.',
   content: `
@@ -967,6 +980,7 @@ A literature review is much more than a summary—it is a critical evaluation of
 },
 {
   id: '13',
+  slug: 'how-to-concentrate-on-study',
   title: 'How to Concentrate on Study in Today’s Distracted World',
   excerpt: 'Learn effective strategies to improve focus, beat distractions, and build study habits that work in the digital age.',
   content: `In today’s fast-paced digital world, concentrating on studies has become more difficult than ever. With social media notifications, constant online distractions, and overwhelming workloads, many students struggle to stay focused. However, with the right techniques and mindset, it is possible to sharpen concentration and study effectively.
@@ -1030,6 +1044,7 @@ Concentration is a skill that can be developed with consistent effort. By buildi
 },
 {
   id: '14',
+  slug: 'assignment-writing-services',
   title: 'Expert Assignment Writing Services with Academia Helper',
   excerpt: 'Get affordable, high-quality, and timely assignment help in all subjects with Academia Helper. From computer science to business, psychology, and more, our experts are here to support your academic success.',
   content: `### Welcome to Academia Helper: Your Trusted Assignment Partner
@@ -1117,6 +1132,7 @@ Let Academia Helper be your trusted academic partner—because your success is o
 },
 {
   id: '15',
+  slug: 'expert-assignment-help-all-subjects',
   title: 'Academia Helper: Expert Assignment Writing Services for Every Subject',
   excerpt: 'Get high-quality, affordable, and timely assignment help from Academia Helper. We cover all academic subjects including Computer Science, Business, Psychology, and more.',
   content: `
@@ -1203,6 +1219,7 @@ Start your journey to academic success with Academia Helper today!
 },
 {
   id: '16',
+  slug: 'plagiarism-academic-career-risk',
   title: 'Why Plagiarism Can Put Your Academic Career at Risk',
   excerpt: 'Learn why plagiarism is a serious academic offense, how it can impact your studies, and how to avoid it with proper referencing and originality.',
   content: `
@@ -1252,6 +1269,7 @@ Remember, academic honesty is a foundation for success. Respecting intellectual 
 },
 {
   id: '17',
+  slug: 'time-management-tips-students',
   title: 'Time Management Tips for Students to Succeed in University',
   excerpt: 'Master your schedule and boost productivity with effective time management strategies for university students.',
   content: `
@@ -1327,6 +1345,7 @@ Mastering time management is essential for university success. By planning your 
 },
 {
   id: '18',
+  slug: 'critical-thinking-university-assignments',
   title: 'The Importance of Critical Thinking in University Assignments',
   excerpt: 'Learn why critical thinking is essential for academic success and how it can help you produce high-quality university assignments.',
   content: `
@@ -1395,6 +1414,7 @@ Critical thinking is not just an academic requirement—it is a skill that under
 
 {
   id: '19',
+  slug: 'effective-note-taking-techniques',
   title: 'Effective Note-Taking Techniques for Better Grades',
   excerpt: 'Discover the best note-taking strategies that help university students retain information, stay organized, and improve academic performance.',
   content: `
@@ -1467,6 +1487,7 @@ Effective note-taking is not just a study habit—it is a powerful tool to impro
 
 {
   id: '20',
+  slug: 'reading-research-papers-improve-work',
   title: 'How Reading Research Papers Can Improve Your Academic Work',
   excerpt: 'Discover why reading research papers is essential for university students and how it enhances your assignments, essays, and critical thinking.',
   content: `
@@ -1538,6 +1559,7 @@ Reading research papers is more than an academic exercise—it is a key to impro
 
 {
   id: '21',
+  slug: 'common-assignment-mistakes-avoid',
   title: 'Common Assignment Mistakes and How to Avoid Them',
   excerpt: 'Learn about the most frequent mistakes students make in assignments and practical tips to avoid them for better grades.',
   content: `
@@ -1610,6 +1632,7 @@ Avoiding common assignment mistakes is essential for academic success. By unders
 
 {
   id: '22',
+  slug: 'improve-presentation-skills',
   title: 'How to Improve Presentation Skills, Making Projects More Impactful',
   excerpt: 'Learn practical strategies to enhance your presentation skills and make your academic or professional projects more engaging and impactful.',
   content: `
@@ -1694,6 +1717,7 @@ Improving presentation skills is a vital step toward making your projects more i
 
 {
   id: '23',
+  slug: 'research-techniques-use-sources-properly',
   title: 'Effective Research Techniques for Assignments: How to Use Sources Properly',
   excerpt: 'Learn proven research techniques to gather credible information and properly use sources for high-quality academic assignments.',
   content: `
@@ -1766,6 +1790,7 @@ Mastering research techniques and proper source usage is essential for academic 
 
 {
   id: '24',
+  slug: 'analyze-data-present-results',
   title: 'How to Analyze Data for Assignments and Present Results Effectively',
   excerpt: 'Learn step-by-step strategies for analyzing data accurately and presenting assignment results in a clear and impactful way.',
   content: `
@@ -1849,6 +1874,7 @@ Effective data analysis and presentation are key to producing high-quality assig
 
 {
   id: '25',
+  slug: 'planning-writing-assignments-stay-organized',
   title: 'The Benefits of Planning Before Writing Assignments and How to Stay Organized',
   excerpt: 'Discover why planning is essential before writing assignments and learn practical strategies to stay organized for academic success.',
   content: `
@@ -1927,6 +1953,7 @@ Planning before writing is not just a preparatory step—it is the foundation of
 },
 {
   id: '26',
+  slug: 'proofreading-assignments-spot-correct-mistakes',
   title: 'The Role of Proofreading in Assignments: How to Spot and Correct Mistakes',
   excerpt: 'Learn why proofreading is essential for high-quality assignments and discover practical strategies to identify and correct errors effectively.',
   content: `
@@ -2009,6 +2036,7 @@ Proofreading is an essential skill for academic success. By carefully reviewing 
 
 {
   id: '27',
+  slug: 'using-visuals-charts-assignments',
   title: 'Using Visuals and Charts in Assignments: Making Reports More Engaging',
   excerpt: 'Discover how using visuals and charts can make your assignments clearer, more engaging, and professional, helping you communicate ideas effectively.',
   content: `
@@ -2092,7 +2120,7 @@ Using visuals and charts in assignments transforms your reports from plain text 
 ];
 
 export const BlogPage: React.FC = () => {
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -2104,101 +2132,6 @@ export const BlogPage: React.FC = () => {
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
-
-  if (selectedPost) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50 to-stone-100 pt-20">
-        <div className="container mx-auto px-6 py-12">
-          <motion.button
-            onClick={() => setSelectedPost(null)}
-            className="mb-8 flex items-center text-stone-600 hover:text-stone-900 transition-colors duration-200"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            whileHover={{ x: -4 }}
-          >
-            <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-            Back to Blog
-          </motion.button>
-
-          <motion.article
-            className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="relative h-64 md:h-96">
-              <img
-                src={selectedPost.image}
-                alt={selectedPost.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
-
-            <div className="p-8 md:p-12">
-              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-stone-600">
-                <div className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {new Date(selectedPost.date).toLocaleDateString()}
-                </div>
-                <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-2" />
-                  {selectedPost.readTime}
-                </div>
-                <div className="flex items-center">
-                  <User className="w-4 h-4 mr-2" />
-                  {selectedPost.author}
-                </div>
-                <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">
-                  {selectedPost.category}
-                </span>
-              </div>
-
-              <h1 className="text-3xl md:text-4xl font-bold text-stone-900 mb-6 leading-tight">
-                {selectedPost.title}
-              </h1>
-
-              {/* ReactMarkdown with proper styling */}
-              <div className="prose prose-lg prose-stone max-w-none">
-                <ReactMarkdown
-                  components={{
-                    h1: ({node, ...props}) => <h1 className="text-3xl font-bold text-stone-900 mt-8 mb-4 border-b pb-2" {...props} />,
-                    h2: ({node, ...props}) => <h2 className="text-2xl font-bold text-stone-900 mt-8 mb-4" {...props} />,
-                    h3: ({node, ...props}) => <h3 className="text-xl font-bold text-stone-900 mt-6 mb-3" {...props} />,
-                    p: ({node, ...props}) => <p className="text-stone-700 leading-relaxed mb-4" {...props} />,
-                    ul: ({node, ...props}) => <ul className="list-disc list-inside mb-4 space-y-2" {...props} />,
-                    ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-4 space-y-2" {...props} />,
-                    li: ({node, ...props}) => <li className="text-stone-700 leading-relaxed ml-4" {...props} />,
-                    strong: ({node, ...props}) => <strong className="font-bold text-stone-900" {...props} />,
-                    em: ({node, ...props}) => <em className="italic text-stone-800" {...props} />,
-                    blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-stone-300 pl-4 italic text-stone-600 my-6" {...props} />,
-                    code: ({node, inline, ...props}) => 
-                      inline 
-                        ? <code className="bg-stone-100 text-stone-800 px-1 py-0.5 rounded text-sm" {...props} />
-                        : <code className="block bg-stone-100 text-stone-800 p-4 rounded-lg text-sm overflow-x-auto" {...props} />,
-                  }}
-                >
-                  {selectedPost.content}
-                </ReactMarkdown>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-8 pt-8 border-t border-stone-200">
-                {selectedPost.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="flex items-center px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm"
-                  >
-                    <Tag className="w-3 h-3 mr-1" />
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.article>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50 to-stone-100 pt-20">
@@ -2267,7 +2200,7 @@ export const BlogPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              onClick={() => setSelectedPost(post)}
+              onClick={() => navigate(`/blog/${post.slug}`)}
             >
               <div className="relative h-48 overflow-hidden">
                 <img

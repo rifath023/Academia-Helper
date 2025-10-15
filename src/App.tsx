@@ -10,6 +10,7 @@ import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
 import { FloatingActionButton } from "./components/ScrollComponents";
 import { BlogPage } from "./pages/BlogPage";
+import { BlogPostPage } from "./pages/BlogPostPage"; // New component
 
 const HomePage: React.FC = () => {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
         <Footer />
         <FloatingActionButton />
