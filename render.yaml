@@ -3,7 +3,7 @@ services:
     name: academiahelper
     env: node
     buildCommand: npm install && npm run build && cp dist/index.html dist/404.html
-    startCommand: node server.js
+    startCommand: npm run preview -- --host
     envVars:
       - key: NODE_ENV
         value: production
