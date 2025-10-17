@@ -1,17 +1,17 @@
 services:
   - type: web
+    env: static
     name: academiahelper
-    env: node
-    buildCommand: npm install && npm run build && cp dist/index.html dist/404.html
-    startCommand: npm run preview -- --host
-    envVars:
-      - key: NODE_ENV
-        value: production
+    buildCommand: npm install && npm run build
+    staticSite:
+      source: dist
+      routes:
+        - path: /*
+          destination: /index.html
     headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
       - path: /*
         name: X-Robots-Tag
         value: all
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
