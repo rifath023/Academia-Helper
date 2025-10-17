@@ -1,9 +1,12 @@
 services:
   - type: web
     name: academiahelper
-    env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    env: node
+    buildCommand: npm install && npm run build && cp dist/index.html dist/404.html
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
     headers:
       - path: /*
         name: X-Robots-Tag

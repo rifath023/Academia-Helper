@@ -1,0 +1,19 @@
+import express from 'express';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Serve static files from dist folder
+app.use(express.static(join(__dirname, 'dist')));
+
+// Redirect all routes to index.html for React Router
+app.get('/*', (req, res) => {
+  res.sendFile(join(__dirname, 'dist', 'index.html'));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
