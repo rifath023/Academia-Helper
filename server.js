@@ -1,19 +1,22 @@
 import express from 'express';
+import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const distPath = path.join(__dirname, 'dist');
 
-// Serve static files from dist folder
-app.use(express.static(join(__dirname, 'dist')));
+// Serve static files
+app.use(express.static(distPath));
 
-// For all other routes, serve index.html
-app.use('*', (req, res) => {
-  res.sendFile(join(__dirname, 'dist', 'index.html'));
+// Send all requests to index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, '0.0.0.0', () => {
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
