@@ -9,13 +9,10 @@ export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
 
-
-   // THIS — resets scroll position every time the page loads
+  // Scroll to top when opening a blog post (forward navigation)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [slug]); // slug in dependency = also resets if user jumps between posts
-
-  
+  }, [slug]);
 
   const post = sampleBlogPosts.find(p => p.slug === slug);
 
@@ -27,11 +24,25 @@ export const BlogPostPage: React.FC = () => {
     window.open('https://wa.me/8801577128417?text=Hi, I need help with my assignment', '_blank');
   };
 
+  // Save current blog scroll position then go back to blog list
+  const handleBackToBlog = () => {
+    const savedY = sessionStorage.getItem('blogScrollY');
+    navigate('/blog');
+    // Restore scroll after navigation paint
+    if (savedY) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: parseInt(savedY), behavior: 'instant' });
+        });
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50 to-stone-100 pt-20">
       <div className="container mx-auto px-6 py-12">
         <motion.button
-          onClick={() => navigate('/blog')}
+          onClick={handleBackToBlog}
           className="mb-8 flex items-center text-stone-600 hover:text-stone-900 transition-colors duration-200"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -92,8 +103,8 @@ export const BlogPostPage: React.FC = () => {
                   strong: ({node, ...props}) => <strong className="font-bold text-stone-900" {...props} />,
                   em: ({node, ...props}) => <em className="italic text-stone-800" {...props} />,
                   blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-stone-300 pl-4 italic text-stone-600 my-6" {...props} />,
-                  code: ({node, inline, ...props}) => 
-                    inline 
+                  code: ({node, inline, ...props}) =>
+                    inline
                       ? <code className="bg-stone-100 text-stone-800 px-1 py-0.5 rounded text-sm" {...props} />
                       : <code className="block bg-stone-100 text-stone-800 p-4 rounded-lg text-sm overflow-x-auto" {...props} />,
                 }}
@@ -109,7 +120,6 @@ export const BlogPostPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              {/* Subtle animated background pattern */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 animate-pulse"></div>
               </div>
@@ -122,11 +132,11 @@ export const BlogPostPage: React.FC = () => {
                 >
                   <Sparkles className="w-8 h-8 text-green-400" />
                 </motion.div>
-                
+
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                   Need Expert Help with Your Assignment?
                 </h3>
-                
+
                 <p className="text-lg text-stone-300 mb-6 max-w-2xl mx-auto">
                   Don't struggle alone! Get <span className="font-bold text-green-400">affordable, high-quality, and plagiarism-free</span> assignments from our MA & PhD qualified experts. We guarantee <span className="font-bold text-green-400">on-time delivery</span> and support in all subjects!
                 </p>
