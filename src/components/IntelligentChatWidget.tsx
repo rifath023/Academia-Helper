@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Bot, User, Loader2 } from 'lucide-react';
+import { generateText } from 'ai';
+import { createOpenAI } from '@ai-sdk/openai';
 
 interface Message {
   id: string;
@@ -14,13 +16,13 @@ interface IntelligentChatWidgetProps {
   onClose: () => void;
 }
 
-const SYSTEM_PROMPT = `You are Alex, a friendly and knowledgeable academic writing assistant for Academia Helper — a premium assignment writing service based in Bangladesh.
+const SYSTEM_PROMPT = `You are Alex, a friendly and knowledgeable academic writing assistant for Academia Helper — a premium assignment writing service.
 
-Your role is to:
+Your role:
 - Help students with essay structure, formatting, citations, and writing advice
 - Answer questions about academic writing (APA, Harvard, MLA citation styles, etc.)
 - Provide guidance on Business, Finance, Tourism, Marketing, Accounting, HRM, and Case Study assignments
-- Explain how Academia Helper's service works and what they offer
+- Explain how Academia Helper's service works
 - Encourage students to place an order when they need professional help
 
 About Academia Helper:
@@ -29,32 +31,7 @@ About Academia Helper:
 - Contact: WhatsApp +8801577128417 | Email academiahelp0@gmail.com
 - Simple 3-step process: Submit requirements → Expert writing → Receive & review
 
-Tone: Warm, professional, encouraging. Keep replies concise (3–6 sentences max unless a detailed explanation is genuinely needed). Use bullet points sparingly. Always end with an offer to help further or suggest contacting via WhatsApp for immediate order placement.`;
-
-async function callClaudeAPI(conversationHistory: { role: string; content: string }[], userMessage: string): Promise<string> {
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      system: SYSTEM_PROMPT,
-      messages: [
-        ...conversationHistory.map(m => ({ role: m.role, content: m.content })),
-        { role: 'user', content: userMessage }
-      ]
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
-  }
-
-  const data = await response.json();
-  return data.content?.[0]?.text ?? "I'm sorry, I couldn't generate a response. Please try again.";
-}
+Tone: Warm, professional, encouraging. Keep replies concise (3–5 sentences). Always end by offering to help further or suggesting WhatsApp for immediate order placement.`;
 
 export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
@@ -68,7 +45,6 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -78,29 +54,44 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
     if (!inputMessage.trim() || isLoading) return;
 
     const userText = inputMessage.trim();
-    const userMessage: Message = {
+    const userMsg: Message = {
       id: Date.now().toString(),
       role: 'user',
       content: userText,
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages(prev => [...prev, userMsg]);
     setInputMessage('');
     setIsLoading(true);
 
-    // Build history (exclude the welcome message from API call to save tokens)
-    const history = messages
-      .slice(1) // skip initial greeting
-      .map(m => ({ role: m.role, content: m.content }));
-
     try {
-      const replyText = await callClaudeAPI(history, userText);
+      // Build conversation history (skip the initial greeting to save tokens)
+      const history = messages.slice(1).map(m => ({
+        role: m.role as 'user' | 'assistant',
+        content: m.content
+      }));
+
+      const openai = createOpenAI({
+        baseURL: 'https://api.youware.com/public/v1/ai',
+        apiKey: 'sk-YOUWARE'
+      });
+
+      const { text } = await generateText({
+        model: openai('gpt-4o-mini'),
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT },
+          ...history,
+          { role: 'user', content: userText }
+        ],
+        temperature: 0.75,
+        maxTokens: 500
+      });
 
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: replyText,
+        content: text,
         timestamp: new Date()
       }]);
     } catch (err) {
@@ -108,7 +99,7 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: "Sorry, I'm having a little trouble right now. For immediate help, reach us on:\n\n📱 WhatsApp: +8801577128417\n📧 academiahelp0@gmail.com",
+        content: "Sorry, I'm having a little trouble right now. For immediate help reach us on:\n\n📱 WhatsApp: +8801577128417\n📧 academiahelp0@gmail.com",
         timestamp: new Date()
       }]);
     } finally {
@@ -140,8 +131,10 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
           exit={{ opacity: 0, scale: 0.85, y: 16 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
         >
-          <div className="bg-white rounded-2xl shadow-2xl border border-stone-200 overflow-hidden flex flex-col" style={{ maxHeight: '75vh' }}>
-
+          <div
+            className="bg-white rounded-2xl shadow-2xl border border-stone-200 overflow-hidden flex flex-col"
+            style={{ maxHeight: '75vh' }}
+          >
             {/* Header */}
             <div className="bg-gradient-to-r from-stone-900 via-slate-800 to-stone-900 text-white px-4 py-3 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-2.5">
@@ -150,10 +143,16 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
                 </div>
                 <div>
                   <p className="font-semibold text-sm leading-tight">Alex — Academic Assistant</p>
-                  <p className="text-stone-300 text-xs font-light">Academia Helper</p>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                    <p className="text-stone-300 text-xs font-light">Online now</p>
+                  </div>
                 </div>
               </div>
-              <button onClick={onClose} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors">
+              <button
+                onClick={onClose}
+                className="p-1.5 hover:bg-white/10 rounded-lg transition-colors"
+              >
                 <X className="w-4 h-4" />
               </button>
             </div>
@@ -174,11 +173,15 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
                       : 'bg-stone-100 text-stone-900 rounded-bl-sm'
                   }`}>
                     <div className="flex items-start gap-1.5">
-                      {message.role === 'assistant' && <Bot className="w-3.5 h-3.5 mt-0.5 text-stone-500 shrink-0" />}
-                      {message.role === 'user' && <User className="w-3.5 h-3.5 mt-0.5 text-stone-300 shrink-0" />}
+                      {message.role === 'assistant' && (
+                        <Bot className="w-3.5 h-3.5 mt-0.5 text-stone-500 shrink-0" />
+                      )}
+                      {message.role === 'user' && (
+                        <User className="w-3.5 h-3.5 mt-0.5 text-stone-300 shrink-0" />
+                      )}
                       <div className="flex-1 min-w-0">
                         <p className="text-xs leading-relaxed whitespace-pre-wrap">{message.content}</p>
-                        <p className={`text-[10px] mt-1 ${message.role === 'user' ? 'text-stone-400' : 'text-stone-400'}`}>
+                        <p className="text-[10px] mt-1 text-stone-400">
                           {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </p>
                       </div>
@@ -191,8 +194,16 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
                 <motion.div className="flex justify-start" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                   <div className="bg-stone-100 rounded-2xl rounded-bl-sm px-3 py-2.5 flex items-center gap-2">
                     <Bot className="w-3.5 h-3.5 text-stone-500" />
-                    <Loader2 className="w-3.5 h-3.5 animate-spin text-stone-500" />
-                    <span className="text-xs text-stone-500">Alex is typing...</span>
+                    <div className="flex gap-1">
+                      {[0, 1, 2].map(i => (
+                        <motion.span
+                          key={i}
+                          className="w-1.5 h-1.5 bg-stone-400 rounded-full block"
+                          animate={{ y: [0, -4, 0] }}
+                          transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.15 }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -221,7 +232,6 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
             <div className="border-t border-stone-200 px-3 py-2.5 shrink-0">
               <div className="flex items-end gap-2">
                 <textarea
-                  ref={textareaRef}
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
