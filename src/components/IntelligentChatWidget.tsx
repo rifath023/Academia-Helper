@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Bot, User, Loader2 } from 'lucide-react';
-import { generateText } from 'ai';
-import { createOpenAI } from '@ai-sdk/openai';
+import { X, Send, Bot, User } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -16,22 +14,20 @@ interface IntelligentChatWidgetProps {
   onClose: () => void;
 }
 
-const SYSTEM_PROMPT = `You are Alex, a friendly and knowledgeable academic writing assistant for Academia Helper — a premium assignment writing service.
+const SYSTEM_PROMPT = `You are Alex, a friendly academic writing assistant for Academia Helper — a premium assignment writing service.
 
-Your role:
-- Help students with essay structure, formatting, citations, and writing advice
-- Answer questions about academic writing (APA, Harvard, MLA citation styles, etc.)
-- Provide guidance on Business, Finance, Tourism, Marketing, Accounting, HRM, and Case Study assignments
-- Explain how Academia Helper's service works
-- Encourage students to place an order when they need professional help
+Help students with:
+- Essay structure, formatting, and writing advice
+- APA, Harvard, MLA citation styles
+- Business, Finance, Tourism, Marketing, Accounting, HRM, Case Study assignments
 
 About Academia Helper:
-- Specialises in: Business Essays, Finance Assignments, Tourism Reports, Marketing Analysis, Accounting Reports, HRM Essays, Case Studies, PowerPoint Presentations
+- Services: Business Essays, Finance Assignments, Tourism Reports, Marketing Analysis, Accounting Reports, HRM Essays, Case Studies, PowerPoint Presentations
 - Guarantees: 0% AI content, less than 10% plagiarism, timely delivery, unlimited revisions
 - Contact: WhatsApp +8801577128417 | Email academiahelp0@gmail.com
-- Simple 3-step process: Submit requirements → Expert writing → Receive & review
+- Process: Submit requirements → Expert writing → Receive & review
 
-Tone: Warm, professional, encouraging. Keep replies concise (3–5 sentences). Always end by offering to help further or suggesting WhatsApp for immediate order placement.`;
+Keep replies warm, concise (3-5 sentences). Suggest WhatsApp for placing orders.`;
 
 export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
@@ -66,32 +62,39 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
     setIsLoading(true);
 
     try {
-      // Build conversation history (skip the initial greeting to save tokens)
-      const history = messages.slice(1).map(m => ({
-        role: m.role as 'user' | 'assistant',
-        content: m.content
-      }));
+      // Build full conversation for context
+      const allMessages = [
+        ...messages.map(m => ({ role: m.role, content: m.content })),
+        { role: 'user', content: userText }
+      ];
 
-      const openai = createOpenAI({
-        baseURL: 'https://api.youware.com/public/v1/ai',
-        apiKey: 'sk-YOUWARE'
+      const response = await fetch('https://api.youware.com/public/v1/ai/chat/completions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            ...allMessages
+          ],
+          temperature: 0.75,
+          max_tokens: 500
+        })
       });
 
-      const { text } = await generateText({
-        model: openai('gpt-4o-mini'),
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          ...history,
-          { role: 'user', content: userText }
-        ],
-        temperature: 0.75,
-        maxTokens: 500
-      });
+      if (!response.ok) {
+        const errText = await response.text();
+        console.error('API error:', response.status, errText);
+        throw new Error(`API ${response.status}`);
+      }
+
+      const data = await response.json();
+      const replyText = data.choices?.[0]?.message?.content ?? "I'm not sure how to help with that. Could you rephrase?";
 
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: text,
+        content: replyText,
         timestamp: new Date()
       }]);
     } catch (err) {
@@ -149,10 +152,7 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
                   </div>
                 </div>
               </div>
-              <button
-                onClick={onClose}
-                className="p-1.5 hover:bg-white/10 rounded-lg transition-colors"
-              >
+              <button onClick={onClose} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors">
                 <X className="w-4 h-4" />
               </button>
             </div>
@@ -173,12 +173,8 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
                       : 'bg-stone-100 text-stone-900 rounded-bl-sm'
                   }`}>
                     <div className="flex items-start gap-1.5">
-                      {message.role === 'assistant' && (
-                        <Bot className="w-3.5 h-3.5 mt-0.5 text-stone-500 shrink-0" />
-                      )}
-                      {message.role === 'user' && (
-                        <User className="w-3.5 h-3.5 mt-0.5 text-stone-300 shrink-0" />
-                      )}
+                      {message.role === 'assistant' && <Bot className="w-3.5 h-3.5 mt-0.5 text-stone-500 shrink-0" />}
+                      {message.role === 'user' && <User className="w-3.5 h-3.5 mt-0.5 text-stone-300 shrink-0" />}
                       <div className="flex-1 min-w-0">
                         <p className="text-xs leading-relaxed whitespace-pre-wrap">{message.content}</p>
                         <p className="text-[10px] mt-1 text-stone-400">
