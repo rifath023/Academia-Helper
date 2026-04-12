@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, ArrowRight, Tag, MessageCircle, CheckCircle, Sparkles } from 'lucide-react';
@@ -8,6 +8,14 @@ import { sampleBlogPosts } from './BlogPage';
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+
+
+   // THIS — resets scroll position every time the page loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [slug]); // slug in dependency = also resets if user jumps between posts
+
+  
 
   const post = sampleBlogPosts.find(p => p.slug === slug);
 
