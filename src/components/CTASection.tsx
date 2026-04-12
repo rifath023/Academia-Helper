@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, MessageCircle, Mail, Phone, Clock, Shield, CheckCircle, Send } from 'lucide-react';
+import { ArrowRight, MessageCircle, Mail, Phone, Clock, Shield, CheckCircle, Send, Paperclip, X, FileText } from 'lucide-react';
 
 export const CTASection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true });
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +16,9 @@ export const CTASection: React.FC = () => {
     message: ''
   });
 
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
+  const [dragOver, setDragOver] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -21,18 +26,54 @@ export const CTASection: React.FC = () => {
     });
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const newFiles = Array.from(e.target.files);
+      setAttachedFiles(prev => [...prev, ...newFiles]);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setDragOver(false);
+    const droppedFiles = Array.from(e.dataTransfer.files);
+    setAttachedFiles(prev => [...prev, ...droppedFiles]);
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setDragOver(true);
+  };
+
+  const handleDragLeave = () => setDragOver(false);
+
+  const removeFile = (index: number) => {
+    setAttachedFiles(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const formatFileSize = (bytes: number) => {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    const fileNames = attachedFiles.length > 0
+      ? `\nAttached Files: ${attachedFiles.map(f => f.name).join(', ')}`
+      : '';
+
     const emailBody = `
 Name: ${formData.name}
 Email: ${formData.email}
 Subject: ${formData.subject}
 Word Count: ${formData.wordCount}
 Deadline: ${formData.deadline}
-Message: ${formData.message}
+Message: ${formData.message}${fileNames}
+
+Note: Please attach the assignment brief file(s) manually to this email if not auto-attached.
     `;
-    
+
     window.location.href = `mailto:academiahelp0@gmail.com?subject=Assignment Order: ${formData.subject}&body=${encodeURIComponent(emailBody)}`;
   };
 
@@ -49,7 +90,7 @@ Message: ${formData.message}
   ];
 
   return (
-    <section 
+    <section
       ref={containerRef}
       id="contact"
       className="py-24 px-6 bg-gradient-to-br from-stone-900 via-slate-800 to-stone-900 relative overflow-hidden"
@@ -90,7 +131,7 @@ Message: ${formData.message}
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Contact Form - Enhanced Design */}
+          {/* Contact Form */}
           <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, x: -60 }}
@@ -110,9 +151,7 @@ Message: ${formData.message}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.8 }}
                   >
-                    <label className="block text-sm font-medium text-stone-200 mb-3">
-                      Your Name *
-                    </label>
+                    <label className="block text-sm font-medium text-stone-200 mb-3">Your Name *</label>
                     <input
                       type="text"
                       name="name"
@@ -128,9 +167,7 @@ Message: ${formData.message}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.9 }}
                   >
-                    <label className="block text-sm font-medium text-stone-200 mb-3">
-                      Email Address *
-                    </label>
+                    <label className="block text-sm font-medium text-stone-200 mb-3">Email Address *</label>
                     <input
                       type="email"
                       name="email"
@@ -148,9 +185,7 @@ Message: ${formData.message}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 1.0 }}
                 >
-                  <label className="block text-sm font-medium text-stone-200 mb-3">
-                    Assignment Type *
-                  </label>
+                  <label className="block text-sm font-medium text-stone-200 mb-3">Assignment Type *</label>
                   <select
                     name="subject"
                     value={formData.subject}
@@ -171,9 +206,7 @@ Message: ${formData.message}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 1.1 }}
                   >
-                    <label className="block text-sm font-medium text-stone-200 mb-3">
-                      Word Count
-                    </label>
+                    <label className="block text-sm font-medium text-stone-200 mb-3">Word Count</label>
                     <input
                       type="text"
                       name="wordCount"
@@ -188,9 +221,7 @@ Message: ${formData.message}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 1.2 }}
                   >
-                    <label className="block text-sm font-medium text-stone-200 mb-3">
-                      Deadline
-                    </label>
+                    <label className="block text-sm font-medium text-stone-200 mb-3">Deadline</label>
                     <input
                       type="date"
                       name="deadline"
@@ -201,14 +232,85 @@ Message: ${formData.message}
                   </motion.div>
                 </div>
 
+                {/* ── Assignment Brief File Upload ── */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 1.25 }}
+                >
+                  <label className="block text-sm font-medium text-stone-200 mb-3">
+                    Assignment Brief / Files
+                    <span className="ml-2 text-xs text-stone-400 font-light">(PDF, DOC, DOCX, JPG, PNG — max 10 MB each)</span>
+                  </label>
+
+                  {/* Drop zone */}
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    onDrop={handleDrop}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    className={`
+                      w-full cursor-pointer rounded-2xl border-2 border-dashed px-6 py-8 text-center
+                      transition-all duration-200 select-none
+                      ${dragOver
+                        ? 'border-amber-400 bg-amber-400/10 scale-[1.01]'
+                        : 'border-white/25 bg-white/5 hover:border-amber-400/60 hover:bg-white/10'
+                      }
+                    `}
+                  >
+                    <Paperclip className="w-7 h-7 mx-auto mb-3 text-amber-400 opacity-80" />
+                    <p className="text-stone-300 text-sm font-medium">
+                      Drag & drop files here, or <span className="text-amber-400 underline underline-offset-2">browse</span>
+                    </p>
+                    <p className="text-stone-500 text-xs mt-1">Upload your assignment brief, marking rubric, or any reference files</p>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      multiple
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.ppt,.pptx,.txt"
+                      onChange={handleFileChange}
+                      className="hidden"
+                    />
+                  </div>
+
+                  {/* Attached file list */}
+                  {attachedFiles.length > 0 && (
+                    <ul className="mt-3 space-y-2">
+                      {attachedFiles.map((file, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, y: -6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.2 }}
+                          className="flex items-center justify-between bg-white/10 border border-white/15 rounded-xl px-4 py-3"
+                        >
+                          <div className="flex items-center gap-3 min-w-0">
+                            <FileText className="w-4 h-4 text-amber-400 shrink-0" />
+                            <span className="text-sm text-white truncate">{file.name}</span>
+                            <span className="text-xs text-stone-400 shrink-0">{formatFileSize(file.size)}</span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(index)}
+                            className="ml-3 text-stone-400 hover:text-red-400 transition-colors duration-150 shrink-0"
+                            aria-label="Remove file"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  )}
+                </motion.div>
+                {/* ── End File Upload ── */}
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 1.3 }}
                 >
-                  <label className="block text-sm font-medium text-stone-200 mb-3">
-                    Assignment Details
-                  </label>
+                  <label className="block text-sm font-medium text-stone-200 mb-3">Assignment Details</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -267,7 +369,7 @@ Message: ${formData.message}
                     <div className="text-sm opacity-90">Instant response guaranteed</div>
                   </div>
                 </motion.a>
-                
+
                 <motion.a
                   href="mailto:academiahelp0@gmail.com"
                   className="group flex items-center p-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
@@ -298,8 +400,8 @@ Message: ${formData.message}
                   { icon: <Clock className="w-5 h-5" />, text: 'Timely delivery always', color: 'text-amber-400' },
                   { icon: <ArrowRight className="w-5 h-5" />, text: 'Unlimited revisions', color: 'text-purple-400' },
                 ].map((item, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="flex items-center text-white group"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -328,7 +430,7 @@ Message: ${formData.message}
                   { step: '2', title: 'Expert Writing', desc: 'Our specialists work on your paper' },
                   { step: '3', title: 'Receive & Review', desc: 'Get your completed assignment' },
                 ].map((item, index) => (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     className="flex items-start text-white group"
                     initial={{ opacity: 0, x: -20 }}
