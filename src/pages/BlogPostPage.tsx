@@ -1,192 +1,199 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, User, ArrowRight, Tag, MessageCircle, CheckCircle, Sparkles } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import { sampleBlogPosts } from './BlogPage';
+import { Calendar, Clock, User, ArrowRight, Search, Tag } from 'lucide-react';
 
-export const BlogPostPage: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  date: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  image: string;
+}
+
+export const sampleBlogPosts: BlogPost[] = [
+  // ... your existing posts array stays exactly the same
+];
+
+export const BlogPage: React.FC = () => {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const didRestoreScroll = useRef(false);
 
-  // Scroll to top when opening a blog post (forward navigation)
+  const categories = ['All', 'Business Writing', 'Finance', 'Tourism', 'Academic Tips'];
+
+  // On mount: restore saved scroll position if coming back from a post,
+  // otherwise scroll to top (fresh visit or browser back from non-post page)
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [slug]);
-
-  const post = sampleBlogPosts.find(p => p.slug === slug);
-
-  if (!post) {
-    return <Navigate to="/blog" replace />;
-  }
-
-  const handleWhatsAppClick = () => {
-    window.open('https://wa.me/8801577128417?text=Hi, I need help with my assignment', '_blank');
-  };
-
-  // Save current blog scroll position then go back to blog list
-  const handleBackToBlog = () => {
     const savedY = sessionStorage.getItem('blogScrollY');
-    navigate('/blog');
-    // Restore scroll after navigation paint
-    if (savedY) {
+    const fromPost = sessionStorage.getItem('blogScrollFrom') === 'post';
+
+    if (savedY && fromPost && !didRestoreScroll.current) {
+      didRestoreScroll.current = true;
+      // Double rAF ensures DOM has painted before we scroll
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          window.scrollTo({ top: parseInt(savedY), behavior: 'instant' });
+          window.scrollTo({ top: parseInt(savedY, 10), behavior: 'instant' });
+          sessionStorage.removeItem('blogScrollFrom');
         });
       });
+    } else if (!fromPost) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
+  }, []);
+
+  // Save scroll position every time user scrolls (continuous tracking)
+  useEffect(() => {
+    const onScroll = () => {
+      sessionStorage.setItem('blogScrollY', String(window.scrollY));
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const handlePostClick = (slug: string) => {
+    // Mark that we're leaving to a post (so we can restore on return)
+    sessionStorage.setItem('blogScrollFrom', 'post');
+    navigate(`/blog/${slug}`);
   };
+
+  const filteredPosts = sampleBlogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50 to-stone-100 pt-20">
       <div className="container mx-auto px-6 py-12">
-        <motion.button
-          onClick={handleBackToBlog}
-          className="mb-8 flex items-center text-stone-600 hover:text-stone-900 transition-colors duration-200"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          whileHover={{ x: -4 }}
-        >
-          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-          Back to Blog
-        </motion.button>
-
-        <motion.article
-          className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden"
+        {/* Header */}
+        <motion.div
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative h-64 md:h-96">
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-full object-cover"
+          <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4">
+            Academia Helper Blog
+          </h1>
+          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+            Expert insights, writing tips, and academic guidance to help you excel in your studies
+          </p>
+        </motion.div>
+
+        {/* Search and Filters */}
+        <motion.div
+          className="mb-12 space-y-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="relative max-w-md mx-auto">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-stone-400" />
+            </div>
+            <input
+              type="text"
+              placeholder="Search articles..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="block w-full pl-10 pr-3 py-3 border border-stone-200 rounded-2xl leading-5 bg-white placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
 
-          <div className="p-8 md:p-12">
-            <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-stone-600">
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2" />
-                {new Date(post.date).toLocaleDateString()}
-              </div>
-              <div className="flex items-center">
-                <Clock className="w-4 h-4 mr-2" />
-                {post.readTime}
-              </div>
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-2" />
-                {post.author}
-              </div>
-              <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">
-                {post.category}
-              </span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl font-bold text-stone-900 mb-6 leading-tight">
-              {post.title}
-            </h1>
-
-            <div className="prose prose-lg prose-stone max-w-none">
-              <ReactMarkdown
-                components={{
-                  h1: ({node, ...props}) => <h1 className="text-3xl font-bold text-stone-900 mt-8 mb-4 border-b pb-2" {...props} />,
-                  h2: ({node, ...props}) => <h2 className="text-2xl font-bold text-stone-900 mt-8 mb-4" {...props} />,
-                  h3: ({node, ...props}) => <h3 className="text-xl font-bold text-stone-900 mt-6 mb-3" {...props} />,
-                  p: ({node, ...props}) => <p className="text-stone-700 leading-relaxed mb-4" {...props} />,
-                  ul: ({node, ...props}) => <ul className="list-disc list-inside mb-4 space-y-2" {...props} />,
-                  ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-4 space-y-2" {...props} />,
-                  li: ({node, ...props}) => <li className="text-stone-700 leading-relaxed ml-4" {...props} />,
-                  strong: ({node, ...props}) => <strong className="font-bold text-stone-900" {...props} />,
-                  em: ({node, ...props}) => <em className="italic text-stone-800" {...props} />,
-                  blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-stone-300 pl-4 italic text-stone-600 my-6" {...props} />,
-                  code: ({node, inline, ...props}) =>
-                    inline
-                      ? <code className="bg-stone-100 text-stone-800 px-1 py-0.5 rounded text-sm" {...props} />
-                      : <code className="block bg-stone-100 text-stone-800 p-4 rounded-lg text-sm overflow-x-auto" {...props} />,
-                }}
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'bg-stone-900 text-white shadow-lg'
+                    : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
+                }`}
               >
-                {post.content}
-              </ReactMarkdown>
-            </div>
+                {category}
+              </button>
+            ))}
+          </div>
+        </motion.div>
 
-            {/* Call-to-Action Section */}
-            <motion.div
-              className="mt-12 mb-8 bg-gradient-to-br from-slate-800 via-stone-900 to-slate-900 rounded-2xl p-8 border border-stone-700 shadow-2xl relative overflow-hidden"
+        {/* Blog Posts Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPosts.map((post, index) => (
+            <motion.article
+              key={post.id}
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              onClick={() => handlePostClick(post.slug)}
             >
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 animate-pulse"></div>
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-stone-800 rounded-full text-xs font-medium">
+                    {post.category}
+                  </span>
+                </div>
               </div>
 
-              <div className="relative z-10 text-center">
-                <motion.div
-                  className="inline-flex items-center justify-center mb-4"
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  <Sparkles className="w-8 h-8 text-green-400" />
-                </motion.div>
-
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                  Need Expert Help with Your Assignment?
-                </h3>
-
-                <p className="text-lg text-stone-300 mb-6 max-w-2xl mx-auto">
-                  Don't struggle alone! Get <span className="font-bold text-green-400">affordable, high-quality, and plagiarism-free</span> assignments from our MA & PhD qualified experts. We guarantee <span className="font-bold text-green-400">on-time delivery</span> and support in all subjects!
-                </p>
-
-                <div className="flex flex-wrap justify-center gap-4 mb-6">
-                  <div className="flex items-center gap-2 text-stone-200">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="font-medium">24/7 Support</span>
+              <div className="p-6">
+                <div className="flex items-center gap-4 mb-3 text-sm text-stone-500">
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    {new Date(post.date).toLocaleDateString()}
                   </div>
-                  <div className="flex items-center gap-2 text-stone-200">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="font-medium">100% Original Work</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-stone-200">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="font-medium">Student-Friendly Prices</span>
+                  <div className="flex items-center">
+                    <Clock className="w-4 h-4 mr-1" />
+                    {post.readTime}
                   </div>
                 </div>
 
-                <motion.button
-                  onClick={handleWhatsAppClick}
-                  className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <MessageCircle className="w-6 h-6" />
-                  Chat on WhatsApp Now
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
+                <h3 className="text-xl font-bold text-stone-900 mb-3 group-hover:text-stone-700 transition-colors duration-200">
+                  {post.title}
+                </h3>
 
-                <p className="mt-4 text-sm text-stone-400">
-                  📱 WhatsApp: <span className="font-semibold text-green-400">+880 1577 128417</span>
+                <p className="text-stone-600 mb-4 line-clamp-3">
+                  {post.excerpt}
                 </p>
-              </div>
-            </motion.div>
 
-            {/* Tags Section */}
-            <div className="flex flex-wrap gap-2 pt-8 border-t border-stone-200">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="flex items-center px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm"
-                >
-                  <Tag className="w-3 h-3 mr-1" />
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </motion.article>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-stone-500">{post.author}</span>
+                  <div className="flex items-center text-stone-400 group-hover:text-stone-600 transition-colors duration-200">
+                    <span className="text-sm mr-2">Read more</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        {filteredPosts.length === 0 && (
+          <motion.div
+            className="text-center py-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-2xl font-semibold text-stone-900 mb-2">No articles found</h3>
+            <p className="text-stone-600">Try adjusting your search or filter criteria</p>
+          </motion.div>
+        )}
       </div>
     </div>
   );
