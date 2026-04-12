@@ -2116,7 +2116,6 @@ Using visuals and charts in assignments transforms your reports from plain text 
   author: 'Academia Helper'
 },
 
-// needed to add in the stie map 
 {
   id: '29',
   slug: 'perfect-university-assignment-guide',
@@ -3018,7 +3017,7 @@ Remember, academic writing is not about copying information—it’s about under
   author: 'Academia Helper'
 }
 
-
+// Sitemap updated
 
 
 ];
