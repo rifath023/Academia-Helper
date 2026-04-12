@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, User, ArrowRight, Search, Tag } from 'lucide-react';
@@ -3026,6 +3026,16 @@ export const BlogPage: React.FC = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+
+  //  THIS — resets scroll position every time the page loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
+  // ... rest of your code stays exactly the same
+
+
 
   const categories = ['All', 'Business Writing', 'Finance', 'Tourism', 'Academic Tips'];
 
