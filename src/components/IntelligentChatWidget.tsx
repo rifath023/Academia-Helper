@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Bot, User } from 'lucide-react';
+import { generateText } from 'ai';
+import { createOpenAI } from '@ai-sdk/openai';
 
 interface Message {
   id: string;
@@ -28,6 +30,17 @@ About Academia Helper:
 - Process: Submit requirements → Expert writing → Receive & review
 
 Keep replies warm, concise (3-5 sentences). Suggest WhatsApp for placing orders.`;
+
+// Read model + endpoint from Youware's injected config, with safe fallbacks
+function getAIClient() {
+  const config = (globalThis as any).ywConfig?.ai_config?.chat_assistant;
+  const model = config?.model ?? 'gpt-4o-mini';
+  const openai = createOpenAI({
+    baseURL: 'https://api.youware.com/public/v1/ai',
+    apiKey: 'sk-YOUWARE',
+  });
+  return { openai, model };
+}
 
 export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
@@ -62,39 +75,29 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
     setIsLoading(true);
 
     try {
-      // Build full conversation for context
-      const allMessages = [
-        ...messages.map(m => ({ role: m.role, content: m.content })),
-        { role: 'user', content: userText }
-      ];
+      const { openai, model } = getAIClient();
 
-      const response = await fetch('https://api.youware.com/public/v1/ai/chat/completions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [
-            { role: 'system', content: SYSTEM_PROMPT },
-            ...allMessages
-          ],
-          temperature: 0.75,
-          max_tokens: 500
-        })
+      // Full conversation history for context
+      const history = messages.map(m => ({
+        role: m.role as 'user' | 'assistant',
+        content: m.content
+      }));
+
+      const { text } = await generateText({
+        model: openai(model),
+        system: SYSTEM_PROMPT,
+        messages: [
+          ...history,
+          { role: 'user', content: userText }
+        ],
+        temperature: 0.75,
+        maxTokens: 500,
       });
-
-      if (!response.ok) {
-        const errText = await response.text();
-        console.error('API error:', response.status, errText);
-        throw new Error(`API ${response.status}`);
-      }
-
-      const data = await response.json();
-      const replyText = data.choices?.[0]?.message?.content ?? "I'm not sure how to help with that. Could you rephrase?";
 
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: replyText,
+        content: text,
         timestamp: new Date()
       }]);
     } catch (err) {
