@@ -9,8 +9,7 @@ import { FAQSection } from "./components/FAQSection";
 import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
 import { FloatingActionButton } from "./components/ScrollComponents";
-import { BlogPage } from "./pages/BlogPage";
-import { BlogPostPage } from "./pages/BlogPostPage"; // New component
+import { BlogPage } from "./pages/BlogPage"; // New component
 
 const HomePage: React.FC = () => {
   return (
