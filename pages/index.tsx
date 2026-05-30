@@ -12,14 +12,15 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Academia Helper | Professional Assignment Writing Service in UK, USA & Australia</title>
-        <meta name="description" content="Get expert assignment help with Academia Helper. Our MA & PhD writers provide essays, dissertations, coursework & proofreading services in the UK, USA, and Australia. 100% plagiarism-free, affordable, and always on time." />
-        <meta name="keywords" content="assignment help, essay writing service, dissertation help, coursework help, UK, USA, Australia, online assignment writing, academic writing service" />
-        <meta property="og:title" content="Academia Helper | Professional Assignment Writing Service" />
-        <meta property="og:description" content="Expert academic writing services for UK and USA students. Professional, original, and timely delivery guaranteed with 0% AI content." />
-        <meta property="og:url" content="https://YOUR-DOMAIN.com/" />
-        <link rel="canonical" href="https://YOUR-DOMAIN.com/" />
+        <title>Academia Helper | Expert Assignment Writing Service</title>
+        <meta name="description" content="Expert assignment help for UK & USA students. MA & PhD writers deliver plagiarism-free essays, dissertations and coursework on time. 0% AI content guaranteed." />
+        <meta name="keywords" content="assignment help, essay writing service, dissertation help, coursework help, UK, USA, Australia, academic writing service" />
+        <meta property="og:title" content="Academia Helper | Expert Assignment Writing Service" />
+        <meta property="og:description" content="Expert assignment help for UK & USA students. Plagiarism-free, on time, 0% AI content guaranteed." />
+        <meta property="og:url" content="https://www.academiahelper.com/" />
+        <link rel="canonical" href="https://www.academiahelper.com/" />
       </Head>
+      
 
       <div className="min-h-screen bg-white text-black overflow-x-hidden relative">
         <ScrollProgress />

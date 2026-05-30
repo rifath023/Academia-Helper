@@ -30,11 +30,11 @@ export default function BlogPage() {
   return (
     <>
       <Head>
-        <title>Blog | Academia Helper - Academic Writing Tips & Guides</title>
-        <meta name="description" content="Expert insights, writing tips, and academic guidance. Learn about essay writing, referencing, dissertations, and more from Academia Helper." />
-        <meta property="og:title" content="Blog | Academia Helper" />
-        <meta property="og:url" content="https://YOUR-DOMAIN.com/blog/" />
-        <link rel="canonical" href="https://YOUR-DOMAIN.com/blog/" />
+        <title>Academic Writing Blog | Essays, Dissertations & Study Tips</title>
+        <meta name="description" content="Expert academic writing tips, essay guides, dissertation advice and study strategies for UK and USA university students from Academia Helper." />
+        <meta property="og:title" content="Academic Writing Blog | Academia Helper" />
+        <meta property="og:url" content="https://www.academiahelper.com/blog/" />
+        <link rel="canonical" href="https://www.academiahelper.com/blog/" />
       </Head>
 
       <div className="min-h-screen bg-white text-black overflow-x-hidden">

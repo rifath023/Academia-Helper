@@ -33,9 +33,9 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
         <meta property="og:title" content={`${post.title} | Academia Helper`} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.image} />
-        <meta property="og:url" content={`https://YOUR-DOMAIN.com/blog/${post.slug}/`} />
+        <meta property="og:url" content={`https://www.academiahelper.com/blog/${post.slug}/`} />
         <meta property="og:type" content="article" />
-        <link rel="canonical" href={`https://YOUR-DOMAIN.com/blog/${post.slug}/`} />
+        <link rel="canonical" href={`https://www.academiahelper.com/blog/${post.slug}/`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -48,7 +48,7 @@ export default function BlogPostPage({ post, relatedPosts }: Props) {
               author: { '@type': 'Organization', name: 'Academia Helper' },
               publisher: { '@type': 'Organization', name: 'Academia Helper' },
               datePublished: post.date,
-              mainEntityOfPage: `https://YOUR-DOMAIN.com/blog/${post.slug}/`,
+              mainEntityOfPage: `https://www.academiahelper.com/blog/${post.slug}/`,
             }),
           }}
         />
