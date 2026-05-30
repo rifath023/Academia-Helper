@@ -133,7 +133,7 @@ Choosing the right lamp can significantly improve focus, reduce eye strain, and 
     'reading lamp USA',
     'student study tools'
   ],
-  image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800',
+  image: 'https://cdn.shopify.com/s/files/1/0632/2526/6422/files/kids-education-2023-11-27-05-26-57-utc_1_480x480_a8fed46c-0c00-4f07-8063-675b1a7d5a43.jpg?v=1736291242',
   author: 'Academia Helper'
 }
 
