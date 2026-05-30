@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.academiahelper.com/sitemap.xml
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
