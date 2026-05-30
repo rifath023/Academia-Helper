@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { ScrollProgress } from "./components/ScrollComponents";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
@@ -9,7 +10,9 @@ import { FAQSection } from "./components/FAQSection";
 import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
 import { FloatingActionButton } from "./components/ScrollComponents";
-import { BlogPage } from "./pages/BlogPage"; // New component
+
+import { BlogPage } from "./pages/BlogPage";
+import { BlogPostPage } from "./pages/BlogPostPage"; // ✅ FIXED
 
 const HomePage: React.FC = () => {
   return (
