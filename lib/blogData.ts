@@ -14,7 +14,7 @@ export interface BlogPost {
 
 export const sampleBlogPosts: BlogPost[] = [
   {
-  id: '42',
+  id: '1',
   slug: 'best-study-lamp-for-students-usa',
   title: 'Best Study Lamp for Students in the USA: Top LED Desk Lamps for Focus and Comfort',
   excerpt: 'Explore the best study lamps for students in the USA that improve focus, reduce eye strain, and enhance productivity with adjustable LED lighting options.',

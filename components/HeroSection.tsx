@@ -62,7 +62,7 @@ export const HeroSection: React.FC = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                Our Expert Assignment Help Service provides essays, dissertations, coursework, case studies, reports, and PowerPoint presentations across computer science, business, management, finance, accounting, HRM, psychology, and more. Work is plagiarism-free, affordable, on time, and written by MA & PhD-qualified writers.
+                Our professional Assignment Writing Services UK team delivers high-quality essays, dissertations, coursework, case studies, reports, and PowerPoint presentations tailored to your academic requirements. We cover a wide range of subjects, including computer science, business, management, finance, accounting, HRM, psychology, and more. Every paper is 100% plagiarism-free, affordable, and completed on time by experienced MA and PhD-qualified writers committed to helping you achieve academic success.
               </motion.p>
             </motion.div>
 
