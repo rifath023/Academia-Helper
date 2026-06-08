@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  repo: rifath023/Academia-Helper
   branch: main
 
 media_folder: public/images/blog
