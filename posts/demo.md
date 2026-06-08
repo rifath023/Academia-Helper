@@ -1,17 +1,18 @@
 ---
-id: '1'
-title: 'Best Study Lamp for Students in USA 2026: Top LED Desk Lamps Reviewed'
-excerpt: 'Discover the best LED study lamps for students in the USA with eye-care features, adjustable brightness, and modern designs.'
-author: 'Academia Helper'
-date: '2025-10-20'
-readTime: '8 min read'
-category: 'Study Tools'
-type: 'transactional'
+type: transactional
+id: "1"
+title: "Best Study Lamp for Students in USA 2026: Top LED Desk Lamps Reviewed"
+excerpt: Discover the best LED study lamps for students in the USA with eye-care
+  features, adjustable brightness, and modern designs.
+author: Academia Helper
+date: 2026-06-08
+readTime: 8 min read
+category: Study Tools
 tags:
   - best study lamp USA
   - LED desk lamp for students
   - study light for reading
-image: 'https://media.istockphoto.com/id/2239742509/photo/female-studying-hard-at-nighttime.jpg?s=612x612&w=0&k=20&c=2JfK1RAawf0rTdGgJqDzgdfHm0I-u85Sp4YsZbGMOBY='
+image: https://media.istockphoto.com/id/2239742509/photo/female-studying-hard-at-nighttime.jpg?s=612x612&w=0&k=20&c=2JfK1RAawf0rTdGgJqDzgdfHm0I-u85Sp4YsZbGMOBY=
 ---
 Finding the right study lamp can make a real difference to your focus, eye comfort, and productivity. Whether you are pulling late-night study sessions or working through assignments in a dimly lit room, a quality LED desk lamp provides consistent, eye-friendly light. This guide reviews the top three study lamps for students in the USA in 2026, covering premium, budget, and mid-range options.
 
