@@ -1,0 +1,82 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  branch: main
+
+media_folder: public/images/blog
+public_folder: /images/blog
+
+publish_mode: editorial_workflow
+
+collections:
+  # ── INFORMATIONAL POSTS ────────────────────────────────────────────────────
+  - name: 'informational'
+    label: 'Informational Posts'
+    folder: 'posts'
+    create: true
+    slug: '{{slug}}'
+    filter: { field: 'type', value: 'informational' }
+    fields:
+      - { label: 'Post Type', name: 'type', widget: 'hidden', default: 'informational' }
+      - { label: 'ID', name: 'id', widget: 'string', hint: 'Unique ID e.g. 001' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'text', hint: 'Short description for Google search. Keep under 160 characters.' }
+      - { label: 'Author', name: 'author', widget: 'string', default: 'Academia Helper' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: 'Read Time', name: 'readTime', widget: 'string', default: '8 min read' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Academic Tips', 'Business Writing', 'Finance', 'Tourism', 'Study Tools', 'Technology'] }
+      - { label: 'Tags', name: 'tags', widget: 'list', hint: 'Add SEO keywords as tags' }
+      - { label: 'Featured Image URL', name: 'image', widget: 'string', hint: 'Paste an image URL from Unsplash or upload below' }
+      - label: 'Content'
+        name: 'body'
+        widget: 'markdown'
+        hint: 'Write your post here. Use ## for headings. Add [CTA_BOX] anywhere to insert the WhatsApp CTA.'
+        buttons: [bold, italic, code, link, heading-two, heading-three, bulleted-list, numbered-list, quote]
+
+  # ── TRANSACTIONAL POSTS ────────────────────────────────────────────────────
+  - name: 'transactional'
+    label: 'Transactional Posts (Affiliate)'
+    folder: 'posts'
+    create: true
+    slug: '{{slug}}'
+    filter: { field: 'type', value: 'transactional' }
+    fields:
+      - { label: 'Post Type', name: 'type', widget: 'hidden', default: 'transactional' }
+      - { label: 'ID', name: 'id', widget: 'string', hint: 'Unique ID e.g. 002' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'text', hint: 'Short description for Google search. Keep under 160 characters.' }
+      - { label: 'Author', name: 'author', widget: 'string', default: 'Academia Helper' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: 'Read Time', name: 'readTime', widget: 'string', default: '8 min read' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Study Tools', 'Technology', 'Academic Tips', 'Business Writing', 'Finance', 'Tourism'] }
+      - { label: 'Tags', name: 'tags', widget: 'list', hint: 'Add SEO keywords as tags' }
+      - { label: 'Featured Image URL', name: 'image', widget: 'string', hint: 'Paste image URL from Unsplash' }
+      - label: 'Products'
+        name: 'products'
+        widget: 'list'
+        label_singular: 'Product'
+        hint: 'Add each product you are reviewing'
+        fields:
+          - { label: 'Product Name', name: 'name', widget: 'string' }
+          - { label: 'Product Image URL', name: 'image', widget: 'string', hint: 'Paste Amazon or product image URL' }
+          - { label: 'Rating (out of 5)', name: 'rating', widget: 'number', value_type: 'float', min: 0, max: 5, step: 0.1 }
+          - { label: 'Review Count', name: 'reviewCount', widget: 'number', value_type: 'int' }
+          - { label: 'Price', name: 'price', widget: 'string', hint: 'e.g. $49.99 or Free' }
+          - { label: 'Affiliate Link', name: 'affiliateLink', widget: 'string', hint: 'Your Amazon affiliate link' }
+          - { label: 'Badge', name: 'badge', widget: 'string', hint: 'e.g. Best Overall, Best Budget', required: false }
+          - { label: 'Short Description', name: 'description', widget: 'text', hint: 'One sentence shown inside the product card' }
+          - { label: 'Pros', name: 'pros', widget: 'list', hint: 'Add pros one by one' }
+          - { label: 'Cons', name: 'cons', widget: 'list', hint: 'Add cons one by one' }
+          - label: 'Specifications'
+            name: 'specifications'
+            widget: 'list'
+            required: false
+            fields:
+              - { label: 'Label', name: 'label', widget: 'string', hint: 'e.g. Brand, Weight, Warranty' }
+              - { label: 'Value', name: 'value', widget: 'string' }
+          - { label: 'Discussion', name: 'discussion', widget: 'text', hint: 'Your detailed take on this product. Full paragraph, no bullet points.' }
+      - label: 'Content'
+        name: 'body'
+        widget: 'markdown'
+        hint: 'Write your post here. Place [AFFILIATE_DISCLOSURE], [COMPARISON_TABLE], [PRODUCT_REVIEWS], and [CTA_BOX] tags wherever you want them.'
+        buttons: [bold, italic, code, link, heading-two, heading-three, bulleted-list, numbered-list, quote]

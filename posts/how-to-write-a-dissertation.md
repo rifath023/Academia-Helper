@@ -44,8 +44,10 @@ Academic tools such as **Google Scholar** are commonly used to find reliable res
 
 In the UK, dissertations vary by level:
 
-- **Undergraduate dissertations:** 8,000–15,000 words
-- **Master's dissertations:** 15,000–50,000 words
+| Level | Word Count |
+|-------|------------|
+| Undergraduate | 8,000 – 15,000 words |
+| Master's | 15,000 – 50,000 words |
 
 A strong dissertation demonstrates academic depth, critical thinking, and the ability to follow a structured research process from start to finish.
 
@@ -75,16 +77,18 @@ Use both **primary research** (surveys, interviews, experiments) and **secondary
 
 A clear structure is essential for a high-quality dissertation. Most UK universities follow a standard format:
 
-1. **Title Page**: Project title, your name, institution, and date
-2. **Abstract**: 150–300 word summary of the entire dissertation
-3. **Introduction**: Background, rationale, aims, and research question
-4. **Literature Review**: Critical analysis of existing research
-5. **Methodology**: Research design and data collection methods
-6. **Results / Findings**: Presentation of data
-7. **Discussion**: Interpretation and analysis of findings
-8. **Conclusion**: Summary, recommendations, and limitations
-9. **References**: Full list of all cited sources
-10. **Appendices**: Supporting materials such as questionnaires or raw data
+| # | Section | Purpose |
+|---|---------|---------|
+| 1 | Title Page | Project title, your name, institution, and date |
+| 2 | Abstract | 150–300 word summary of the entire dissertation |
+| 3 | Introduction | Background, rationale, aims, and research question |
+| 4 | Literature Review | Critical analysis of existing research |
+| 5 | Methodology | Research design and data collection methods |
+| 6 | Results / Findings | Presentation of data |
+| 7 | Discussion | Interpretation and analysis of findings |
+| 8 | Conclusion | Summary, recommendations, and limitations |
+| 9 | References | Full list of all cited sources |
+| 10 | Appendices | Supporting materials such as questionnaires or raw data |
 
 If you are unsure about structure, refer to dissertation examples provided by universities. The University of Reading's LibGuides offers useful writing guidance and structure references that many UK students find helpful.
 
@@ -109,9 +113,11 @@ Referencing is a critical part of dissertation writing. Every source you use mus
 
 UK universities commonly use:
 
-- **Harvard referencing**
-- **APA 7**
-- **Chicago style**
+| Style | Commonly Used In |
+|-------|-----------------|
+| Harvard | Business, Social Sciences, Humanities |
+| APA 7 | Psychology, Education, Health Sciences |
+| Chicago | History, Arts, Literature |
 
 Incorrect or inconsistent referencing can lead to plagiarism issues, even unintentionally. Tools like citation managers (e.g., Zotero or RefWorks) can help you stay organised throughout the process.
 
@@ -129,15 +135,7 @@ A: Start by selecting a topic, defining your research question, and creating a r
 
 **Q: How do I manage my time effectively when writing a dissertation?**
 
-A: Break the process into clear stages and assign weekly goals to each:
-1. Start with your literature review
-2. Plan your methodology early
-3. Identify primary sources
-4. Collect secondary sources
-5. Write continuously as you research
-6. Organise and analyse your material
-7. Draft the full dissertation
-8. Redraft, proofread, and finalise
+A: Break the process into clear stages and assign weekly goals to each. Start with your literature review, plan your methodology early, identify primary and secondary sources, write continuously as you research, then draft, redraft, proofread, and finalise.
 
 **Q: How long should a dissertation be?**
 
@@ -158,3 +156,5 @@ A: AI tools can assist with brainstorming ideas, improving sentence structure, o
 **Q: Is 3 weeks enough time to write a dissertation?**
 
 A: It is possible but very challenging. If you are in this situation, do a quick first-pass draft of the entire dissertation without worrying about perfection, then refine each section. Prioritise your most important chapters first.
+
+[CTA_BOX]
