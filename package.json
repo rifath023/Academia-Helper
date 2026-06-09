@@ -3,22 +3,19 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+  "dev": "node generate-index.js && node server.js",
+  "build": "node generate-index.js && next build",
+  "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "clsx": "^2.1.0",
+    "express": "^4.19.2",
     "framer-motion": "^11.0.8",
-    "gray-matter": "^4.0.3",
     "lucide-react": "^0.400.0",
     "next": "^14.2.5",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-markdown": "^9.0.0",
-    "reading-time": "^1.5.0",
-    "remark-gfm": "^4.0.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
