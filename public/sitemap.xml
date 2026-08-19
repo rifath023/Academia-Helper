@@ -248,39 +248,60 @@
   <!-- new blog post  -->
   <url>
     <loc>https://www.academiahelper.com/blog/google-scholar-search-tips</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://www.academiahelper.com/blog/how-to-choose-a-dissertation-topic</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.academiahelper.com/blog/how-to-critically-evaluate-an-academic-article</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.academiahelper.com/blog/how-to-evaluate-the-credibility-of-academic-sources</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.academiahelper.com/blog/how-to-find-peer-reviewed-articles</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
+<!-- new blog posts  -->
+  <url>
+      <loc>https://www.academiahelper.com/blog/how-to-structure-a-research-paper</loc>
+      <lastmod>2026-08-19</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
+
+    <url>
+      <loc>https://www.academiahelper.com/blog/how-to-take-effective-notes-from-academic-sources</loc>
+      <lastmod>2026-08-19</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
+
+    <url>
+      <loc>https://www.academiahelper.com/blog/how-to-use-google-scholar-effectively</loc>
+      <lastmod>2026-08-19</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
 
 </urlset>
 
