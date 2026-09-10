@@ -3,9 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-  "dev": "node generate-index.js && node server.js",
-  "build": "node generate-index.js && next build",
-  "start": "NODE_ENV=production node server.js"
+    "dev": "node generate-index.js && node server.js",
+    "build": "node generate-index.js && next build",
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
@@ -22,6 +22,7 @@
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.19",
+    "cheerio": "^1.2.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"

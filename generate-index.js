@@ -1,77 +1,88 @@
 // this is for auto entry posts into the blog-posts/index.json file, which is used to generate the blog index page. It should be run whenever a new post is added or an existing post is edited.
 const fs = require('fs');
 const path = require('path');
+const cheerio = require('cheerio');
 
 const postsDir = path.join(__dirname, 'blog-posts');
 const outputFile = path.join(postsDir, 'index.json');
 
 function extractMeta(html, slug) {
-  const get = (tag) => {
-    const match = html.match(new RegExp(`<meta[^>]+name="${tag}"[^>]+content="([^"]+)"`));
-    return match ? match[1] : '';
-  };
-  const getOg = (prop) => {
-    const match = html.match(new RegExp(`<meta[^>]+property="og:${prop}"[^>]+content="([^"]+)"`));
-    return match ? match[1] : '';
-  };
-  const getTag = (tag) => {
-    const match = html.match(new RegExp(`<${tag}[^>]*>([^<]+)</${tag}>`));
-    return match ? match[1].trim() : '';
-  };
+  const $ = cheerio.load(html);
+
+  const getMeta = (attr, value) => $(`meta[${attr}="${value}"]`).attr('content') || '';
 
   // Extract from JSON-LD schema
-  const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   let schema = {};
-  if (jsonLdMatch) {
-    try { schema = JSON.parse(jsonLdMatch[1]); } catch {}
+  const jsonLdRaw = $('script[type="application/ld+json"]').first().html();
+  if (jsonLdRaw) {
+    try {
+      const parsed = JSON.parse(jsonLdRaw);
+      // Handle @graph-wrapped schemas (like your Article + BreadcrumbList + FAQPage graph)
+      if (Array.isArray(parsed['@graph'])) {
+        schema = parsed['@graph'].find(item => item['@type'] === 'Article') || {};
+      } else {
+        schema = parsed;
+      }
+    } catch (e) {
+      console.warn(`  ⚠ Could not parse JSON-LD for ${slug}: ${e.message}`);
+    }
   }
 
-  // Extract category from hero badge
-  const badgeMatch = html.match(/class="hero-badge">([^<]+)</);
-  const category = badgeMatch ? badgeMatch[1].trim() : 'General';
+  // Category from hero badge
+  const category = $('.hero-badge').first().text().trim() || 'General';
 
-  // Extract type from badge class or product card presence
-  const type = html.includes('class="product-card"') ? 'transactional' : 'informational';
+  // Type from product-card presence
+  const type = $('.product-card').length > 0 ? 'transactional' : 'informational';
 
-  // Extract read time from post-meta
-  const readTimeMatch = html.match(/(\d+\s*min\s*read)/i);
+  // Read time from post-meta
+  const postMetaText = $('.post-meta').first().text();
+  const readTimeMatch = postMetaText.match(/(\d+\s*min\s*read)/i);
   const readTime = readTimeMatch ? readTimeMatch[1] : '5 min read';
 
-  // Extract date
-  const dateMatch = html.match(/datePublished["']?\s*:\s*["']([^"']+)["']/);
-  const date = dateMatch ? dateMatch[1] : new Date().toISOString().split('T')[0];
+  // Date from schema, falling back to today
+  const date = schema.datePublished || new Date().toISOString().split('T')[0];
 
-  return {
-    slug,
-    title: schema.headline || getTag('title').replace(' | Academia Helper', '').trim(),
-    excerpt: get('description') || schema.description || '',
-    date,
-    readTime,
-    category,
-    type,
-    image: getOg('image') || schema.image || '',
-    author: schema.author?.name || 'Academia Helper',
-  };
+  const title =
+    schema.headline ||
+    getMeta('property', 'og:title') ||
+    $('title').text().replace(' | Academia Helper', '').trim();
+
+  const excerpt =
+    getMeta('name', 'description') ||
+    schema.description ||
+    getMeta('property', 'og:description') ||
+    '';
+
+  const image =
+    getMeta('property', 'og:image') ||
+    (schema.image && (schema.image.url || schema.image)) ||
+    getMeta('name', 'twitter:image') ||
+    '';
+
+  const author =
+    (schema.author && schema.author.name) ||
+    'Academia Helper';
+
+  return { slug, title, excerpt, date, readTime, category, type, image, author };
 }
 
 function generate() {
   if (!fs.existsSync(postsDir)) {
-    console.log('❌ blog-posts/ folder not found');
+    console.log('⚠ No blog-posts/ directory found.');
+    fs.writeFileSync(outputFile, '[]', 'utf8');
     return;
   }
 
   const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.html'));
 
-  if (files.length === 0) {
-    console.log('⚠️  No HTML files found in blog-posts/');
-    fs.writeFileSync(outputFile, '[]', 'utf8');
-    return;
-  }
-
   const posts = files.map(file => {
     const slug = file.replace('.html', '');
     const html = fs.readFileSync(path.join(postsDir, file), 'utf8');
     const meta = extractMeta(html, slug);
+
+    if (!meta.image) console.warn(`  ⚠ ${slug}: no image found`);
+    if (!meta.excerpt) console.warn(`  ⚠ ${slug}: no excerpt found`);
+
     console.log(`✅ ${slug}`);
     return meta;
   });
