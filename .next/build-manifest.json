@@ -1,56 +1,16 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills-42372ed130431b0a.js"
+    "static/chunks/polyfills.js"
   ],
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/DzNOmMAF9mGgyXBLXMNQ5/_buildManifest.js",
-    "static/DzNOmMAF9mGgyXBLXMNQ5/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
-    "/": [
-      "static/chunks/webpack-8fa1640cc84ba8fe.js",
-      "static/chunks/framework-64ad27b21261a9ce.js",
-      "static/chunks/main-5b2299ded1a46c83.js",
-      "static/chunks/15-ad2a513c61e45ce4.js",
-      "static/chunks/187-457c49232fdd95d9.js",
-      "static/chunks/pages/index-d11b52b1742d3990.js"
-    ],
-    "/404": [
-      "static/chunks/webpack-8fa1640cc84ba8fe.js",
-      "static/chunks/framework-64ad27b21261a9ce.js",
-      "static/chunks/main-5b2299ded1a46c83.js",
-      "static/chunks/pages/404-0e659dcc1ac6beca.js"
-    ],
-    "/_app": [
-      "static/chunks/webpack-8fa1640cc84ba8fe.js",
-      "static/chunks/framework-64ad27b21261a9ce.js",
-      "static/chunks/main-5b2299ded1a46c83.js",
-      "static/css/b5a1a6848830599f.css",
-      "static/chunks/pages/_app-26f5890917895004.js"
-    ],
-    "/_error": [
-      "static/chunks/webpack-8fa1640cc84ba8fe.js",
-      "static/chunks/framework-64ad27b21261a9ce.js",
-      "static/chunks/main-5b2299ded1a46c83.js",
-      "static/chunks/pages/_error-7a92967bea80186d.js"
-    ],
-    "/blog": [
-      "static/chunks/webpack-8fa1640cc84ba8fe.js",
-      "static/chunks/framework-64ad27b21261a9ce.js",
-      "static/chunks/main-5b2299ded1a46c83.js",
-      "static/chunks/15-ad2a513c61e45ce4.js",
-      "static/chunks/187-457c49232fdd95d9.js",
-      "static/chunks/pages/blog-daded5fbba046f13.js"
-    ],
-    "/blog/[slug]": [
-      "static/chunks/webpack-8fa1640cc84ba8fe.js",
-      "static/chunks/framework-64ad27b21261a9ce.js",
-      "static/chunks/main-5b2299ded1a46c83.js",
-      "static/chunks/pages/blog/[slug]-c5adc530083abae2.js"
-    ]
+    "/_app": []
   },
   "ampFirstPages": []
 }
