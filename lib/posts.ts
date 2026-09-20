@@ -13,7 +13,8 @@ export interface BlogPost {
 }
 
 export function getAllPosts(): BlogPost[] {
-  return postsData.sort((a, b) =>
-    new Date(b.date).getTime() - new Date(a.date).getTime()
+  return [...postsData].sort((a, b) =>
+    (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0) ||
+    a.slug.localeCompare(b.slug)
   );
 }

@@ -1,10 +1,18 @@
-// this is for auto entry posts into the blog-posts/index.json file, which is used to generate the blog index page. It should be run whenever a new post is added or an existing post is edited.
+// Generate the article index and canonical sitemap from the same source files.
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
+const { pageSize, siteUrl } = require('./lib/blog-config.json');
 
 const postsDir = path.join(__dirname, 'blog-posts');
 const outputFile = path.join(postsDir, 'index.json');
+const sitemapFile = path.join(__dirname, 'public', 'sitemap.xml');
+
+function validDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(value)) return '';
+  const parsed = new Date(value);
+  return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value.slice(0, 10) ? value : '';
+}
 
 function extractMeta(html, slug) {
   const $ = cheerio.load(html);
@@ -13,20 +21,16 @@ function extractMeta(html, slug) {
 
   // Extract from JSON-LD schema
   let schema = {};
-  const jsonLdRaw = $('script[type="application/ld+json"]').first().html();
-  if (jsonLdRaw) {
+  $('script[type="application/ld+json"]').each((_, element) => {
     try {
-      const parsed = JSON.parse(jsonLdRaw);
-      // Handle @graph-wrapped schemas (like your Article + BreadcrumbList + FAQPage graph)
-      if (Array.isArray(parsed['@graph'])) {
-        schema = parsed['@graph'].find(item => item['@type'] === 'Article') || {};
-      } else {
-        schema = parsed;
-      }
+      const parsed = JSON.parse($(element).html());
+      const nodes = Array.isArray(parsed) ? parsed : parsed['@graph'] || [parsed];
+      const article = nodes.find(item => ['Article', 'BlogPosting'].includes(item['@type']));
+      if (article) schema = article;
     } catch (e) {
-      console.warn(`  ⚠ Could not parse JSON-LD for ${slug}: ${e.message}`);
+      throw new Error(`Invalid JSON-LD in ${slug}: ${e.message}`);
     }
-  }
+  });
 
   // Category from hero badge
   const category = $('.hero-badge').first().text().trim() || 'General';
@@ -39,8 +43,8 @@ function extractMeta(html, slug) {
   const readTimeMatch = postMetaText.match(/(\d+\s*min\s*read)/i);
   const readTime = readTimeMatch ? readTimeMatch[1] : '5 min read';
 
-  // Date from schema, falling back to today
-  const date = schema.datePublished || new Date().toISOString().split('T')[0];
+  // An unknown publication date stays unknown; rebuilding is not publishing.
+  const date = validDate(schema.datePublished || getMeta('property', 'article:published_time'));
 
   const title =
     schema.headline ||
@@ -63,20 +67,51 @@ function extractMeta(html, slug) {
     (schema.author && schema.author.name) ||
     'Academia Helper';
 
-  return { slug, title, excerpt, date, readTime, category, type, image, author };
+  const modified = validDate(schema.dateModified);
+  return { slug, title, excerpt, date, readTime, category, type, image, author, modified };
+}
+
+function writeSitemap(posts) {
+  const previousDates = new Map();
+  if (fs.existsSync(sitemapFile)) {
+    const $ = cheerio.load(fs.readFileSync(sitemapFile, 'utf8'), { xmlMode: true });
+    $('url').each((_, element) => {
+      const loc = $(element).find('loc').text().trim();
+      const date = validDate($(element).find('lastmod').text().trim());
+      previousDates.set(`${loc.replace(/\/+$/, '')}/`, date);
+    });
+  }
+  const entries = [
+    { loc: `${siteUrl}/`, lastmod: previousDates.get(`${siteUrl}/`) || '' },
+    { loc: `${siteUrl}/blog/`, lastmod: previousDates.get(`${siteUrl}/blog/`) || '' },
+  ];
+  for (let page = 2; page <= Math.ceil(posts.length / pageSize); page++) {
+    entries.push({ loc: `${siteUrl}/blog/page/${page}/`, lastmod: '' });
+  }
+  posts.forEach(post => {
+    const loc = `${siteUrl}/blog/${post.slug}/`;
+    const dates = [previousDates.get(loc), post.modified, post.date].filter(Boolean);
+    dates.sort((a, b) => Date.parse(b) - Date.parse(a));
+    entries.push({ loc, lastmod: dates[0] || '' });
+  });
+  const xml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    entries.map(({ loc, lastmod }) => `  <url>\n    <loc>${loc}</loc>\n${lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : ''}  </url>`).join('\n') +
+    '\n</urlset>\n';
+  fs.writeFileSync(sitemapFile, xml, 'utf8');
+  console.log(`Sitemap updated: ${entries.length} canonical URLs`);
 }
 
 function generate() {
   if (!fs.existsSync(postsDir)) {
-    console.log('⚠ No blog-posts/ directory found.');
-    fs.writeFileSync(outputFile, '[]', 'utf8');
-    return;
+    throw new Error('No blog-posts/ directory found.');
   }
 
-  const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.html'));
+  const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.html')).sort();
 
   const posts = files.map(file => {
     const slug = file.replace('.html', '');
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error(`Invalid article slug: ${slug}`);
     const html = fs.readFileSync(path.join(postsDir, file), 'utf8');
     const meta = extractMeta(html, slug);
 
@@ -88,9 +123,10 @@ function generate() {
   });
 
   // Sort newest first
-  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  posts.sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0) || a.slug.localeCompare(b.slug));
 
-  fs.writeFileSync(outputFile, JSON.stringify(posts, null, 2), 'utf8');
+  fs.writeFileSync(outputFile, JSON.stringify(posts.map(({ modified, ...post }) => post), null, 2) + '\n', 'utf8');
+  writeSitemap(posts);
   console.log(`\n📄 index.json updated — ${posts.length} post(s)`);
 }
 
