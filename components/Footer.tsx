@@ -25,11 +25,11 @@ export const Footer: React.FC = () => {
                 <div className="text-sm text-stone-400 font-medium">Expert Writing Services</div>
               </div>
             </div>
-            
+
             <p className="text-stone-300 leading-relaxed font-light text-lg max-w-md">
               Expert academic writing services for UK and USA students. Professional, original, and timely delivery guaranteed with 0% AI content.
             </p>
-            
+
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               {[
                 'Business Essays',
-                'Finance & Accounting', 
+                'Finance & Accounting',
                 'Tourism Reports',
                 'Marketing Analysis',
                 'HRM Papers',
@@ -72,8 +72,8 @@ export const Footer: React.FC = () => {
                 'Statistics'
               ].map((service, index) => (
                 <li key={index}>
-                  <a 
-                    href="#services" 
+                  <a
+                    href="/#services"
                     className="group flex items-center text-stone-300 hover:text-white transition-all duration-300 font-medium"
                   >
                     <ArrowRight className="w-4 h-4 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
@@ -91,14 +91,15 @@ export const Footer: React.FC = () => {
               <h3 className="text-xl font-bold mb-6 text-white">Quick Links</h3>
               <ul className="space-y-4">
                 {[
-                  { name: 'Home', href: '#home' },
-                  { name: 'Services', href: '#services' },
-                  { name: 'Testimonials', href: '#testimonials' },
-                  { name: 'Contact', href: '#contact' },
+                  { name: 'Home', href: '/' },
+                  { name: 'Blog', href: '/blog/' },
+                  { name: 'Services', href: '/#services' },
+                  { name: 'Testimonials', href: '/#testimonials' },
+                  { name: 'Contact', href: '/#contact' },
                 ].map((link, index) => (
                   <li key={index}>
-                    <a 
-                      href={link.href} 
+                    <a
+                      href={link.href}
                       className="group flex items-center text-stone-300 hover:text-white transition-all duration-300 font-medium"
                     >
                       <ArrowRight className="w-4 h-4 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
@@ -152,13 +153,13 @@ export const Footer: React.FC = () => {
             <div className="flex flex-wrap gap-6 text-sm">
               {[
                 'Privacy Policy',
-                'Terms of Service', 
+                'Terms of Service',
                 'Refund Policy',
                 'Quality Guarantee'
               ].map((link, index) => (
-                <a 
+                <a
                   key={index}
-                  href="#" 
+                  href="#"
                   className="text-stone-400 hover:text-white transition-colors duration-300 font-medium hover:underline"
                 >
                   {link}

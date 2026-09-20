@@ -1,1157 +1,745 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.academiahelper.com/</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-20</lastmod>
   </url>
-
   <url>
-    <loc>https://www.academiahelper.com/blog</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/</loc>
+    <lastmod>2026-09-20</lastmod>
   </url>
-
-  <!-- <url>
-    <loc>https://www.academiahelper.com/#services</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.academiahelper.com/#contact</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url> -->
-
-
-  <!-- for all blog posts... -->
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-study-lamps-students-usa-2026/</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation/</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/free-ai-tools-students-2026/</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-reduce-screen-time-as-a-student/</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-wall-mounted-desk-lamps-2026/</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/write-my-dissertation-for-me/</loc>
-    <lastmod>2026-06-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- new -->
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-free-plagiarism-checkers-2026/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-ai-plagiarism-removers-2026/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-read-research-papers-easily/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-
-  <!-- New blog posts 2026-07-20 -->
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-paraphrase-without-plagiarism/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-cite-chatgpt-apa-mla-harvard/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/ai-detection-vs-plagiarism-whats-the-difference/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-citation-generators-apa-mla-harvard/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-research-proposal/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/chatgpt-prompts-for-students/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-summarise-research-papers-using-ai/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-avoid-ai-detection-ethically/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/apa-7th-edition-citation-guide/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/mla-citation-guide-2026/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/harvard-referencing-guide/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-an-abstract/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-thesis-statement/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-literature-review/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-
-  <!-- new blog posts 2026-07-25 -->
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-ai-note-taking-apps-for-students/</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-ai-homework-helpers/</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- New blog posts -->
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-ai-research-assistants-2026/</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-grammar-checkers-for-students/</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-ai-pdf-summarizers-2026/</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/turnitin-alternatives-2026/</loc>
-    <lastmod>2026-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- new blog post  -->
-  <url>
-    <loc>https://www.academiahelper.com/blog/google-scholar-search-tips</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-choose-a-dissertation-topic</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-critically-evaluate-an-academic-article</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-evaluate-the-credibility-of-academic-sources</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-find-peer-reviewed-articles</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- New blog posts -->
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-structure-a-research-paper/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-take-effective-notes-from-academic-sources/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-use-google-scholar-effectively/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-critical-analysis/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation-conclusion/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation-methodology/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation-discussion-chapter/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-a-problem-statement/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-research-objectives-and-hypotheses/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-write-research-questions-for-a-dissertation/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/primary-vs-secondary-research/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/qualitative-vs-quantitative-research/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/systematic-review-vs-literature-review/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/what-is-a-systematic-review/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/what-is-peer-review/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- new blog posts 2026-08-23 -->
-  <url>
-    <loc>
-      https://www.academiahelper.com/blog/how-students-can-use-ai-homework-tools-without-academic-misconduct/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>
-      https://www.academiahelper.com/blog/how-to-use-ai-for-homework-without-losing-your-own-thinking/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-
-  <!-- new blog posts 2026-09-05 -->
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-desk-lamps-with-phone-holders/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-desk-lamps-with-timer-for-studying/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-eye-care-desk-lamps-for-students/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-flexible-neck-desk-lamps-for-studying/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-small-desk-lamps-for-dorm-rooms/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-touch-control-desk-lamps-for-students/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.academiahelper.com/blog/best-usb-desk-lamps-for-students/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/understand-assignment-brief/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- new blog posts 2026-09-10 -->
-  <url>
-    <loc>https://www.academiahelper.com/blog/12-week-dissertation-timeline/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-appeal-uk-university/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-command-words/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-integrity-investigation-australia/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-paragraph-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-poster-presentation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-presentation-speaker-notes/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-probation-college/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-sentence-starters/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/academic-topic-sentences/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/apply-theory-case-study/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/argumentative-essay-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/assignment-word-count-allocation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/australian-university-grades/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/before-starting-assignment-checklist/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/behind-on-dissertation-recovery-plan/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/british-vs-american-academic-english/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/build-academic-argument/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/business-report-assignment/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/capped-resit-marks-uk/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/case-study-assignment/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/change-dissertation-topic-after-approval/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/clean-survey-data-spss/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/code-interview-transcripts/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/college-capstone-project-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/compare-contrast-essay-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/conceptual-framework-dissertation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/connect-theory-internship-report/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/content-analysis-vs-thematic-analysis/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/convenience-vs-purposive-sampling/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/critically-discuss-meaning/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/critical-reflective-writing/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/cronbach-alpha-spss/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/data-saturation-qualitative-research/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/descriptive-to-critical-writing/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/design-dissertation-questionnaire/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/discuss-essay-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/dissertation-proposal-rejected/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/dissertation-supervisor-not-replying/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/dissertation-survey-sample-size/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/email-lecturer-assignment-clarification/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/evaluate-assignment-question/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/excel-dissertation-data-analysis/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/executive-summary-university-report/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/extenuating-circumstances-uk-university/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/fail-one-university-assignment-uk/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/first-person-academic-writing/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/gibbs-reflective-cycle-example/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/group-assignment-member-not-contributing/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/group-assignment-peer-evaluation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/hedging-academic-writing/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-many-slides-presentation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/how-to-read-marking-rubric/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/hurdle-requirement-australia/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/incomplete-grade-college/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/integrate-evidence-academic-writing/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/interpret-pearson-correlation-spss/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/interpret-regression-spss/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/lab-report-discussion/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/late-submission-penalty-uk/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/learning-outcomes-assignment/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/likert-scale-questionnaire/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/manage-dissertation-scope/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/missing-data-outliers-spss/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/multi-part-assignment-question/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/narrow-dissertation-topic/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/normality-test-spss/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/operationalise-research-variables/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/pilot-study-dissertation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/prepare-dissertation-supervisor-meeting/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/presentation-question-answer-preparation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/present-interview-quotes-dissertation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/p-value-explained-students/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/reflective-essay-university/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/reflexivity-qualitative-research/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/report-descriptive-statistics-spss/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/report-spss-results-apa-7/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/research-ethics-student-projects/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/research-variable-types/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/resit-vs-resubmission-uk/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/sampling-methods-student-research/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/semi-structured-interview-guide/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/special-consideration-australia/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/supervisor-disagrees-research-approach/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.academiahelper.com/blog/supplementary-assessment-australia/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/synthesis-vs-summary/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/2/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/thematic-analysis-dissertation/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/3/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/transcribe-dissertation-interviews/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/4/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/trustworthiness-qualitative-research/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/5/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/turn-codes-into-themes/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/6/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/turn-rubric-into-assignment-plan/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/7/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/uk-degree-classifications/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/8/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/understand-supervisor-feedback/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/9/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/university-essay-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/10/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/university-internship-report/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/11/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/university-presentation-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/12/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/university-report-structure/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/13/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/us-college-gpa-international-students/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/14/</loc>
   </url>
   <url>
-    <loc>https://www.academiahelper.com/blog/write-report-recommendations/</loc>
-    <lastmod>2026-09-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.academiahelper.com/blog/page/15/</loc>
   </url>
-
-  <!-- new blog posts 2026-09-18 -->
   <url>
     <loc>https://www.academiahelper.com/blog/academic-writing-help-australia-international-students/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>
-      https://www.academiahelper.com/blog/accounting-assignment-help-uk-financial-management-ratio-analysis/</loc>
+    <loc>https://www.academiahelper.com/blog/accounting-assignment-help-uk-financial-management-ratio-analysis/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.academiahelper.com/blog/assignment-due-tomorrow/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.academiahelper.com/blog/assignment-help-australia/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.academiahelper.com/blog/assignment-help-cost-uk/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
-  <!-- new  blog posts 2026-09-20 -->
   <url>
     <loc>https://www.academiahelper.com/blog/assignment-help-uk/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/assignment-help-usa/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/best-assignment-help-service-uk/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/computer-science-assignment-help/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/dissertation-data-analysis-help/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/dissertation-deadline-help/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/dissertation-editing-service-uk-included-cost/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/dissertation-help-international-students-uk/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/dissertation-help-uk-stages/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.academiahelper.com/blog/dissertation-proposal-help/</loc>
     <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
-
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-desk-lamps-with-phone-holders/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-desk-lamps-with-timer-for-studying/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-eye-care-desk-lamps-for-students/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-flexible-neck-desk-lamps-for-studying/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-small-desk-lamps-for-dorm-rooms/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-touch-control-desk-lamps-for-students/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-usb-desk-lamps-for-students/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-ai-homework-helpers/</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/turnitin-alternatives-2026/</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-ai-note-taking-apps-for-students/</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-ai-pdf-summarizers-2026/</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-grammar-checkers-for-students/</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-ai-research-assistants-2026/</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-ai-plagiarism-removers-2026/</loc>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-free-plagiarism-checkers-2026/</loc>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-wall-mounted-desk-lamps-2026/</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-reduce-screen-time-as-a-student/</loc>
+    <lastmod>2026-06-12T00:00:00Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/free-ai-tools-students-2026/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-study-lamps-students-usa-2026/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-students-can-use-ai-homework-tools-without-academic-misconduct/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-use-ai-for-homework-without-losing-your-own-thinking/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-take-effective-notes-from-academic-sources/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-use-google-scholar-effectively/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/what-is-peer-review/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-critically-evaluate-an-academic-article/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-critical-analysis/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-structure-a-research-paper/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation-conclusion/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation-discussion-chapter/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-dissertation-methodology/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-choose-a-dissertation-topic/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-problem-statement/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-research-objectives-and-hypotheses/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-research-questions-for-a-dissertation/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/systematic-review-vs-literature-review/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/what-is-a-systematic-review/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/qualitative-vs-quantitative-research/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/primary-vs-secondary-research/</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-evaluate-the-credibility-of-academic-sources/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/google-scholar-search-tips/</loc>
+    <lastmod>2026-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-find-peer-reviewed-articles/</loc>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-literature-review/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-thesis-statement/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-an-abstract/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/harvard-referencing-guide/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/mla-citation-guide-2026/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/apa-7th-edition-citation-guide/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-avoid-ai-detection-ethically/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-summarise-research-papers-using-ai/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/chatgpt-prompts-for-students/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-write-a-research-proposal/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/best-citation-generators-apa-mla-harvard/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/ai-detection-vs-plagiarism-whats-the-difference/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-cite-chatgpt-apa-mla-harvard/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-paraphrase-without-plagiarism/</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-read-research-papers-easily/</loc>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/write-my-dissertation-for-me/</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/12-week-dissertation-timeline/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-appeal-uk-university/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-command-words/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-integrity-investigation-australia/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-paragraph-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-poster-presentation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-presentation-speaker-notes/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-probation-college/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-sentence-starters/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/academic-topic-sentences/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/apply-theory-case-study/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/argumentative-essay-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/assignment-word-count-allocation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/australian-university-grades/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/before-starting-assignment-checklist/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/behind-on-dissertation-recovery-plan/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/british-vs-american-academic-english/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/build-academic-argument/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/business-report-assignment/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/capped-resit-marks-uk/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/case-study-assignment/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/change-dissertation-topic-after-approval/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/clean-survey-data-spss/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/code-interview-transcripts/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/college-capstone-project-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/compare-contrast-essay-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/conceptual-framework-dissertation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/connect-theory-internship-report/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/content-analysis-vs-thematic-analysis/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/convenience-vs-purposive-sampling/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/critical-reflective-writing/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/critically-discuss-meaning/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/cronbach-alpha-spss/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/data-saturation-qualitative-research/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/descriptive-to-critical-writing/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/design-dissertation-questionnaire/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/discuss-essay-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/dissertation-proposal-rejected/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/dissertation-supervisor-not-replying/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/dissertation-survey-sample-size/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/email-lecturer-assignment-clarification/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/evaluate-assignment-question/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/excel-dissertation-data-analysis/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/executive-summary-university-report/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/extenuating-circumstances-uk-university/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/fail-one-university-assignment-uk/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/first-person-academic-writing/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/gibbs-reflective-cycle-example/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/group-assignment-member-not-contributing/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/group-assignment-peer-evaluation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/hedging-academic-writing/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-many-slides-presentation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/how-to-read-marking-rubric/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/hurdle-requirement-australia/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/incomplete-grade-college/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/integrate-evidence-academic-writing/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/interpret-pearson-correlation-spss/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/interpret-regression-spss/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/lab-report-discussion/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/late-submission-penalty-uk/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/learning-outcomes-assignment/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/likert-scale-questionnaire/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/manage-dissertation-scope/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/missing-data-outliers-spss/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/multi-part-assignment-question/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/narrow-dissertation-topic/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/normality-test-spss/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/operationalise-research-variables/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/p-value-explained-students/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/pilot-study-dissertation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/prepare-dissertation-supervisor-meeting/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/present-interview-quotes-dissertation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/presentation-question-answer-preparation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/reflective-essay-university/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/reflexivity-qualitative-research/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/report-descriptive-statistics-spss/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/report-spss-results-apa-7/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/research-ethics-student-projects/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/research-variable-types/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/resit-vs-resubmission-uk/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/sampling-methods-student-research/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/semi-structured-interview-guide/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/special-consideration-australia/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/supervisor-disagrees-research-approach/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/supplementary-assessment-australia/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/synthesis-vs-summary/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/thematic-analysis-dissertation/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/transcribe-dissertation-interviews/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/trustworthiness-qualitative-research/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/turn-codes-into-themes/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/turn-rubric-into-assignment-plan/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/uk-degree-classifications/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/understand-assignment-brief/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/understand-supervisor-feedback/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/university-essay-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/university-internship-report/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/university-presentation-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/university-report-structure/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/us-college-gpa-international-students/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.academiahelper.com/blog/write-report-recommendations/</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
 </urlset>

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, BookOpen, MessageCircle } from 'lucide-react';
-import { useRouter } from 'next/router';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -17,29 +15,9 @@ export const Header: React.FC = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/#services' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Blog', href: '/blog/' },
     { name: 'Contact', href: '/#contact' },
   ];
-
-  const handleNavClick = (href: string) => {
-    setIsMenuOpen(false);
-    if (href.startsWith('/#')) {
-      const hash = href.substring(1);
-      if (router.pathname === '/') {
-        const el = document.querySelector(hash);
-        el?.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        router.push('/').then(() => {
-          setTimeout(() => {
-            const el = document.querySelector(hash);
-            el?.scrollIntoView({ behavior: 'smooth' });
-          }, 300);
-        });
-      }
-    } else {
-      router.push(href);
-    }
-  };
 
   return (
     <motion.header
@@ -54,8 +32,9 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <motion.button
-            onClick={() => handleNavClick('/')}
+          <motion.a
+            href="/"
+            onClick={() => setIsMenuOpen(false)}
             className="flex items-center space-x-3 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 400, damping: 10 }}
@@ -75,13 +54,14 @@ export const Header: React.FC = () => {
                 isScrolled ? 'text-stone-600' : 'text-stone-200'
               }`}>Expert Writing Services</div>
             </div>
-          </motion.button>
+          </motion.a>
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.button
+              <motion.a
                 key={item.name}
-                onClick={() => handleNavClick(item.href)}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
                 className={`relative font-semibold transition-all duration-300 group ${
                   isScrolled ? 'text-stone-700 hover:text-stone-900' : 'text-white hover:text-stone-200'
                 }`}
@@ -92,7 +72,7 @@ export const Header: React.FC = () => {
                 <div className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
                   isScrolled ? 'bg-stone-900' : 'bg-white'
                 }`}></div>
-              </motion.button>
+              </motion.a>
             ))}
             <motion.a
               href="https://wa.me/8801577128417"
@@ -112,6 +92,8 @@ export const Header: React.FC = () => {
 
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close navigation' : 'Open navigation'}
+            aria-expanded={isMenuOpen}
             className={`md:hidden relative p-3 rounded-2xl transition-all duration-300 ${
               isScrolled
                 ? 'bg-stone-100 text-stone-900 hover:bg-stone-200'
@@ -132,9 +114,10 @@ export const Header: React.FC = () => {
             isScrolled ? 'border-t border-stone-200 mt-4' : 'border-t border-white/20 mt-4'
           }`}>
             {navItems.map((item, index) => (
-              <motion.button
+              <motion.a
                 key={item.name}
-                onClick={() => handleNavClick(item.href)}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
                 className={`block w-full text-left py-3 px-4 rounded-2xl font-semibold transition-all duration-300 ${
                   isScrolled
                     ? 'text-stone-700 hover:bg-stone-100 hover:text-stone-900'
@@ -146,7 +129,7 @@ export const Header: React.FC = () => {
                 whileHover={{ x: 8 }}
               >
                 {item.name}
-              </motion.button>
+              </motion.a>
             ))}
             <motion.a
               href="https://wa.me/8801577128417"

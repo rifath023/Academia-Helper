@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "node generate-index.js && node server.js",
-    "build": "node generate-index.js && next build",
+    "build": "node generate-index.js && node scripts/check-seo.js && next build && node scripts/check-seo.js --export",
+    "check:seo": "node scripts/check-seo.js",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
