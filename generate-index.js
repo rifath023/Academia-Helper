@@ -83,6 +83,21 @@ function writeSitemap(posts) {
   }
   const entries = [
     { loc: `${siteUrl}/`, lastmod: previousDates.get(`${siteUrl}/`) || '' },
+    { loc: `${siteUrl}/assignment-help-uk/`, lastmod: previousDates.get(`${siteUrl}/assignment-help-uk/`) || '' },
+    { loc: `${siteUrl}/dissertation-help-uk/`, lastmod: previousDates.get(`${siteUrl}/dissertation-help-uk/`) || '' },
+    { loc: `${siteUrl}/coursework-help-uk/`, lastmod: previousDates.get(`${siteUrl}/coursework-help-uk/`) || '' },
+    { loc: `${siteUrl}/services/`, lastmod: previousDates.get(`${siteUrl}/services/`) || '' },
+    { loc: `${siteUrl}/services/essays/`, lastmod: previousDates.get(`${siteUrl}/services/essays/`) || '' },
+    { loc: `${siteUrl}/services/reports/`, lastmod: previousDates.get(`${siteUrl}/services/reports/`) || '' },
+    { loc: `${siteUrl}/services/case-studies/`, lastmod: previousDates.get(`${siteUrl}/services/case-studies/`) || '' },
+    { loc: `${siteUrl}/services/reflective-journals/`, lastmod: previousDates.get(`${siteUrl}/services/reflective-journals/`) || '' },
+    { loc: `${siteUrl}/services/literature-reviews/`, lastmod: previousDates.get(`${siteUrl}/services/literature-reviews/`) || '' },
+    { loc: `${siteUrl}/services/presentations/`, lastmod: previousDates.get(`${siteUrl}/services/presentations/`) || '' },
+    { loc: `${siteUrl}/services/problem-sets/`, lastmod: previousDates.get(`${siteUrl}/services/problem-sets/`) || '' },
+    { loc: `${siteUrl}/services/dissertations-theses/`, lastmod: previousDates.get(`${siteUrl}/services/dissertations-theses/`) || '' },
+    { loc: `${siteUrl}/services/annotated-bibliographies/`, lastmod: previousDates.get(`${siteUrl}/services/annotated-bibliographies/`) || '' },
+    { loc: `${siteUrl}/services/group-projects/`, lastmod: previousDates.get(`${siteUrl}/services/group-projects/`) || '' },
+    { loc: `${siteUrl}/services/portfolio-eportfolio/`, lastmod: previousDates.get(`${siteUrl}/services/portfolio-eportfolio/`) || '' },
     { loc: `${siteUrl}/blog/`, lastmod: previousDates.get(`${siteUrl}/blog/`) || '' },
   ];
   for (let page = 2; page <= Math.ceil(posts.length / pageSize); page++) {

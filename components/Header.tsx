@@ -12,6 +12,20 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const serviceLinks = [
+    { name: 'Essays', href: '/services/essays/' },
+    { name: 'Reports', href: '/services/reports/' },
+    { name: 'Case Studies', href: '/services/case-studies/' },
+    { name: 'Reflective Journals', href: '/services/reflective-journals/' },
+    { name: 'Literature Reviews', href: '/services/literature-reviews/' },
+    { name: 'Presentations', href: '/services/presentations/' },
+    { name: 'Problem Sets', href: '/services/problem-sets/' },
+    { name: 'Dissertations & Theses', href: '/services/dissertations-theses/' },
+    { name: 'Annotated Bibliographies', href: '/services/annotated-bibliographies/' },
+    { name: 'Group Projects', href: '/services/group-projects/' },
+    { name: 'Portfolio / ePortfolio', href: '/services/portfolio-eportfolio/' },
+  ];
+
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/#services' },
@@ -58,6 +72,38 @@ export const Header: React.FC = () => {
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
+              item.name === 'Services' ? (
+                <div key={item.name} className="relative group">
+                  <motion.a
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`relative font-semibold transition-all duration-300 flex items-center gap-1 ${
+                      isScrolled ? 'text-stone-700 hover:text-stone-900' : 'text-white hover:text-stone-200'
+                    }`}
+                    whileHover={{ y: -2 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                  >
+                    <span className="relative z-10">{item.name}</span>
+                    <span className="text-xs opacity-70">▾</span>
+                    <div className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                      isScrolled ? 'bg-stone-900' : 'bg-white'
+                    }`}></div>
+                  </motion.a>
+                  <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="w-72 bg-white rounded-2xl shadow-2xl border border-stone-200/60 py-3 overflow-hidden">
+                      {serviceLinks.map((s) => (
+                        <a
+                          key={s.href}
+                          href={s.href}
+                          className="block px-5 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-100 hover:text-stone-900 transition-colors"
+                        >
+                          {s.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
               <motion.a
                 key={item.name}
                 href={item.href}
@@ -73,6 +119,7 @@ export const Header: React.FC = () => {
                   isScrolled ? 'bg-stone-900' : 'bg-white'
                 }`}></div>
               </motion.a>
+              )
             ))}
             <motion.a
               href="https://wa.me/8801577128417"
@@ -107,29 +154,46 @@ export const Header: React.FC = () => {
 
         <motion.nav
           className={`md:hidden overflow-hidden transition-all duration-500 ${
-            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-[32rem] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
           <div className={`pt-6 pb-4 space-y-2 ${
             isScrolled ? 'border-t border-stone-200 mt-4' : 'border-t border-white/20 mt-4'
           }`}>
             {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block w-full text-left py-3 px-4 rounded-2xl font-semibold transition-all duration-300 ${
-                  isScrolled
-                    ? 'text-stone-700 hover:bg-stone-100 hover:text-stone-900'
-                    : 'text-white hover:bg-white/10'
-                }`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                whileHover={{ x: 8 }}
-              >
-                {item.name}
-              </motion.a>
+              <div key={item.name}>
+                <motion.a
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block w-full text-left py-3 px-4 rounded-2xl font-semibold transition-all duration-300 ${
+                    isScrolled
+                      ? 'text-stone-700 hover:bg-stone-100 hover:text-stone-900'
+                      : 'text-white hover:bg-white/10'
+                  }`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ x: 8 }}
+                >
+                  {item.name}
+                </motion.a>
+                {item.name === 'Services' && (
+                  <div className="pl-4 pb-2 grid grid-cols-1 gap-1">
+                    {serviceLinks.map((s) => (
+                      <a
+                        key={s.href}
+                        href={s.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`block py-2 px-4 rounded-xl text-sm font-medium ${
+                          isScrolled ? 'text-stone-600 hover:bg-stone-100' : 'text-stone-200 hover:bg-white/10'
+                        }`}
+                      >
+                        {s.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <motion.a
               href="https://wa.me/8801577128417"

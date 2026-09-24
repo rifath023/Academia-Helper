@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Desktop feels ~10% over-zoomed at 100% browser zoom.
+   Scale rem-based Tailwind sizes down on large screens only. */
+@media (min-width: 1024px) {
+  html {
+    font-size: 90%;
+  }
+}

@@ -43,7 +43,7 @@ export const FloatingActionButton: React.FC = () => {
       <AnimatePresence>
         {isVisible && (
           <motion.button
-            onClick={() => setShowChatWidget(true)}
+            onClick={() => setShowChatWidget((v) => !v)}
             className="fixed bottom-6 right-6 group p-4 bg-gradient-to-r from-stone-900 via-slate-800 to-stone-900 text-white rounded-full shadow-2xl z-40"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}

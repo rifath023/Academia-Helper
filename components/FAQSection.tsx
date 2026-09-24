@@ -4,28 +4,32 @@ import { ChevronDown } from 'lucide-react';
 
 export const FAQSection: React.FC = () => {
   const title = 'Frequently Asked Questions';
-  const description = 'Common questions about our platform.';
+  const description = 'How ordering, pricing, originality checks and support work.';
   
   const faqs = [
     {
-      question: 'How do I get started?',
-      answer: 'Sign up for a free account, choose your plan, and start building immediately. Our onboarding guide will walk you through the process step by step.',
+      question: 'How do I order an assignment?',
+      answer: 'Send your brief via the order form, WhatsApp (+8801577128417) or email (academiahelp0@gmail.com) with your topic, word count, deadline, marking rubric and referencing style. We review the brief and confirm scope, price and delivery time before you pay.',
     },
     {
-      question: 'What payment methods do you accept?',
-      answer: 'We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for enterprise customers. All payments are processed securely.',
+      question: 'What subjects and assignment types do you cover?',
+      answer: 'Business, finance, accounting, marketing, HRM, management, computer science, psychology, healthcare, education, law, engineering and more. We handle essays, reports, case studies, dissertations, coursework, literature reviews, presentations, problem sets and proofreading.',
     },
     {
-      question: 'Can I cancel my subscription anytime?',
-      answer: 'Yes! You can cancel your subscription at any time from your account settings. You will continue to have access until the end of your current billing period.',
+      question: 'How much does assignment help cost?',
+      answer: 'Pricing depends on word count, academic level, subject complexity and deadline. Short deadlines and technical work (data analysis, programming, SPSS) cost more. You get a written quote showing exactly what is included before payment.',
     },
     {
-      question: 'Is my data secure?',
-      answer: 'Absolutely. We use enterprise-grade encryption, regular security audits, and comply with GDPR and SOC 2 standards to ensure your data is protected.',
+      question: 'Is the work original and AI-free?',
+      answer: 'Yes. Every paper is human-written, checked for plagiarism (under 10%) and delivered with 0% AI content. We do not resell papers. You can request unlimited revisions if anything does not match your brief.',
     },
     {
-      question: 'Do you offer customer support?',
-      answer: 'Yes! We provide 24/7 support via chat and email for all paid plans. Enterprise customers also get dedicated phone support.',
+      question: 'How fast can you deliver? Will I meet my deadline?',
+      answer: 'We accept urgent deadlines and guarantee on-time delivery. Share your exact deadline and timezone when ordering. If a deadline is too tight for quality work, we will tell you honestly rather than overpromise.',
+    },
+    {
+      question: 'Is my personal information kept private?',
+      answer: 'Yes. We only ask for what is needed to complete your order, never share your details, and never ask for your university login. Files are handled confidentially via WhatsApp, email or the order form.',
     },
   ];
 
@@ -40,11 +44,25 @@ export const FAQSection: React.FC = () => {
     );
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  };
+
   return (
     <section
       ref={containerRef}
       className="py-20 px-6 bg-white"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container mx-auto max-w-3xl">
         <motion.div
           className="text-center mb-16"

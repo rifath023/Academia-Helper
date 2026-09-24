@@ -92,9 +92,10 @@ export const Footer: React.FC = () => {
               <ul className="space-y-4">
                 {[
                   { name: 'Home', href: '/' },
+                  { name: 'Assignment Help UK', href: '/assignment-help-uk/' },
+                  { name: 'Dissertation Help UK', href: '/dissertation-help-uk/' },
+                  { name: 'Coursework Help UK', href: '/coursework-help-uk/' },
                   { name: 'Blog', href: '/blog/' },
-                  { name: 'Services', href: '/#services' },
-                  { name: 'Testimonials', href: '/#testimonials' },
                   { name: 'Contact', href: '/#contact' },
                 ].map((link, index) => (
                   <li key={index}>

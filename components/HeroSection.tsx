@@ -44,16 +44,16 @@ export const HeroSection: React.FC = () => {
               </motion.div>
 
               <motion.h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <span className="bg-gradient-to-r from-stone-900 via-slate-800 to-stone-900 bg-clip-text text-transparent">
-                  Excellence in
+                  Assignment Help UK
                 </span>
                 <br />
-                <span className="text-stone-700 font-light">Academic Writing</span>
+                <span className="text-stone-700 font-light">Essays & Dissertations</span>
               </motion.h1>
 
               <motion.p

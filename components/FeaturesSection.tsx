@@ -15,6 +15,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <FileText className="w-7 h-7" />,
       title: 'Essays',
+      href: '/services/essays/',
       description: 'Argumentative, analytical, and descriptive essays crafted with academic rigor.',
       color: 'from-amber-100 to-orange-100',
       iconColor: 'from-amber-500 to-orange-600',
@@ -22,6 +23,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <ClipboardList className="w-7 h-7" />,
       title: 'Reports',
+      href: '/services/reports/',
       description: 'Business, lab, and technical reports following structured academic formats.',
       color: 'from-emerald-100 to-teal-100',
       iconColor: 'from-emerald-500 to-teal-600',
@@ -29,6 +31,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <Users className="w-7 h-7" />,
       title: 'Case Studies',
+      href: '/services/case-studies/',
       description: 'In-depth real-world scenario analysis across business, law, and healthcare.',
       color: 'from-blue-100 to-indigo-100',
       iconColor: 'from-blue-500 to-indigo-600',
@@ -36,6 +39,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <PenTool className="w-7 h-7" />,
       title: 'Reflective Journals',
+      href: '/services/reflective-journals/',
       description: 'Personal reflection tasks linking academic theory to practice.',
       color: 'from-purple-100 to-pink-100',
       iconColor: 'from-purple-500 to-pink-600',
@@ -43,6 +47,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <BookOpen className="w-7 h-7" />,
       title: 'Literature Reviews',
+      href: '/services/literature-reviews/',
       description: 'Critical analysis of academic sources, highlighting debates and research gaps.',
       color: 'from-rose-100 to-red-100',
       iconColor: 'from-rose-500 to-red-600',
@@ -50,6 +55,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <Presentation className="w-7 h-7" />,
       title: 'Presentations',
+      href: '/services/presentations/',
       description: 'Professional PowerPoint and oral presentation content for academic settings.',
       color: 'from-slate-100 to-stone-100',
       iconColor: 'from-slate-500 to-stone-600',
@@ -57,6 +63,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <Calculator className="w-7 h-7" />,
       title: 'Problem Sets',
+      href: '/services/problem-sets/',
       description: 'Accurate solutions for quantitative subjects including math, economics, and physics.',
       color: 'from-cyan-100 to-sky-100',
       iconColor: 'from-cyan-500 to-sky-600',
@@ -64,6 +71,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <GraduationCap className="w-7 h-7" />,
       title: 'Dissertations & Theses',
+      href: '/services/dissertations-theses/',
       description: 'Comprehensive research projects at undergraduate, masters, and doctoral levels.',
       color: 'from-green-100 to-lime-100',
       iconColor: 'from-green-500 to-lime-600',
@@ -71,6 +79,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <FileText className="w-7 h-7" />,
       title: 'Annotated Bibliographies',
+      href: '/services/annotated-bibliographies/',
       description: 'Annotated lists of sources with concise summaries and evaluations for research preparation.',
       color: 'from-indigo-100 to-violet-100',
       iconColor: 'from-indigo-500 to-violet-600',
@@ -78,6 +87,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <Users className="w-7 h-7" />,
       title: 'Group Work / Group Projects',
+      href: '/services/group-projects/',
       description: 'Collaborative projects, peer assessments, and team presentations with role distribution.',
       color: 'from-yellow-100 to-amber-100',
       iconColor: 'from-yellow-500 to-amber-600',
@@ -85,6 +95,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <BookOpen className="w-7 h-7" />,
       title: 'Portfolio / ePortfolio',
+      href: '/services/portfolio-eportfolio/',
       description: 'Curated collections showcasing learning artefacts, reflections, and professional development.',
       color: 'from-pink-100 to-rose-100',
       iconColor: 'from-pink-500 to-rose-600',
@@ -242,17 +253,17 @@ export const FeaturesSection: React.FC = () => {
           transition={{ duration: 1, delay: 0.8 }}
         >
           {services.map((service, index) => (
-            <motion.div
+            <motion.a
               key={index}
-              className={`group relative bg-gradient-to-br ${service.color} p-8 rounded-3xl border border-white/50 hover:border-white/70 transition-all duration-500 backdrop-blur-sm ${
-                index === 1 ? 'md:translate-y-8' : ''
-              } ${
-                index === 4 ? 'lg:translate-y-12' : ''
+              href={service.href}
+              aria-label={service.title}
+              className={`group relative block bg-gradient-to-br ${service.color} p-8 rounded-3xl border border-white/50 hover:border-white/70 transition-all duration-500 backdrop-blur-sm cursor-pointer ${
+                index % 3 === 1 ? 'md:mt-8' : ''
               }`}
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: index === 1 ? 32 : index === 4 ? 48 : 0, scale: 1 } : {}}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.7, delay: 1.0 + index * 0.15 }}
-              whileHover={{ y: (index === 1 ? 32 : index === 4 ? 48 : 0) - 12, scale: 1.02 }}
+              whileHover={{ y: -12, scale: 1.02 }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
@@ -269,7 +280,7 @@ export const FeaturesSection: React.FC = () => {
                   {service.description}
                 </p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 

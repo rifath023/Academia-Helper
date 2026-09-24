@@ -50,14 +50,14 @@ export default function BlogIndex({ posts, page }: BlogIndexProps) {
   const currentPage = filtering ? Math.min(filteredPage, totalPages) : page;
   const visiblePosts = filteredPosts.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
   const canonical = `${SITE_URL}${getBlogPagePath(page)}`;
-  const title = page === 1 ? 'Academic Writing Blog | Essays & Study Tips' : `Academic Writing Blog – Page ${page} | Academia Helper`;
+  const title = page === 1 ? 'Assignment Help Blog UK 2026 | Essays, Dissertations & Study Tips' : `Academic Writing Blog – Page ${page} | Academia Helper`;
   const paginationClass = 'inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border px-3 py-2 text-sm font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-700';
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Expert academic writing tips, essay guides, dissertation advice and study strategies for UK and USA university students from Academia Helper." />
+        <meta name="description" content="Assignment help tips, essay guides, dissertation advice and coursework study strategies for UK university students from Academia Helper." />
         <meta property="og:title" content={title} />
         <meta property="og:url" content={canonical} />
         <link rel="canonical" href={canonical} />
