@@ -1,7 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/404": "pages/404.js"
-}
+{"/_app":"pages/_app.js","/_error":"pages/_error.js","/404":"pages/404.html","/assignment-help-uk":"pages/assignment-help-uk.html","/_document":"pages/_document.js","/coursework-help-uk":"pages/coursework-help-uk.html","/dissertation-help-uk":"pages/dissertation-help-uk.html","/services/case-studies":"pages/services/case-studies.html","/services/dissertations-theses":"pages/services/dissertations-theses.html","/":"pages/index.html","/services/essays":"pages/services/essays.html","/services/annotated-bibliographies":"pages/services/annotated-bibliographies.html","/services/group-projects":"pages/services/group-projects.html","/services":"pages/services.html","/services/literature-reviews":"pages/services/literature-reviews.html","/services/portfolio-eportfolio":"pages/services/portfolio-eportfolio.html","/services/problem-sets":"pages/services/problem-sets.html","/services/presentations":"pages/services/presentations.html","/blog":"pages/blog.js","/blog/page/[page]":"pages/blog/page/[page].js","/blog/[slug]":"pages/blog/[slug].js","/services/reflective-journals":"pages/services/reflective-journals.html","/services/reports":"pages/services/reports.html"}
