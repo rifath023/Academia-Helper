@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Desktop feels ~10% over-zoomed at 100% browser zoom.
-   Scale rem-based Tailwind sizes down on large screens only. */
-@media (min-width: 1024px) {
-  html {
-    font-size: 90%;
-  }
-}
+html { scroll-padding-top: 7rem; }
+body { overflow-wrap: break-word; }
+input, select, textarea { max-width: 100%; }
+.site-content { min-width: 0; overflow-wrap: anywhere; }
+.site-content > * { min-width: 0; }
+.site-content :is(h2,h3) { line-height: 1.35; }
+.site-content :is(input,select,textarea):focus-visible,
+.site-content a:focus-visible,
+.site-content button:focus-visible { outline: 3px solid #a16207; outline-offset: 3px; }
+.site-content table input { min-width: 4.5rem; }
+.tool-cards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.site-content .tool-card { display: flex; flex-direction: column; gap: .6rem; padding: 1.25rem; border: 1px solid #d6d3d1; border-radius: 1rem; background: #fff; text-decoration: none; color: #292524; box-shadow: 0 2px 6px rgb(28 25 23 / .03); }
+.site-content .tool-card:hover { border-color: #a16207; background: #fffbeb; }
+.tool-card strong { font-size: 1.1rem; line-height: 1.4; }
+.tool-card span { color: #57534e; font-size: .9375rem; line-height: 1.65; }
+@media (max-width: 600px) { .tool-cards { grid-template-columns: minmax(0,1fr); } }
