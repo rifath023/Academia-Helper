@@ -28,7 +28,7 @@ export default function DissertationHelpUk() {
   const canonical = 'https://www.academiahelper.com/dissertation-help-uk/';
   const title = 'Dissertation Help UK 2026: Proposal to Final Submission | Academia Helper';
   const description =
-    'Dissertation help for UK students: proposals, literature reviews, methodology, SPSS data analysis, results and editing. Human-written, original, on-time. Get a written quote.';
+    'Dissertation help for UK students: proposals, literature reviews, methodology, SPSS data analysis, results and editing. Use research guides and planning tools; discuss permitted support and requirements.';
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -75,7 +75,7 @@ export default function DissertationHelpUk() {
               Structured support for proposals, chapters, data analysis and editing.
               Send your topic and rubric for a written quote and realistic timeline.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <section id="support-boundaries" className="rounded-2xl border border-stone-200 bg-white p-6 mb-8"><h2 className="text-xl font-semibold mb-3">Check the support your assessment permits</h2><p className="text-stone-700">Use outside assistance only within your institution’s rules. Describe the activity precisely, check whether acknowledgement is required, and keep ownership of your research and writing. Do not share university passwords or confidential participant data.</p><p className="mt-3"><Link href="/tools/" className="text-amber-800 underline">Free study tools</Link> · <Link href="/editorial-policy/" className="text-amber-800 underline">Editorial standards</Link> · <Link href="/privacy-policy/" className="text-amber-800 underline">Privacy notice</Link></p></section><div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a href="/#contact" className="px-8 py-4 bg-stone-900 text-white rounded-2xl font-semibold text-center">
                 Get Dissertation Quote
               </a>

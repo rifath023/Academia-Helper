@@ -3,18 +3,21 @@ const path = require('path');
 const cheerio = require('cheerio');
 const { pageSize, siteUrl } = require('../lib/blog-config.json');
 const posts = require('../blog-posts/index.json');
+const extraRoutes = require('../lib/extra-routes.json');
 
 const root = path.resolve(__dirname, '..');
 const exportMode = process.argv.includes('--export');
 const failures = [];
 const pageCount = Math.ceil(posts.length / pageSize);
 const serviceRoutes = ['/assignment-help-uk/', '/dissertation-help-uk/', '/coursework-help-uk/', '/services/', '/services/essays/', '/services/reports/', '/services/case-studies/', '/services/reflective-journals/', '/services/literature-reviews/', '/services/presentations/', '/services/problem-sets/', '/services/dissertations-theses/', '/services/annotated-bibliographies/', '/services/group-projects/', '/services/portfolio-eportfolio/'];
-const routes = new Set(['/', ...serviceRoutes, '/blog/', ...posts.map(post => `/blog/${post.slug}/`)]);
+const routes = new Set(['/', ...serviceRoutes, ...extraRoutes, '/blog/', ...posts.map(post => `/blog/${post.slug}/`)]);
 for (let page = 2; page <= pageCount; page++) routes.add(`/blog/page/${page}/`);
 const articleRoutes = new Set(posts.map(post => `/blog/${post.slug}/`));
 const edges = new Map();
 
 function checkLinks($, route, label) {
+  const footerText = $('footer').text();
+  if (/0% AI|<10% Plagiarism|timely delivery guaranteed/i.test(footerText)) failures.push(`${label}: unsupported legacy footer promise`);
   const destinations = new Set();
   $('a[href]').each((_, element) => {
     const href = $(element).attr('href');
@@ -26,8 +29,8 @@ function checkLinks($, route, label) {
       return;
     }
     if (!['www.academiahelper.com', 'academiahelper.com'].includes(url.hostname)) return;
-    if (url.pathname.startsWith('/blog')) {
-      if (!routes.has(url.pathname)) failures.push(`${label}: unknown or noncanonical blog link ${href}`);
+    if (!/\.[a-z0-9]+$/i.test(url.pathname) && !url.pathname.startsWith('/admin')) {
+      if (!routes.has(url.pathname)) failures.push(`${label}: unknown or noncanonical internal link ${href}`);
     }
     if (routes.has(url.pathname)) destinations.add(url.pathname);
   });
@@ -36,6 +39,17 @@ function checkLinks($, route, label) {
 
 function checkHtml(content, route, label) {
   const $ = cheerio.load(content);
+  if (exportMode && articleRoutes.has(route)) {
+    const slug = route.split('/')[2];
+    const source = cheerio.load(fs.readFileSync(path.join(root, 'blog-posts', `${slug}.html`), 'utf8'));
+    if ($('title').text() !== source('title').text()) failures.push(`${label}: exported title differs from source (possible entity escaping)`);
+    for (const selector of ['meta[name="description"]', 'meta[property="og:title"]', 'meta[property="og:description"]']) {
+      if ($(selector).attr('content') !== source(selector).attr('content')) failures.push(`${label}: exported ${selector} differs from source`);
+    }
+  }
+  $('a[href="#"]').each((_, element) => {
+    if (/privacy policy|terms of service|editorial policy/i.test($(element).text())) failures.push(`${label}: placeholder policy link`);
+  });
   if ($('h1').length !== 1) failures.push(`${label}: expected one H1`);
   if (!$('title').text().trim()) failures.push(`${label}: missing title`);
   if (!$('meta[name="description"]').attr('content')) failures.push(`${label}: missing description`);
@@ -88,7 +102,7 @@ if (exportMode) {
       if (!seen.has(destination)) { seen.add(destination); queue.push(destination); }
     }
   }
-  for (const route of articleRoutes) if (!seen.has(route)) failures.push(`Article has no crawlable path from the homepage: ${route}`);
+  for (const route of routes) if (!seen.has(route)) failures.push(`Page has no crawlable path from the homepage: ${route}`);
 } else {
   for (const post of posts) {
     const file = path.join(root, 'blog-posts', `${post.slug}.html`);

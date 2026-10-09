@@ -50,7 +50,7 @@ export default function BlogIndex({ posts, page }: BlogIndexProps) {
   const currentPage = filtering ? Math.min(filteredPage, totalPages) : page;
   const visiblePosts = filteredPosts.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
   const canonical = `${SITE_URL}${getBlogPagePath(page)}`;
-  const title = page === 1 ? 'Assignment Help Blog UK 2026 | Essays, Dissertations & Study Tips' : `Academic Writing Blog – Page ${page} | Academia Helper`;
+  const title = page === 1 ? 'University Study Guides: Writing, Research & Grades | Academia Helper' : `Academic Writing Blog – Page ${page} | Academia Helper`;
   const paginationClass = 'inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border px-3 py-2 text-sm font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-700';
 
   return (
@@ -69,8 +69,18 @@ export default function BlogIndex({ posts, page }: BlogIndexProps) {
           <div className="container mx-auto px-6 py-12">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Academia Helper Blog</h1>
-              <p className="text-xl text-stone-600 max-w-3xl mx-auto">Expert insights, writing tips, and academic guidance to help you excel in your studies</p>
+              <p className="text-xl text-stone-600 max-w-3xl mx-auto">Practical guides to academic writing, research methods, grades and assessment planning</p>
             </div>
+            {page === 1 && (
+              <nav aria-label="Start with a study topic" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+                {[
+                  { href: '/guides/research-methods/', title: 'Research methods', text: 'Choose sampling approaches and understand their limits.' },
+                  { href: '/guides/academic-writing/', title: 'Academic writing', text: 'Follow a path from assignment brief to evidence and synthesis.' },
+                  { href: '/guides/university-assessment/', title: 'Grades and results', text: 'Compare rules for grades, deadlines and assessment.' },
+                  { href: '/tools/', title: 'Free study tools', text: 'Plan grades, word counts, reading time and milestones.' },
+                ].map(topic => <Link key={topic.href} href={topic.href} className="rounded-2xl border border-stone-200 bg-white p-5 hover:border-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-700"><h2 className="text-lg font-semibold text-stone-900 mb-2">{topic.title}</h2><p className="text-stone-600">{topic.text}</p></Link>)}
+              </nav>
+            )}
             <div className="mb-8 space-y-6">
               <div className="relative max-w-md mx-auto">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Search className="h-5 w-5 text-stone-400" /></div>

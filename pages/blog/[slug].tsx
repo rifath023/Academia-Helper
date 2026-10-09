@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import type { GetStaticProps, GetStaticPaths } from 'next';
 import postsData from '../../blog-posts/index.json';
+import { load } from 'cheerio';
 
 interface HtmlAttributes {
   [key: string]: string;
@@ -21,17 +22,9 @@ interface Props {
 }
 
 function parseAttributes(tag: string): HtmlAttributes {
-  const attrs: HtmlAttributes = {};
-
-  const regex = /([:\w-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g;
-
-  let match;
-
-  while ((match = regex.exec(tag)) !== null) {
-    attrs[match[1]] = match[2] ?? match[3] ?? '';
-  }
-
-  return attrs;
+  // HTML entities must be decoded before React escapes attribute values again.
+  const $ = load(tag);
+  return { ...$('meta, link').first().attr() };
 }
 
 function reactAttributes(attrs: HtmlAttributes) {
@@ -181,7 +174,7 @@ export const getStaticProps: GetStaticProps = async ({
   );
 
   const title = titleMatch
-    ? titleMatch[1].trim()
+    ? load(headContent)('title').first().text().trim()
     : 'Academia Helper';
 
   /* Meta tags */

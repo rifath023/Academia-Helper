@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: 'Can you help with urgent or overdue coursework?',
-    a: 'Yes. Share your deadline and timezone. We confirm in writing whether the deadline is feasible and guarantee on-time delivery.',
+    a: 'Share your deadline and timezone. Confirm availability and timing in writing before payment; an enquiry alone does not establish delivery.',
   },
   {
     q: 'Will my work match the marking rubric?',
@@ -28,7 +28,7 @@ export default function CourseworkHelpUk() {
   const canonical = 'https://www.academiahelper.com/coursework-help-uk/';
   const title = 'Coursework Help UK 2026: Reports, Essays & Presentations | Academia Helper';
   const description =
-    'Coursework help for UK students: essays, reports, portfolios, presentations and problem sets. Rubric-matched, plagiarism-free, 0% AI, on-time. Get a written quote.';
+    'Coursework help for UK students: essays, reports, portfolios, presentations and problem sets. Check assessment requirements and discuss permitted support, scope and timing.';
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -73,9 +73,9 @@ export default function CourseworkHelpUk() {
             </h1>
             <p className="text-xl text-stone-600 mb-8">
               Get coursework written to your brief, word count and referencing style —
-              with human-written, original work and unlimited revisions.
+              with scope and revision arrangements agreed before starting.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <section id="support-boundaries" className="rounded-2xl border border-stone-200 bg-white p-6 mb-8"><h2 className="text-xl font-semibold mb-3">Check the support your assessment permits</h2><p className="text-stone-700">Use outside assistance only within your institution’s rules. Describe the activity precisely, check whether acknowledgement is required, and keep ownership of your research and writing. Do not share university passwords or confidential participant data.</p><p className="mt-3"><Link href="/tools/" className="text-amber-800 underline">Free study tools</Link> · <Link href="/editorial-policy/" className="text-amber-800 underline">Editorial standards</Link> · <Link href="/privacy-policy/" className="text-amber-800 underline">Privacy notice</Link></p></section><div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a href="/#contact" className="px-8 py-4 bg-stone-900 text-white rounded-2xl font-semibold text-center">
                 Get Coursework Quote
               </a>

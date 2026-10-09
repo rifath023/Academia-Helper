@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Mail } from 'lucide-react';
-import { IntelligentChatWidget } from './IntelligentChatWidget';
+import dynamic from 'next/dynamic';
+const IntelligentChatWidget = dynamic(() => import('./IntelligentChatWidget').then(m => m.IntelligentChatWidget), { ssr: false });
 
 export const ScrollProgress: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -31,6 +32,7 @@ export const FloatingActionButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showChatWidget, setShowChatWidget] = useState(false);
   const [showIntelligentChat, setShowIntelligentChat] = useState(false);
+  const [chatLoaded, setChatLoaded] = useState(false);
 
   useEffect(() => {
     const toggle = () => setIsVisible(window.scrollY > 300);
@@ -43,6 +45,7 @@ export const FloatingActionButton: React.FC = () => {
       <AnimatePresence>
         {isVisible && (
           <motion.button
+            aria-label="Open support options"
             onClick={() => setShowChatWidget((v) => !v)}
             className="fixed bottom-6 right-6 group p-4 bg-gradient-to-r from-stone-900 via-slate-800 to-stone-900 text-white rounded-full shadow-2xl z-40"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -90,7 +93,7 @@ export const FloatingActionButton: React.FC = () => {
                 <div className="text-stone-700 font-medium">Hi there! How can we help you excel in your studies today? 🌟</div>
                 <div className="space-y-3">
                   <motion.button
-                    onClick={() => { setShowChatWidget(false); setShowIntelligentChat(true); }}
+                    onClick={() => { setChatLoaded(true); setShowChatWidget(false); setShowIntelligentChat(true); }}
                     className="group w-full text-left p-4 bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 rounded-2xl border border-blue-200/50 transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -100,8 +103,8 @@ export const FloatingActionButton: React.FC = () => {
                         <MessageCircle className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="font-bold text-stone-800">Chat with Alex AI</div>
-                        <div className="text-stone-600 text-sm">Academic writing assistant 🤖</div>
+                        <div className="font-bold text-stone-800">Open study assistant</div>
+                        <div className="text-stone-600 text-sm">Automated replies</div>
                       </div>
                     </div>
                   </motion.button>
@@ -152,10 +155,10 @@ export const FloatingActionButton: React.FC = () => {
         )}
       </AnimatePresence>
 
-      <IntelligentChatWidget
+      {chatLoaded && <IntelligentChatWidget
         isOpen={showIntelligentChat}
         onClose={() => setShowIntelligentChat(false)}
-      />
+      />}
     </>
   );
 };
