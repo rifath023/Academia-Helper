@@ -12,7 +12,7 @@ export default function GroupProjectsPage() {
         'Group reports, plans and team presentations',
         'Role distribution and peer-evaluation support',
         'Conflict and non-contributing-member guidance',
-        'Original, 0% AI, unlimited revisions',
+        'Written to your brief, with revisions to match requirements',
       ]}
       related={[
         { name: 'Group Member Not Contributing?', href: '/blog/group-assignment-member-not-contributing/' },

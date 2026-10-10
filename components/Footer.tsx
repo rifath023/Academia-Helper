@@ -22,12 +22,12 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <span className="text-2xl font-bold">Academia Helper</span>
-                <div className="text-sm text-stone-400 font-medium">Expert Writing Services</div>
+                <div className="text-sm text-stone-400 font-medium">Study Guides, Tools & Academic Support</div>
               </div>
             </div>
 
             <p className="text-stone-300 leading-relaxed font-light text-lg max-w-md">
-              Expert academic writing services for UK and USA students. Professional, original, and timely delivery guaranteed with 0% AI content.
+              Free study guides, calculators and planners for university students, with academic support alongside them.
             </p>
 
             {/* Enhanced CTA Buttons */}
@@ -91,12 +91,15 @@ export const Footer: React.FC = () => {
               <h3 className="text-xl font-bold mb-6 text-white">Quick Links</h3>
               <ul className="space-y-4">
                 {[
-                  { name: 'Home', href: '/' },
+                  { name: 'All Services', href: '/services/' },
+                  { name: 'Free Tools', href: '/tools/' },
+                  { name: 'University Study Guides', href: '/blog/' },
+                  { name: 'About', href: '/about/' },
+                  { name: 'Contact', href: '/contact/' },
+                  { name: 'Editorial Policy', href: '/editorial-policy/' },
                   { name: 'Assignment Help UK', href: '/assignment-help-uk/' },
                   { name: 'Dissertation Help UK', href: '/dissertation-help-uk/' },
                   { name: 'Coursework Help UK', href: '/coursework-help-uk/' },
-                  { name: 'Blog', href: '/blog/' },
-                  { name: 'Contact', href: '/#contact' },
                 ].map((link, index) => (
                   <li key={index}>
                     <a
@@ -113,13 +116,13 @@ export const Footer: React.FC = () => {
 
             {/* Guarantees */}
             <div>
-              <h3 className="text-xl font-bold mb-6 text-white">Our Guarantees</h3>
+              <h3 className="text-xl font-bold mb-6 text-white">How We Work</h3>
               <div className="space-y-4">
                 {[
-                  { icon: Shield, text: '0% AI Content', color: 'text-emerald-400' },
-                  { icon: CheckCircle, text: '<10% Plagiarism', color: 'text-blue-400' },
-                  { icon: Clock, text: 'On-Time Delivery', color: 'text-amber-400' },
-                  { icon: ArrowRight, text: 'Unlimited Revisions', color: 'text-purple-400' },
+                  { icon: Shield, text: 'Develop your own work', color: 'text-emerald-400' },
+                  { icon: CheckCircle, text: 'Check assessment rules', color: 'text-blue-400' },
+                  { icon: Clock, text: 'Agree scope in writing', color: 'text-amber-400' },
+                  { icon: ArrowRight, text: 'Editorial policy', color: 'text-purple-400' },
                 ].map((guarantee, index) => (
                   <div key={index} className="flex items-center group">
                     <guarantee.icon className={`w-5 h-5 mr-3 ${guarantee.color} group-hover:scale-110 transition-transform duration-200`} />
@@ -138,10 +141,10 @@ export const Footer: React.FC = () => {
           <div className="text-center">
             <div className="inline-flex items-center px-4 py-2 bg-amber-500/20 rounded-full mb-4">
               <Clock className="w-5 h-5 text-amber-400 mr-2" />
-              <span className="text-amber-200 font-semibold">Need Urgent Help?</span>
+              <span className="text-amber-200 font-semibold">Need study support?</span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">24/7 Expert Support Available</h3>
-            <p className="text-stone-300 font-light">Get immediate assistance with your assignments anytime, anywhere</p>
+            <h3 className="text-2xl font-bold text-white mb-2">Study guides, tools and enquiry support</h3>
+            <p className="text-stone-300 font-light">Browse free resources or send an enquiry via WhatsApp or email</p>
           </div>
         </div>
 
@@ -153,17 +156,17 @@ export const Footer: React.FC = () => {
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
               {[
-                'Privacy Policy',
-                'Terms of Service',
-                'Refund Policy',
-                'Quality Guarantee'
+                { name: 'Privacy Policy', href: '/privacy-policy/' },
+                { name: 'Terms', href: '/terms/' },
+                { name: 'Editorial Policy', href: '/editorial-policy/' },
+                { name: 'Contact', href: '/contact/' },
               ].map((link, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={link.href}
                   className="text-stone-400 hover:text-white transition-colors duration-300 font-medium hover:underline"
                 >
-                  {link}
+                  {link.name}
                 </a>
               ))}
             </div>

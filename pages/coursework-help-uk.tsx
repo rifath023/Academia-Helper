@@ -28,7 +28,7 @@ export default function CourseworkHelpUk() {
   const canonical = 'https://www.academiahelper.com/coursework-help-uk/';
   const title = 'Coursework Help UK 2026: Reports, Essays & Presentations | Academia Helper';
   const description =
-    'Coursework help for UK students: essays, reports, portfolios, presentations and problem sets. Rubric-matched, plagiarism-free, 0% AI, on-time. Get a written quote.';
+    'Coursework guidance for UK students: essays, reports, portfolios, presentations and problem sets. Rubric-matched; scope and timing confirmed in writing.';
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

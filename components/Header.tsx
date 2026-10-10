@@ -30,7 +30,8 @@ export const Header: React.FC = () => {
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/#services' },
     { name: 'Blog', href: '/blog/' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Free Tools', href: '/tools/' },
+    { name: 'Contact', href: '/contact/' },
   ];
 
   return (
@@ -44,7 +45,7 @@ export const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           <motion.a
             href="/"
@@ -58,10 +59,10 @@ export const Header: React.FC = () => {
                 ? 'bg-gradient-to-br from-stone-700 to-slate-800 shadow-lg'
                 : 'bg-white backdrop-blur-sm border border-white/30 shadow-xl'
             }`}>
-              <BookOpen className={`w-6 h-6 ${isScrolled ? 'text-white' : 'text-black'}`} />
+              <BookOpen aria-hidden="true" className={`w-5 h-5 sm:w-6 sm:h-6 ${isScrolled ? 'text-white' : 'text-black'}`} />
             </div>
             <div className="text-left">
-              <span className={`text-xl font-bold transition-colors duration-300 ${
+              <span className={`text-lg sm:text-xl font-bold transition-colors duration-300 ${
                 isScrolled ? 'text-stone-900' : 'text-white'
               }`}>Academia Helper</span>
               <div className={`text-xs font-medium transition-colors duration-300 ${
@@ -70,7 +71,7 @@ export const Header: React.FC = () => {
             </div>
           </motion.a>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               item.name === 'Services' ? (
                 <div key={item.name} className="relative group">
@@ -131,7 +132,7 @@ export const Header: React.FC = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center">
-                <MessageCircle className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200" />
+                <MessageCircle aria-hidden="true" className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200" />
                 <span>Chat Now</span>
               </div>
             </motion.a>
@@ -141,19 +142,19 @@ export const Header: React.FC = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? 'Close navigation' : 'Open navigation'}
             aria-expanded={isMenuOpen}
-            className={`md:hidden relative p-3 rounded-2xl transition-all duration-300 ${
+            className={`lg:hidden relative p-3 rounded-2xl transition-all duration-300 ${
               isScrolled
                 ? 'bg-stone-100 text-stone-900 hover:bg-stone-200'
                 : 'bg-white/20 backdrop-blur-sm text-white border border-white/30'
             }`}
             whileTap={{ scale: 0.95 }}
           >
-            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isMenuOpen ? <X aria-hidden="true" className="w-5 h-5" /> : <Menu aria-hidden="true" className="w-5 h-5" />}
           </motion.button>
         </div>
 
         <motion.nav
-          className={`md:hidden overflow-hidden transition-all duration-500 ${
+          className={`lg:hidden overflow-hidden transition-all duration-500 ${
             isMenuOpen ? 'max-h-[32rem] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
@@ -205,7 +206,7 @@ export const Header: React.FC = () => {
               animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
+              <MessageCircle aria-hidden="true" className="w-5 h-5 mr-2" />
               <span>Contact via WhatsApp</span>
             </motion.a>
           </div>

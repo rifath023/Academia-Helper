@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="384" viewBox="0 0 640 384" role="img" aria-label="Research notes and connected ideas">
+<rect width="640" height="384" fill="#f5f5f4"/><rect x="110" y="70" width="245" height="250" rx="14" fill="#fff" stroke="#d6d3d1" stroke-width="3"/>
+<path d="M150 125h150M150 163h130M150 201h150M150 239h105M150 277h145" stroke="#78716c" stroke-width="9" stroke-linecap="round"/>
+<path d="M400 130l95 63-90 73" fill="none" stroke="#a16207" stroke-width="5"/><g fill="#292524"><circle cx="400" cy="130" r="24"/><circle cx="495" cy="193" r="24"/><circle cx="405" cy="266" r="24"/></g>
+</svg>

@@ -8,28 +8,28 @@ export const FAQSection: React.FC = () => {
   
   const faqs = [
     {
-      question: 'How do I order an assignment?',
-      answer: 'Send your brief via the order form, WhatsApp (+8801577128417) or email (academiahelp0@gmail.com) with your topic, word count, deadline, marking rubric and referencing style. We review the brief and confirm scope, price and delivery time before you pay.',
+      question: 'How do I make an enquiry?',
+      answer: 'Send your topic, word count, deadline, marking rubric and referencing style via WhatsApp (+8801577128417) or email (academiahelp0@gmail.com). We review what you need and confirm the scope, price and timing in writing before any payment.',
     },
     {
       question: 'What subjects and assignment types do you cover?',
-      answer: 'Business, finance, accounting, marketing, HRM, management, computer science, psychology, healthcare, education, law, engineering and more. We handle essays, reports, case studies, dissertations, coursework, literature reviews, presentations, problem sets and proofreading.',
+      answer: 'Business, finance, accounting, marketing, HRM, management, computer science, psychology, healthcare, education, law, engineering and more. We provide study guides and permitted support such as feedback, explanations, structure planning and proofreading. Always check what your university allows for your specific assessment.',
     },
     {
-      question: 'How much does assignment help cost?',
-      answer: 'Pricing depends on word count, academic level, subject complexity and deadline. Short deadlines and technical work (data analysis, programming, SPSS) cost more. You get a written quote showing exactly what is included before payment.',
+      question: 'How much does academic support cost?',
+      answer: 'Cost depends on word count, academic level, subject complexity and deadline. You will receive a written quote showing exactly what is included. Confirm the scope, price, timing and cancellation terms in writing before paying.',
     },
     {
-      question: 'Is the work original and AI-free?',
-      answer: 'Yes. Every paper is human-written, checked for plagiarism (under 10%) and delivered with 0% AI content. We do not resell papers. You can request unlimited revisions if anything does not match your brief.',
+      question: 'How do you support originality and academic integrity?',
+      answer: 'Our guides help you develop your own work. Before requesting feedback or editing, check your institutional assessment rules on permitted assistance. Do not submit someone else\u2019s work as your own. See our editorial policy for how guides are researched and corrected.',
     },
     {
-      question: 'How fast can you deliver? Will I meet my deadline?',
-      answer: 'We accept urgent deadlines and guarantee on-time delivery. Share your exact deadline and timezone when ordering. If a deadline is too tight for quality work, we will tell you honestly rather than overpromise.',
+      question: 'How do deadlines and availability work?',
+      answer: 'Share your exact deadline and timezone when enquiring. If a deadline is too tight for useful support, we will tell you honestly. Calculator and planner outputs are estimates for planning only; always confirm official deadlines and regulations with your university.',
     },
     {
       question: 'Is my personal information kept private?',
-      answer: 'Yes. We only ask for what is needed to complete your order, never share your details, and never ask for your university login. Files are handled confidentially via WhatsApp, email or the order form.',
+      answer: 'We only ask for what is needed to respond to your enquiry, never ask for your university login, and advise against sending passwords, identity documents or confidential research data. Calculator inputs run in your browser and are not sent to us. See our privacy policy for details.',
     },
   ];
 

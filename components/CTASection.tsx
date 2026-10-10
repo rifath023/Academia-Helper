@@ -126,7 +126,7 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Get your high-quality assignment written by experts. Fast turnaround, original content, and guaranteed satisfaction.
+            Send an enquiry about permitted academic support. We confirm scope in writing and point you to relevant study guides and planning tools.
           </motion.p>
         </motion.div>
 
@@ -140,8 +140,8 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
           >
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-white/20 shadow-2xl">
               <div className="mb-8">
-                <h3 className="text-3xl font-bold text-white mb-2">Place Your Order</h3>
-                <p className="text-stone-300 font-light">Fill out the form below and we'll get started on your assignment</p>
+                <h3 className="text-3xl font-bold text-white mb-2">Send an enquiry</h3>
+                <p className="text-stone-300 font-light">Describe your topic and the kind of feedback or explanation you need. Check your assessment rules first.</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -332,7 +332,7 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
                 >
                   <span className="flex items-center justify-center">
                     <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                    Submit Your Order
+                    Send Enquiry
                   </span>
                 </motion.button>
               </form>
@@ -366,7 +366,7 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
                   <MessageCircle className="w-6 h-6 mr-4 group-hover:scale-110 transition-transform duration-200" />
                   <div>
                     <div className="font-bold">WhatsApp Chat</div>
-                    <div className="text-sm opacity-90">Instant response guaranteed</div>
+                    <div className="text-sm opacity-90">Send an enquiry</div>
                   </div>
                 </motion.a>
 
@@ -392,13 +392,13 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.2 }}
             >
-              <h3 className="text-xl font-bold text-white mb-6">Why Choose Our Service?</h3>
+              <h3 className="text-xl font-bold text-white mb-6">How we work</h3>
               <div className="space-y-4">
                 {[
-                  { icon: <Shield className="w-5 h-5" />, text: '0% AI content guarantee', color: 'text-emerald-400' },
-                  { icon: <CheckCircle className="w-5 h-5" />, text: 'Less than 10% plagiarism', color: 'text-blue-400' },
-                  { icon: <Clock className="w-5 h-5" />, text: 'Timely delivery always', color: 'text-amber-400' },
-                  { icon: <ArrowRight className="w-5 h-5" />, text: 'Unlimited revisions', color: 'text-purple-400' },
+                  { icon: <Shield className="w-5 h-5" />, text: 'Develop your own work with guidance', color: 'text-emerald-400' },
+                  { icon: <CheckCircle className="w-5 h-5" />, text: 'Check your assessment rules first', color: 'text-blue-400' },
+                  { icon: <Clock className="w-5 h-5" />, text: 'Agree scope in writing', color: 'text-amber-400' },
+                  { icon: <ArrowRight className="w-5 h-5" />, text: 'Plan ahead with guides & tools', color: 'text-purple-400' },
                 ].map((item, index) => (
                   <motion.div
                     key={index}

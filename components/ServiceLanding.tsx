@@ -82,7 +82,7 @@ export const ServiceLanding: React.FC<ServiceLandingProps> = ({
               </a>
             </div>
 
-            <h2 className="text-2xl font-bold text-stone-900 mb-4">What you get</h2>
+            <h2 className="text-2xl font-bold text-stone-900 mb-4">Topics to discuss</h2>
             <ul className="list-disc pl-6 mb-10 text-stone-700 space-y-2">
               {bullets.map((b) => (
                 <li key={b}>{b}</li>

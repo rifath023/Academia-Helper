@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'Is the work original and AI-free?',
-    a: 'Yes. Human-written only, plagiarism under 10%, 0% AI content, with unlimited revisions until it matches your brief.',
+    a: 'Yes. Written to your brief with originality checks, with revisions until it matches your requirements. Confirm permitted scope with your institution first.',
   },
   {
     q: 'What do you need from me to start?',
@@ -28,7 +28,7 @@ export default function AssignmentHelpUk() {
   const canonical = 'https://www.academiahelper.com/assignment-help-uk/';
   const title = 'Assignment Help UK 2026: Essays, Coursework & Reports | Academia Helper';
   const description =
-    'Assignment help for UK students: essays, coursework, case studies, reports and presentations. Human-written, plagiarism-free, 0% AI, on-time delivery. Get a written quote today.';
+    'Assignment guidance for UK students: essays, coursework, case studies, reports and presentations. Written to your brief; scope and timing confirmed in writing.';
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

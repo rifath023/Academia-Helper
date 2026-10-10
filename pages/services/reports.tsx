@@ -12,7 +12,7 @@ export default function ReportsPage() {
         'Business, lab, technical and internship reports',
         'Executive summary, findings, analysis and recommendations',
         'Tables, charts and correct academic formatting',
-        'Plagiarism under 10%, 0% AI, unlimited revisions',
+        'Plagiarism under 10%, originality-checked, unlimited revisions',
       ]}
       related={[
         { name: 'Business Report Assignment Guide', href: '/blog/business-report-assignment/' },
@@ -22,7 +22,7 @@ export default function ReportsPage() {
       faqs={[
         { q: 'What do you need to start my report?', a: 'Brief, rubric, word count, deadline, referencing style and any data or lecturer notes.' },
         { q: 'Do you include executive summaries?', a: 'Yes. Reports include executive summary, structure, analysis and recommendations matched to your rubric.' },
-        { q: 'Is it original?', a: 'Yes. Human-written, plagiarism-checked, 0% AI, with unlimited revisions.' },
+        { q: 'Is it original?', a: 'Yes. Written to your brief with originality checks and revisions to match requirements.' },
       ]}
     />
   );

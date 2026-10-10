@@ -1,5 +1,60 @@
 [
   {
+    "slug": "convenience-sampling",
+    "title": "Convenience Sampling: Example, Bias & Methods Write-Up",
+    "excerpt": "Understand convenience sampling with a worked campus survey example, a bias checklist and a transparent methods paragraph.",
+    "date": "2026-10-08",
+    "readTime": "5 min read",
+    "category": "Research & Writing",
+    "type": "informational",
+    "image": "https://www.academiahelper.com/images/research-guides.svg",
+    "author": "Academia Helper"
+  },
+  {
+    "slug": "literature-review-example",
+    "title": "Literature Review Example: Annotated Synthesis Paragraph",
+    "excerpt": "See how a literature review moves from source summaries to synthesis, with a clearly fictional evidence matrix, annotated paragraph and revision checklist.",
+    "date": "2026-10-08",
+    "readTime": "5 min read",
+    "category": "Research & Writing",
+    "type": "informational",
+    "image": "https://www.academiahelper.com/images/research-guides.svg",
+    "author": "Academia Helper"
+  },
+  {
+    "slug": "purposive-sampling",
+    "title": "Purposive Sampling: Criteria, Examples & Recruitment Plan",
+    "excerpt": "Build a purposive sampling plan around your research question. See an original recruitment matrix and a methods example with clear limitations.",
+    "date": "2026-10-08",
+    "readTime": "5 min read",
+    "category": "Research & Writing",
+    "type": "informational",
+    "image": "https://www.academiahelper.com/images/research-guides.svg",
+    "author": "Academia Helper"
+  },
+  {
+    "slug": "snowball-sampling",
+    "title": "Snowball Sampling: Recruitment Example & Bias Checklist",
+    "excerpt": "Plan snowball recruitment with an original example, a consent checklist and clear limits on what referral samples can show.",
+    "date": "2026-10-08",
+    "readTime": "5 min read",
+    "category": "Research & Writing",
+    "type": "informational",
+    "image": "https://www.academiahelper.com/images/research-guides.svg",
+    "author": "Academia Helper"
+  },
+  {
+    "slug": "stratified-sampling",
+    "title": "Stratified Sampling: Worked Allocation & Weighting Example",
+    "excerpt": "See how stratified random sampling works, calculate a proportional allocation and understand why equal group samples may need weighting.",
+    "date": "2026-10-08",
+    "readTime": "5 min read",
+    "category": "Research & Writing",
+    "type": "informational",
+    "image": "https://www.academiahelper.com/images/research-guides.svg",
+    "author": "Academia Helper"
+  },
+  {
     "slug": "7-best-adjustable-book-stands-reading-under-40-2026",
     "title": "7 Best Adjustable Book Stands for Reading Under $40 in 2026",
     "excerpt": "Compare 7 adjustable book stands priced below $40, focusing on adjustability, stability, portability, page-holding ability, materials, storage features, and versatility.",
@@ -1640,8 +1695,8 @@
   },
   {
     "slug": "best-ai-homework-helpers",
-    "title": "7 Best AI Homework Helpers (2026, Tested with Pictures)",
-    "excerpt": "Compare the 7 best AI homework helpers for math, science and step-by-step explanations — Photomath, Khanmigo, Socratic, Chegg and more, with picture examples.",
+    "title": "Best AI Homework Helpers for Students in 2026",
+    "excerpt": "The best AI homework helpers in 2026 for math, science, and step-by-step explanations - compare Photomath, Khanmigo, Socratic, Chegg Study and Numerade.",
     "date": "2026-07-17T00:00:00Z",
     "readTime": "6 min read",
     "category": "Study Tools",

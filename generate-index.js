@@ -7,6 +7,27 @@ const { pageSize, siteUrl } = require('./lib/blog-config.json');
 const postsDir = path.join(__dirname, 'blog-posts');
 const outputFile = path.join(postsDir, 'index.json');
 const sitemapFile = path.join(__dirname, 'public', 'sitemap.xml');
+const extraRoutesFile = path.join(__dirname, 'lib', 'extra-routes.json');
+
+function writeIfChanged(file, content) {
+  const prev = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
+  if (prev !== content) {
+    fs.writeFileSync(file, content, 'utf8');
+    return true;
+  }
+  return false;
+}
+
+function loadExtraRoutes() {
+  try {
+    const raw = fs.readFileSync(extraRoutesFile, 'utf8');
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((r) => typeof r === 'string' && r.startsWith('/') && r.endsWith('/'));
+  } catch {
+    return [];
+  }
+}
 
 function validDate(value) {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(value)) return '';
@@ -100,6 +121,12 @@ function writeSitemap(posts) {
     { loc: `${siteUrl}/services/portfolio-eportfolio/`, lastmod: previousDates.get(`${siteUrl}/services/portfolio-eportfolio/`) || '' },
     { loc: `${siteUrl}/blog/`, lastmod: previousDates.get(`${siteUrl}/blog/`) || '' },
   ];
+  for (const route of loadExtraRoutes()) {
+    const loc = `${siteUrl}${route}`;
+    if (!entries.some((e) => e.loc === loc)) {
+      entries.push({ loc, lastmod: previousDates.get(loc) || '' });
+    }
+  }
   for (let page = 2; page <= Math.ceil(posts.length / pageSize); page++) {
     entries.push({ loc: `${siteUrl}/blog/page/${page}/`, lastmod: '' });
   }
@@ -113,8 +140,11 @@ function writeSitemap(posts) {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     entries.map(({ loc, lastmod }) => `  <url>\n    <loc>${loc}</loc>\n${lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : ''}  </url>`).join('\n') +
     '\n</urlset>\n';
-  fs.writeFileSync(sitemapFile, xml, 'utf8');
-  console.log(`Sitemap updated: ${entries.length} canonical URLs`);
+  if (writeIfChanged(sitemapFile, xml)) {
+    console.log(`Sitemap updated: ${entries.length} canonical URLs`);
+  } else {
+    console.log(`Sitemap unchanged: ${entries.length} canonical URLs`);
+  }
 }
 
 function generate() {
@@ -140,9 +170,13 @@ function generate() {
   // Sort newest first
   posts.sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0) || a.slug.localeCompare(b.slug));
 
-  fs.writeFileSync(outputFile, JSON.stringify(posts.map(({ modified, ...post }) => post), null, 2) + '\n', 'utf8');
+  const indexJson = JSON.stringify(posts.map(({ modified, ...post }) => post), null, 2) + '\n';
+  if (writeIfChanged(outputFile, indexJson)) {
+    console.log(`\n📄 index.json updated — ${posts.length} post(s)`);
+  } else {
+    console.log(`\n📄 index.json unchanged — ${posts.length} post(s)`);
+  }
   writeSitemap(posts);
-  console.log(`\n📄 index.json updated — ${posts.length} post(s)`);
 }
 
 generate();

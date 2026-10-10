@@ -12,7 +12,7 @@ export default function CaseStudiesPage() {
         'Business, law, healthcare and MBA case studies',
         'Theory application, SWOT and critical analysis',
         'Evidence-based recommendations',
-        'Original, 0% AI, unlimited revisions',
+        'Written to your brief, with revisions to match requirements',
       ]}
       related={[
         { name: 'Case Study Assignment Help UK', href: '/blog/case-study-assignment-help-uk/' },

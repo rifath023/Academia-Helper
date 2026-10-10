@@ -12,7 +12,7 @@ export default function DissertationsThesesPage() {
         'Proposals, literature reviews, methodology and chapters',
         'Qualitative and quantitative guidance, SPSS and Excel',
         'Editing, proofreading and supervisor-feedback response',
-        'Original, 0% AI, unlimited revisions',
+        'Written to your brief, with revisions to match requirements',
       ]}
       related={[
         { name: 'Dissertation Help UK (Full Service)', href: '/dissertation-help-uk/' },

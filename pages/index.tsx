@@ -12,11 +12,11 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Academia Helper | Expert Assignment Writing Service</title>
-        <meta name="description" content="Expert assignment help for UK & USA students. MA & PhD writers deliver plagiarism-free essays, dissertations and coursework on time. 0% AI content guaranteed." />
+        <title>Academia Helper | University Study Resources, Guides & Free Tools</title>
+        <meta name="description" content="Free university study guides, grade calculators and study planners for UK, US and Australian students, with academic support alongside them." />
         <meta name="keywords" content="assignment help, essay writing service, dissertation help, coursework help, UK, USA, Australia, academic writing service, Assignment Writing Services UK" />
         <meta property="og:title" content="Academia Helper | Assignment Writing Services UK" />
-        <meta property="og:description" content="Need reliable assignment writing services in the UK? Get expert academic assistance, plagiarism-free papers, timely delivery, and affordable pricing for essays, dissertations, coursework, and more." />
+        <meta property="og:description" content="Explore study guides on essays, dissertations and research methods, plus free calculators and planners. Check your university rules before applying general guidance." />
         <meta property="og:url" content="https://www.academiahelper.com/" />
         <link rel="canonical" href="https://www.academiahelper.com/" />
       </Head>

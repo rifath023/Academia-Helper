@@ -50,14 +50,14 @@ export default function BlogIndex({ posts, page }: BlogIndexProps) {
   const currentPage = filtering ? Math.min(filteredPage, totalPages) : page;
   const visiblePosts = filteredPosts.slice((currentPage - 1) * BLOG_PAGE_SIZE, currentPage * BLOG_PAGE_SIZE);
   const canonical = `${SITE_URL}${getBlogPagePath(page)}`;
-  const title = page === 1 ? 'Assignment Help Blog UK 2026 | Essays, Dissertations & Study Tips' : `Academic Writing Blog – Page ${page} | Academia Helper`;
+  const title = page === 1 ? 'University Study Guides | Academia Helper' : `University Study Guides – Page ${page} | Academia Helper`;
   const paginationClass = 'inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border px-3 py-2 text-sm font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-700';
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Assignment help tips, essay guides, dissertation advice and coursework study strategies for UK university students from Academia Helper." />
+        <meta name="description" content="Free university study guides on research methods, academic writing and assessment, plus grade calculators and study planners." />
         <meta property="og:title" content={title} />
         <meta property="og:url" content={canonical} />
         <link rel="canonical" href={canonical} />
@@ -68,9 +68,24 @@ export default function BlogIndex({ posts, page }: BlogIndexProps) {
         <main className="min-h-screen bg-gradient-to-br from-stone-50 via-slate-50 to-stone-100 pt-20">
           <div className="container mx-auto px-6 py-12">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Academia Helper Blog</h1>
-              <p className="text-xl text-stone-600 max-w-3xl mx-auto">Expert insights, writing tips, and academic guidance to help you excel in your studies</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4">University Study Guides</h1>
+              <p className="text-xl text-stone-600 max-w-3xl mx-auto">Practical guides, free calculators and planners to help you study, write and plan with confidence</p>
             </div>
+            {page === 1 && !filtering && (
+              <nav aria-label="Study topics" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                {[
+                  { name: 'Research Methods', href: '/guides/research-methods/', desc: 'Sampling, proposals & analysis' },
+                  { name: 'Academic Writing', href: '/guides/academic-writing/', desc: 'Briefs, evidence & reviews' },
+                  { name: 'University Assessment', href: '/guides/university-assessment/', desc: 'Grades, deadlines & resits' },
+                  { name: 'Free Tools', href: '/tools/', desc: 'Calculators & planners' },
+                ].map((t) => (
+                  <Link key={t.href} href={t.href} className="block bg-white rounded-2xl border border-stone-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+                    <span className="block font-bold text-stone-900">{t.name}</span>
+                    <span className="block text-sm text-stone-600 mt-1">{t.desc}</span>
+                  </Link>
+                ))}
+              </nav>
+            )}
             <div className="mb-8 space-y-6">
               <div className="relative max-w-md mx-auto">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><Search className="h-5 w-5 text-stone-400" /></div>

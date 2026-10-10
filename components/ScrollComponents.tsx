@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Mail } from 'lucide-react';
-import { IntelligentChatWidget } from './IntelligentChatWidget';
+
+const IntelligentChatWidget = dynamic(
+  () => import('./IntelligentChatWidget').then((m) => m.IntelligentChatWidget),
+  { ssr: false }
+);
 
 export const ScrollProgress: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -44,6 +49,8 @@ export const FloatingActionButton: React.FC = () => {
         {isVisible && (
           <motion.button
             onClick={() => setShowChatWidget((v) => !v)}
+            aria-label={showChatWidget ? 'Close study help options' : 'Open study help options'}
+            aria-expanded={showChatWidget}
             className="fixed bottom-6 right-6 group p-4 bg-gradient-to-r from-stone-900 via-slate-800 to-stone-900 text-white rounded-full shadow-2xl z-40"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -80,7 +87,7 @@ export const FloatingActionButton: React.FC = () => {
                       <p className="text-stone-200 text-sm font-light">We are here to assist you!</p>
                     </div>
                   </div>
-                  <button onClick={() => setShowChatWidget(false)} className="p-2 hover:bg-white/10 rounded-xl">
+                  <button onClick={() => setShowChatWidget(false)} aria-label="Close study help options" className="p-2 hover:bg-white/10 rounded-xl">
                     <X className="w-5 h-5" />
                   </button>
                 </div>
@@ -100,8 +107,8 @@ export const FloatingActionButton: React.FC = () => {
                         <MessageCircle className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="font-bold text-stone-800">Chat with Alex AI</div>
-                        <div className="text-stone-600 text-sm">Academic writing assistant 🤖</div>
+                        <div className="font-bold text-stone-800">Study help (preset replies)</div>
+                        <div className="text-stone-600 text-sm">Not live chat · quick guidance</div>
                       </div>
                     </div>
                   </motion.button>
