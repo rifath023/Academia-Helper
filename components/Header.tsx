@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-4">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.a
             href="/"
@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 400, damping: 10 }}
           >
-            <div className={`p-2 sm:p-3 rounded-2xl transition-all duration-300 ${
+            <div className={`p-3 rounded-2xl transition-all duration-300 ${
               isScrolled
                 ? 'bg-gradient-to-br from-stone-700 to-slate-800 shadow-lg'
                 : 'bg-white backdrop-blur-sm border border-white/30 shadow-xl'
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
               <BookOpen className={`w-6 h-6 ${isScrolled ? 'text-white' : 'text-black'}`} />
             </div>
             <div className="text-left">
-              <span className={`text-lg sm:text-xl font-bold transition-colors duration-300 ${
+              <span className={`text-xl font-bold transition-colors duration-300 ${
                 isScrolled ? 'text-stone-900' : 'text-white'
               }`}>Academia Helper</span>
               <div className={`text-xs font-medium transition-colors duration-300 ${
@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
             </div>
           </motion.a>
 
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               item.name === 'Services' ? (
                 <div key={item.name} className="relative group">
@@ -142,7 +142,7 @@ export const Header: React.FC = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? 'Close navigation' : 'Open navigation'}
             aria-expanded={isMenuOpen}
-            className={`lg:hidden relative p-3 rounded-2xl transition-all duration-300 ${
+            className={`md:hidden relative p-3 rounded-2xl transition-all duration-300 ${
               isScrolled
                 ? 'bg-stone-100 text-stone-900 hover:bg-stone-200'
                 : 'bg-white/20 backdrop-blur-sm text-white border border-white/30'
@@ -154,9 +154,7 @@ export const Header: React.FC = () => {
         </div>
 
         <motion.nav
-          hidden={!isMenuOpen}
-          aria-hidden={!isMenuOpen}
-          className={`lg:hidden overflow-hidden transition-all duration-500 ${
+          className={`md:hidden overflow-hidden transition-all duration-500 ${
             isMenuOpen ? 'max-h-[32rem] overflow-y-auto opacity-100' : 'max-h-0 opacity-0'
           }`}
         >

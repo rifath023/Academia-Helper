@@ -5,7 +5,6 @@ import Script from 'next/script';
 import type { GetStaticProps, GetStaticPaths } from 'next';
 import postsData from '../../blog-posts/index.json';
 import { load } from 'cheerio';
-const { prepareArticleLayout } = require('../../lib/article-layout.cjs');
 
 interface HtmlAttributes {
   [key: string]: string;
@@ -101,11 +100,9 @@ export default function BlogPost({
             dangerouslySetInnerHTML={{ __html: json }}
           />
         ))}
-        <link rel="stylesheet" href="/styles/article-layout.css" />
       </Head>
 
       <div
-        className="blog-page"
         dangerouslySetInnerHTML={{
           __html: bodyContent,
         }}
@@ -255,10 +252,10 @@ export const getStaticProps: GetStaticProps = async ({
 
   /* Remove scripts from raw HTML,
      because Next Script will execute them */
-  const bodyContent = prepareArticleLayout(rawBody.replace(
+  const bodyContent = rawBody.replace(
     /<script\b[^>]*>[\s\S]*?<\/script>/gi,
     ''
-  ));
+  );
 
   return {
     props: {
