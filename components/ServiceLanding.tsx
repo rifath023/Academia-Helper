@@ -82,7 +82,7 @@ export const ServiceLanding: React.FC<ServiceLandingProps> = ({
               </a>
             </div>
 
-            <h2 className="text-2xl font-bold text-stone-900 mb-4">Topics to discuss</h2>
+            <h2 className="text-2xl font-bold text-stone-900 mb-4">What you get</h2>
             <ul className="list-disc pl-6 mb-10 text-stone-700 space-y-2">
               {bullets.map((b) => (
                 <li key={b}>{b}</li>
@@ -91,12 +91,11 @@ export const ServiceLanding: React.FC<ServiceLandingProps> = ({
 
             <h2 className="text-2xl font-bold text-stone-900 mb-4">How it works</h2>
             <ol className="list-decimal pl-6 mb-10 text-stone-700 space-y-2">
-              <li>Check what outside assistance your institution permits for this assessment.</li>
-              <li>Describe your question, level and deadline without sending confidential data.</li>
-              <li>Request written confirmation of scope, availability, price and revision terms before payment.</li>
-              <li>Use any permitted feedback to develop your own work and retain responsibility for submission.</li>
+              <li>Send your brief, rubric, word count, deadline and referencing style.</li>
+              <li>We confirm scope, price and delivery time in writing before payment.</li>
+              <li>A qualified subject expert completes your work.</li>
+              <li>You review and request unlimited revisions until it matches your brief.</li>
             </ol>
-            <p className="mb-10 text-stone-700">A similarity score or AI-detector result does not establish academic integrity. Follow your assessment rules and cite the sources you use. See our <Link href="/editorial-policy/" className="underline text-amber-800">editorial policy</Link> and <Link href="/privacy-policy/" className="underline text-amber-800">privacy notice</Link>.</p>
 
             {related.length > 0 && (
               <>

@@ -22,12 +22,12 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <span className="text-2xl font-bold">Academia Helper</span>
-                <div className="text-sm text-stone-400 font-medium">Study Guides, Tools &amp; Academic Support</div>
+                <div className="text-sm text-stone-400 font-medium">Expert Writing Services</div>
               </div>
             </div>
 
             <p className="text-stone-300 leading-relaxed font-light text-lg max-w-md">
-              Free study guides, grade calculators and academic support for university students in the UK, USA and Australia.
+              Expert academic writing services for UK and USA students. Professional, original, and timely delivery guaranteed with 0% AI content.
             </p>
 
             {/* Enhanced CTA Buttons */}
@@ -96,10 +96,7 @@ export const Footer: React.FC = () => {
                   { name: 'Dissertation Help UK', href: '/dissertation-help-uk/' },
                   { name: 'Coursework Help UK', href: '/coursework-help-uk/' },
                   { name: 'Blog', href: '/blog/' },
-                  { name: 'All Services', href: '/services/' },
-                  { name: 'Free Study Tools', href: '/tools/' },
-                  { name: 'About Us', href: '/about/' },
-                  { name: 'Contact', href: '/contact/' },
+                  { name: 'Contact', href: '/#contact' },
                 ].map((link, index) => (
                   <li key={index}>
                     <a
@@ -114,21 +111,22 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Trust */}
+            {/* Guarantees */}
             <div>
-              <h3 className="text-xl font-bold mb-6 text-white">How We Work</h3>
+              <h3 className="text-xl font-bold mb-6 text-white">Our Guarantees</h3>
               <div className="space-y-4">
                 {[
-                  { icon: Shield, text: 'Academic-integrity first', color: 'text-emerald-400', href: '/editorial-policy/' },
-                  { icon: CheckCircle, text: 'Editorial policy', color: 'text-blue-400', href: '/editorial-policy/' },
-                  { icon: Clock, text: 'Contact and corrections', color: 'text-amber-400', href: '/contact/' },
-                ].map((item, index) => (
-                  <a key={index} href={item.href} className="flex items-center group">
-                    <item.icon className={`w-5 h-5 mr-3 ${item.color} group-hover:scale-110 transition-transform duration-200`} />
+                  { icon: Shield, text: '0% AI Content', color: 'text-emerald-400' },
+                  { icon: CheckCircle, text: '<10% Plagiarism', color: 'text-blue-400' },
+                  { icon: Clock, text: 'On-Time Delivery', color: 'text-amber-400' },
+                  { icon: ArrowRight, text: 'Unlimited Revisions', color: 'text-purple-400' },
+                ].map((guarantee, index) => (
+                  <div key={index} className="flex items-center group">
+                    <guarantee.icon className={`w-5 h-5 mr-3 ${guarantee.color} group-hover:scale-110 transition-transform duration-200`} />
                     <span className="text-stone-300 group-hover:text-white transition-colors duration-200 font-medium">
-                      {item.text}
+                      {guarantee.text}
                     </span>
-                  </a>
+                  </div>
                 ))}
               </div>
             </div>
@@ -142,8 +140,8 @@ export const Footer: React.FC = () => {
               <Clock className="w-5 h-5 text-amber-400 mr-2" />
               <span className="text-amber-200 font-semibold">Need Urgent Help?</span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Questions About Your Studies?</h3>
-            <p className="text-stone-300 font-light">Send a study question or report an error in a guide</p>
+            <h3 className="text-2xl font-bold text-white mb-2">24/7 Expert Support Available</h3>
+            <p className="text-stone-300 font-light">Get immediate assistance with your assignments anytime, anywhere</p>
           </div>
         </div>
 
@@ -151,20 +149,21 @@ export const Footer: React.FC = () => {
         <div className="border-t border-stone-700/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-stone-400 text-sm font-light">
-              © {currentYear} Academia Helper. All rights reserved. Academic study resources for students worldwide.
+              © {currentYear} Academia Helper. All rights reserved. Professional academic writing services for students worldwide.
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
               {[
-                { name: 'Privacy Policy', href: '/privacy-policy/' },
-                { name: 'Terms of Service', href: '/terms/' },
-                { name: 'Editorial Policy', href: '/editorial-policy/' },
+                'Privacy Policy',
+                'Terms of Service',
+                'Refund Policy',
+                'Quality Guarantee'
               ].map((link, index) => (
                 <a
                   key={index}
-                  href={link.href}
+                  href="#"
                   className="text-stone-400 hover:text-white transition-colors duration-300 font-medium hover:underline"
                 >
-                  {link.name}
+                  {link}
                 </a>
               ))}
             </div>

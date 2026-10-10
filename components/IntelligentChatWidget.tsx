@@ -16,17 +16,99 @@ interface IntelligentChatWidgetProps {
 
 // ─── Knowledge base ───────────────────────────────────────────────────────────
 const KB: { patterns: RegExp[]; reply: string }[] = [
-  { patterns: [/citation|reference|apa|harvard|mla/i], reply: 'Use the citation style specified by your module. Check author, title, date and source details against the original publication. Our blog has referencing guides.' },
-  { patterns: [/essay|structure|introduction|conclusion/i], reply: 'Start with your assignment brief and marking criteria. An essay usually needs a clear argument, evidence-based discussion and a conclusion that answers the question. Use the free word-count planner as a starting point.' },
-  { patterns: [/ai|plagiarism|turnitin|detector|similarity/i], reply: 'Check your assessment rules before using outside help or AI. Similarity and AI-detector scores do not establish academic integrity, and no detector outcome can be guaranteed.' },
-  { patterns: [/privacy|confidential|data/i], reply: 'This assistant uses preset replies in your browser. It does not send your typed messages to a person. Email and WhatsApp have separate privacy practices; avoid sharing sensitive documents.' },
-  { patterns: [/price|cost|order|deadline|urgent|revision|refund/i], reply: 'For availability, scope, price or service terms, contact academiahelp0@gmail.com or WhatsApp +8801577128417. Request written terms before payment. This automated assistant cannot confirm an order, quote or deadline.' },
-  { patterns: [/hello|hi|who are you|about/i], reply: 'This is an automated guide using preset replies, not a live adviser. You can browse study guides and free tools, or contact the team by email or WhatsApp.' },
+  {
+    patterns: [/price|cost|how much|rate|charge|fee|pricing/i],
+    reply:
+      "Our pricing depends on the word count, subject, and deadline. We keep rates student-friendly! 💰\n\nFor an exact quote, please reach out:\n📱 WhatsApp: +8801577128417\n📧 academiahelp0@gmail.com\n\nWe'll get back to you within minutes!",
+  },
+  {
+    patterns: [/order|place|start|get started|submit/i],
+    reply:
+      "Placing an order is super easy! Here's how:\n\n1️⃣ Fill in the order form on this page (scroll down to 'Place Your Order')\n2️⃣ Tell us your subject, word count & deadline\n3️⃣ Upload your assignment brief\n4️⃣ We'll confirm and get started!\n\nOr message us directly on WhatsApp: +8801577128417 for instant help.",
+  },
+  {
+    patterns: [/deadline|urgent|fast|quick|rush|hours|days/i],
+    reply:
+      "We handle tight deadlines! ⚡ Whether you need it in 24 hours or a few days, our team works around the clock.\n\nShare your deadline on WhatsApp (+8801577128417) and we'll confirm availability right away.",
+  },
+  {
+    patterns: [/plagiarism|original|copied|turnitin|similarity/i],
+    reply:
+      "Every assignment we deliver is 100% original and written from scratch. ✅\n\n• Less than 10% similarity guaranteed\n• Turnitin-safe content\n• No copy-paste, no reused work\n\nYou can request a plagiarism report with your order!",
+  },
+  {
+    patterns: [/ai|chatgpt|ai.?generat|ai.?written|ai.?detect/i],
+    reply:
+      "We guarantee 0% AI-generated content. 🙅‍♂️\n\nAll assignments are written by human academic experts — no ChatGPT, no AI tools. Your work will pass any AI detector confidently.",
+  },
+  {
+    patterns: [/revision|edit|change|update|redo|rewrite/i],
+    reply:
+      "We offer unlimited free revisions! 🔄\n\nIf anything doesn't meet your requirements, just let us know and we'll fix it — no extra charge, no questions asked.",
+  },
+  {
+    patterns: [/subject|topic|type|what.*(do|can|offer|cover)|business|finance|tourism|marketing|accounting|hrm|case study|powerpoint|presentation/i],
+    reply:
+      "We cover a wide range of subjects! 📚\n\n• Business Essays\n• Finance Assignments\n• Tourism Reports\n• Marketing Analysis\n• Accounting Reports\n• HRM Essays\n• Case Studies\n• PowerPoint Presentations\n\nDon't see yours? Message us — we likely cover it!",
+  },
+  {
+    patterns: [/citation|reference|apa|harvard|mla|chicago|referencing|cite/i],
+    reply:
+      "We follow any citation style you need! 📖\n\n• APA 7th Edition\n• Harvard Referencing\n• MLA Format\n• Chicago Style\n• OSCOLA (for law)\n\nJust mention your preferred style when placing your order and we'll handle it perfectly.",
+  },
+  {
+    patterns: [/essay|structure|how to write|introduction|conclusion|body|paragraph/i],
+    reply:
+      "A strong essay structure typically looks like this: 📝\n\n1. Introduction — Hook + background + thesis statement\n2. Body paragraphs — One main idea per paragraph (PEEL method works great)\n3. Conclusion — Summarise key points + restate thesis\n\nNeed it written professionally? We're here to help — just place an order!",
+  },
+  {
+    patterns: [/word count|words|length|how long/i],
+    reply:
+      "We handle any word count — from short 500-word essays to 5,000+ word dissertations. 📄\n\nJust specify your required word count in the order form or on WhatsApp (+8801577128417) and we'll quote accordingly.",
+  },
+  {
+    patterns: [/payment|pay|method|bkash|card|bank|transfer/i],
+    reply:
+      "For payment details and methods, please contact us directly so we can guide you:\n\n📱 WhatsApp: +8801577128417\n📧 academiahelp0@gmail.com\n\nWe'll walk you through the process step by step!",
+  },
+  {
+    patterns: [/confidential|private|secret|safe|secure|trust/i],
+    reply:
+      "Your privacy is our top priority. 🔒\n\n• Your personal details are never shared\n• All orders are handled confidentially\n• We don't store or reuse your work\n\nYou can trust us completely — hundreds of students already do!",
+  },
+  {
+    patterns: [/guarantee|quality|satisfaction|good|standard/i],
+    reply:
+      "We stand behind every assignment with these guarantees: ✅\n\n• 0% AI-generated content\n• Less than 10% plagiarism\n• On-time delivery — always\n• Unlimited free revisions\n• Written by subject-matter experts\n\nYour satisfaction is our priority!",
+  },
+  {
+    patterns: [/contact|reach|whatsapp|email|phone|talk|speak/i],
+    reply:
+      "You can reach us anytime! 📞\n\n📱 WhatsApp: +8801577128417 (fastest response)\n📧 Email: academiahelp0@gmail.com\n\nWe typically respond within minutes on WhatsApp!",
+  },
+  {
+    patterns: [/hello|hi|hey|good morning|good evening|howdy|greet/i],
+    reply:
+      "Hello! 👋 Great to hear from you!\n\nI'm Alex, your academic assistant at Academia Helper. Whether you need help with an essay, report, or case study — we've got you covered.\n\nWhat can I help you with today?",
+  },
+  {
+    patterns: [/thank|thanks|appreciate|helpful/i],
+    reply:
+      "You're very welcome! 😊 Happy to help anytime.\n\nIf you're ready to get started with your assignment, just fill in the order form on this page or ping us on WhatsApp: +8801577128417. Good luck with your studies! 🎓",
+  },
+  {
+    patterns: [/who are you|what are you|about you|about academia/i],
+    reply:
+      "I'm Alex, the virtual assistant for Academia Helper! 🤖\n\nAcademia Helper is a trusted academic writing service specialising in business, finance, tourism, marketing, accounting, HRM, and more.\n\nWe help students get high-quality, plagiarism-free assignments delivered on time. How can I assist you today?",
+  },
 ];
 
 const FALLBACK_REPLIES = [
-  'This preset assistant cannot answer that reliably. Check the relevant study guide or contact academiahelp0@gmail.com or WhatsApp +8801577128417. Your message here has not been sent to the team.',
+  "That's a great question! For the most accurate answer, our team is ready to help directly:\n\n📱 WhatsApp: +8801577128417\n📧 academiahelp0@gmail.com\n\nWe respond within minutes!",
+  "I want to make sure you get the right answer! Please reach out to our team directly:\n\n📱 WhatsApp: +8801577128417\n\nThey'll sort you out right away. 😊",
+  "I'm not 100% sure about that one, but our expert team will know! Drop them a message:\n\n📱 WhatsApp: +8801577128417\n📧 academiahelp0@gmail.com",
 ];
+
 let fallbackIndex = 0;
 function getReply(input: string): string {
   const trimmed = input.trim();
@@ -48,7 +130,7 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
       id: '1',
       role: 'assistant',
       content:
-        "Hello. This is an automated study guide with preset replies, not live chat. Ask about essay structure or referencing, or use the contact links to reach the team. Messages here stay in this page and are cleared when you reload.",
+        "Hi there! 👋 I'm Alex, your academic writing assistant from Academia Helper.\n\nI can help you with:\n• Assignment types & subjects\n• Pricing & deadlines\n• Citation styles\n• Essay structure tips\n• Placing an order\n\nWhat can I help you with today?",
       timestamp: new Date(),
     },
   ]);
@@ -127,14 +209,14 @@ export const IntelligentChatWidget: React.FC<IntelligentChatWidgetProps> = ({ is
                   <Bot className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm leading-tight">Study help assistant</p>
+                  <p className="font-semibold text-sm leading-tight">Alex — Academic Assistant</p>
                   <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                    <p className="text-stone-300 text-xs font-light">Automated replies · not live chat</p>
+                    <p className="text-stone-300 text-xs font-light">Online now</p>
                   </div>
                 </div>
               </div>
-              <button aria-label="Close study assistant" onClick={onClose} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors">
+              <button onClick={onClose} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors">
                 <X className="w-4 h-4" />
               </button>
             </div>

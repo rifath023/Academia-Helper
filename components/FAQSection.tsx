@@ -4,32 +4,32 @@ import { ChevronDown } from 'lucide-react';
 
 export const FAQSection: React.FC = () => {
   const title = 'Frequently Asked Questions';
-  const description = 'Using the free resources and enquiring about academic support.';
+  const description = 'How ordering, pricing, originality checks and support work.';
   
   const faqs = [
     {
-      question: 'How do I enquire about academic support?',
-      answer: 'Use the contact page, WhatsApp (+8801577128417) or email (academiahelp0@gmail.com). Describe your question, academic level and deadline. Check your assessment rules first, and ask for the permitted scope, price and timing in writing before paying or sending documents.',
+      question: 'How do I order an assignment?',
+      answer: 'Send your brief via the order form, WhatsApp (+8801577128417) or email (academiahelp0@gmail.com) with your topic, word count, deadline, marking rubric and referencing style. We review the brief and confirm scope, price and delivery time before you pay.',
     },
     {
       question: 'What subjects and assignment types do you cover?',
-      answer: 'The site has resources on essays, reports, dissertations, referencing, research methods and university assessment. Availability of individual support depends on your question and the permitted scope; confirm it through the contact channels.',
+      answer: 'Business, finance, accounting, marketing, HRM, management, computer science, psychology, healthcare, education, law, engineering and more. We handle essays, reports, case studies, dissertations, coursework, literature reviews, presentations, problem sets and proofreading.',
     },
     {
       question: 'How much does assignment help cost?',
-      answer: 'The study guides and browser-based tools are free to use. For individual support, request a written quote specifying what is included, timing, payment terms and any revision arrangements.',
+      answer: 'Pricing depends on word count, academic level, subject complexity and deadline. Short deadlines and technical work (data analysis, programming, SPSS) cost more. You get a written quote showing exactly what is included before payment.',
     },
     {
-      question: 'Can a similarity or AI score prove my work is acceptable?',
-      answer: 'No. A detector score does not establish authorship, correct attribution or compliance with your assessment rules. Use support to develop your own work, cite sources properly and follow your institution’s policy on AI and outside assistance.',
+      question: 'Is the work original and AI-free?',
+      answer: 'Yes. Every paper is human-written, checked for plagiarism (under 10%) and delivered with 0% AI content. We do not resell papers. You can request unlimited revisions if anything does not match your brief.',
     },
     {
-      question: 'Can I enquire about a short deadline?',
-      answer: 'Include the date, time and timezone in your enquiry and ask what is feasible. A message does not confirm availability or delivery. Keep responsibility for your submission and contact your university if you need an extension.',
+      question: 'How fast can you deliver? Will I meet my deadline?',
+      answer: 'We accept urgent deadlines and guarantee on-time delivery. Share your exact deadline and timezone when ordering. If a deadline is too tight for quality work, we will tell you honestly rather than overpromise.',
     },
     {
-      question: 'What should I share in an enquiry?',
-      answer: 'Start with a short description of your question. Do not send university passwords, participant data or confidential documents. Read the privacy notice and confirm how any files will be handled before sharing them through email or WhatsApp.',
+      question: 'Is my personal information kept private?',
+      answer: 'Yes. We only ask for what is needed to complete your order, never share your details, and never ask for your university login. Files are handled confidentially via WhatsApp, email or the order form.',
     },
   ];
 

@@ -12,7 +12,7 @@ export default function ReflectiveJournalsPage() {
         'Reflective essays, journals and placement reflections',
         'Gibbs, Rolfe, Kolb and critical reflection models',
         'Theory-to-practice linkage with citations',
-        'Confirm permitted scope, timing and revision terms before payment',
+        'Original, 0% AI, unlimited revisions',
       ]}
       related={[
         { name: 'Reflective Essay Guide', href: '/blog/reflective-essay-university/' },

@@ -18,7 +18,7 @@ export const HeroSection: React.FC = () => {
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-stone-50/80 via-slate-100/70 to-stone-200/60"></div>
-
+      
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Content - Asymmetrical Layout */}
@@ -40,7 +40,7 @@ export const HeroSection: React.FC = () => {
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                ✨ Study Guides & Free Tools
+                ✨ Expert Academic Writing Services
               </motion.div>
 
               <motion.h1
@@ -50,10 +50,10 @@ export const HeroSection: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <span className="bg-gradient-to-r from-stone-900 via-slate-800 to-stone-900 bg-clip-text text-transparent">
-                  University Study Resources
+                  Assignment Help UK
                 </span>
                 <br />
-                <span className="text-stone-700 font-light">Guides, Tools & Academic Support</span>
+                <span className="text-stone-700 font-light">Essays & Dissertations</span>
               </motion.h1>
 
               <motion.p
@@ -62,7 +62,7 @@ export const HeroSection: React.FC = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                Understand your assignment, plan your time and develop your own work. Explore practical guides to research methods, referencing and university assessment, alongside free grade calculators and dissertation planners. For academic support enquiries, check your institution’s rules and discuss the permitted scope before sharing documents.
+                Our professional Assignment Writing Services UK team delivers high-quality essays, dissertations, coursework, case studies, reports, and PowerPoint presentations tailored to your academic requirements. We cover a wide range of subjects, including computer science, business, management, finance, accounting, HRM, psychology, and more. Every paper is 100% plagiarism-free, affordable, and completed on time by experienced MA and PhD-qualified writers committed to helping you achieve academic success.
               </motion.p>
             </motion.div>
 
@@ -74,14 +74,14 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 1.0 }}
             >
               <motion.a
-                href="/tools/"
+                href="#contact"
                 className="group relative px-8 py-4 bg-stone-900 text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-stone-800 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative flex items-center justify-center">
-                  <span className="mr-2 font-medium">Explore Free Tools</span>
+                  <span className="mr-2 font-medium">Place Your Order</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </div>
               </motion.a>
@@ -108,21 +108,21 @@ export const HeroSection: React.FC = () => {
           >
             <div className="grid grid-cols-1 gap-6">
               {[
-                {
-                  number: 'Free',
-                  label: 'Study Calculators',
+                { 
+                  number: '500+', 
+                  label: 'Completed Projects', 
                   icon: <BookOpen className="w-7 h-7" />,
                   gradient: 'from-amber-400 to-orange-500'
                 },
-                {
-                  number: 'Practical',
-                  label: 'Writing & Research Guides',
+                { 
+                  number: '0%', 
+                  label: 'AI Content', 
                   icon: <GraduationCap className="w-7 h-7" />,
                   gradient: 'from-emerald-400 to-teal-500'
                 },
-                {
-                  number: 'Clear',
-                  label: 'Planning Tools',
+                { 
+                  number: '24/7', 
+                  label: 'Expert Support', 
                   icon: <Users className="w-7 h-7" />,
                   gradient: 'from-blue-400 to-indigo-500'
                 },

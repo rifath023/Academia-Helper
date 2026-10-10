@@ -12,7 +12,7 @@ export default function PortfolioPage() {
         'Learning artefacts, reflections and evidence mapping',
         'Professional development and placement portfolios',
         'Clear structure matched to learning outcomes',
-        'Confirm permitted scope, timing and revision terms before payment',
+        'Original, 0% AI, unlimited revisions',
       ]}
       related={[
         { name: 'University Internship Report', href: '/blog/university-internship-report/' },

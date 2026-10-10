@@ -12,11 +12,11 @@ const faqs = [
   },
   {
     q: 'How fast can you deliver?',
-    a: 'Share your deadline and timezone, then ask for written confirmation of availability and timing. An enquiry does not guarantee delivery; retain responsibility for your submission.',
+    a: 'We handle urgent deadlines and guarantee on-time delivery. Share your exact deadline and timezone. If a deadline is too tight for quality work we tell you honestly.',
   },
   {
-    q: 'How should I check academic integrity?',
-    a: 'Check the rules for outside assistance and AI on your assessment. You remain responsible for your own work and citations. No similarity or detector score proves acceptability.',
+    q: 'Is the work original and AI-free?',
+    a: 'Yes. Human-written only, plagiarism under 10%, 0% AI content, with unlimited revisions until it matches your brief.',
   },
   {
     q: 'What do you need from me to start?',
@@ -28,7 +28,7 @@ export default function AssignmentHelpUk() {
   const canonical = 'https://www.academiahelper.com/assignment-help-uk/';
   const title = 'Assignment Help UK 2026: Essays, Coursework & Reports | Academia Helper';
   const description =
-    'Assignment help for UK students: essays, coursework, case studies, reports and presentations. Explore relevant guides and discuss permitted support, scope and timing before payment.';
+    'Assignment help for UK students: essays, coursework, case studies, reports and presentations. Human-written, plagiarism-free, 0% AI, on-time delivery. Get a written quote today.';
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -73,9 +73,9 @@ export default function AssignmentHelpUk() {
             </h1>
             <p className="text-xl text-stone-600 mb-8">
               Professional support for UK university students. Send your brief and rubric —
-              discuss permitted support, availability, price and revision terms before starting.
+              get a written quote, human-written work, and on-time delivery with unlimited revisions.
             </p>
-            <section id="support-boundaries" className="rounded-2xl border border-stone-200 bg-white p-6 mb-8"><h2 className="text-xl font-semibold mb-3">Check the support your assessment permits</h2><p className="text-stone-700">Use outside assistance only within your institution’s rules. Describe the activity precisely, check whether acknowledgement is required, and keep ownership of your research and writing. Do not share university passwords or confidential participant data.</p><p className="mt-3"><Link href="/tools/" className="text-amber-800 underline">Free study tools</Link> · <Link href="/editorial-policy/" className="text-amber-800 underline">Editorial standards</Link> · <Link href="/privacy-policy/" className="text-amber-800 underline">Privacy notice</Link></p></section><div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a href="/#contact" className="px-8 py-4 bg-stone-900 text-white rounded-2xl font-semibold text-center">
                 Get a Written Quote
               </a>
@@ -101,8 +101,8 @@ export default function AssignmentHelpUk() {
             <ol className="list-decimal pl-6 mb-10 text-stone-700 space-y-2">
               <li>Send your assignment question, rubric, word count, deadline and referencing style.</li>
               <li>We confirm scope, price and delivery time in writing before payment.</li>
-              <li>Confirm the relevant experience and permitted activity before agreeing to support.</li>
-              <li>Use permitted feedback to develop your own work; agree any revision terms in advance.</li>
+              <li>An MA/PhD-qualified subject expert completes your paper.</li>
+              <li>You review and request unlimited revisions until it matches your brief.</li>
             </ol>
 
             <h2 className="text-2xl font-bold text-stone-900 mb-4">Related guides</h2>

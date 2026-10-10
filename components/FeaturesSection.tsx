@@ -190,10 +190,10 @@ export const FeaturesSection: React.FC = () => {
   ];
 
   const guarantees = [
-    { title: 'Develop Your Own Work', description: 'Use resources to support your learning', icon: '🤖' },
-    { title: 'Check Assessment Rules', description: 'Follow your institution’s requirements', icon: '✅' },
-    { title: 'Agree the Scope', description: 'Discuss permitted support before starting', icon: '🔄' },
-    { title: 'Plan Ahead', description: 'Map your workload and deadlines', icon: '⏰' },
+    { title: '0% AI Content', description: 'Human-written papers only', icon: '🤖' },
+    { title: '<10% Plagiarism', description: 'Original work guaranteed', icon: '✅' },
+    { title: 'Unlimited Revisions', description: 'Until you are satisfied', icon: '🔄' },
+    { title: 'On-Time Delivery', description: 'Never miss your deadline', icon: '⏰' },
   ];
 
   return (
@@ -360,7 +360,7 @@ export const FeaturesSection: React.FC = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1.7 }}
               >
-                Principles for Academic Support
+                Our Quality Guarantees
               </motion.h3>
               <motion.p
                 className="text-stone-600 text-lg font-light"
@@ -368,7 +368,7 @@ export const FeaturesSection: React.FC = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1.9 }}
               >
-                Start with your assessment requirements
+                Committed to excellence in every assignment
               </motion.p>
             </div>
             

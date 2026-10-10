@@ -12,7 +12,7 @@ export default function AnnotatedBibliographiesPage() {
         'Peer-reviewed source selection',
         'Concise summaries plus critical evaluation',
         'Correct Harvard, APA or MLA formatting',
-        'Confirm permitted scope, timing and revision terms before payment',
+        'Original, 0% AI, unlimited revisions',
       ]}
       related={[
         { name: 'How to Find Peer-Reviewed Articles', href: '/blog/how-to-find-peer-reviewed-articles/' },

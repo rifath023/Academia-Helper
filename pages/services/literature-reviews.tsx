@@ -12,7 +12,7 @@ export default function LiteratureReviewsPage() {
         'Thematic, critical and systematic-style reviews',
         'Peer-reviewed sources, synthesis not summary',
         'Research gaps and conceptual frameworks',
-        'Confirm permitted scope, timing and revision terms before payment',
+        'Original, 0% AI, unlimited revisions',
       ]}
       related={[
         { name: 'How to Write a Literature Review', href: '/blog/how-to-write-a-literature-review/' },

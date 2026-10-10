@@ -126,7 +126,7 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Tell us your question, assessment requirements and deadline so we can discuss the scope of academic support.
+            Get your high-quality assignment written by experts. Fast turnaround, original content, and guaranteed satisfaction.
           </motion.p>
         </motion.div>
 
@@ -366,7 +366,7 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
                   <MessageCircle className="w-6 h-6 mr-4 group-hover:scale-110 transition-transform duration-200" />
                   <div>
                     <div className="font-bold">WhatsApp Chat</div>
-                    <div className="text-sm opacity-90">Send an enquiry</div>
+                    <div className="text-sm opacity-90">Instant response guaranteed</div>
                   </div>
                 </motion.a>
 
@@ -395,10 +395,10 @@ Note: Please attach the assignment brief file(s) manually to this email if not a
               <h3 className="text-xl font-bold text-white mb-6">Why Choose Our Service?</h3>
               <div className="space-y-4">
                 {[
-                  { icon: <Shield className="w-5 h-5" />, text: 'Check your assessment’s AI rules', color: 'text-emerald-400' },
-                  { icon: <CheckCircle className="w-5 h-5" />, text: 'Keep ownership of your work', color: 'text-blue-400' },
-                  { icon: <Clock className="w-5 h-5" />, text: 'Discuss your deadline', color: 'text-amber-400' },
-                  { icon: <ArrowRight className="w-5 h-5" />, text: 'Agree feedback and revision scope', color: 'text-purple-400' },
+                  { icon: <Shield className="w-5 h-5" />, text: '0% AI content guarantee', color: 'text-emerald-400' },
+                  { icon: <CheckCircle className="w-5 h-5" />, text: 'Less than 10% plagiarism', color: 'text-blue-400' },
+                  { icon: <Clock className="w-5 h-5" />, text: 'Timely delivery always', color: 'text-amber-400' },
+                  { icon: <ArrowRight className="w-5 h-5" />, text: 'Unlimited revisions', color: 'text-purple-400' },
                 ].map((item, index) => (
                   <motion.div
                     key={index}

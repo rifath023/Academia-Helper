@@ -12,7 +12,7 @@ export default function PresentationsPage() {
         'PowerPoint slides with clear academic structure',
         'Speaker notes and Q&A preparation',
         'Charts, visuals and concise bullet points',
-        'Confirm permitted scope, timing and revision terms before payment',
+        'Original, 0% AI, unlimited revisions',
       ]}
       related={[
         { name: 'University Presentation Structure', href: '/blog/university-presentation-structure/' },
