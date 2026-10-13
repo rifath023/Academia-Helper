@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -86,7 +86,7 @@
     #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(to right, #fbbf24, #78716c, #34d399); z-index: 9999; transition: width 0.1s linear; }
     header { position: fixed; top: 3px; left: 0; right: 0; z-index: 1000; transition: all 0.5s ease; background: #262626; }
     header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 4px 32px rgba(0,0,0,0.12); border-bottom: 1px solid rgba(214,211,209,0.5); }
-    .header-inner { max-width: 1280px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .header-inner { max-width: 1280px; margin: 0 auto; padding: 0.6875rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; text-decoration: none; }
     .logo-icon { padding: 0.625rem; border-radius: 1rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; }
     header.scrolled .logo-icon { background: linear-gradient(135deg, #44403c, #1e293b); border: none; }
@@ -248,7 +248,7 @@
     #fab-dot { position: absolute; top: -2px; right: -2px; width: 1rem; height: 1rem; background: #ef4444; border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
     #fab-dot::after { content: ''; width: 6px; height: 6px; background: #fff; border-radius: 9999px; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.7;transform:scale(1.2)} }
-    #chat-widget { position: fixed; bottom: 6.5rem; right: 1.5rem; width: 20rem; max-width: calc(100vw - 3rem); z-index: 950; background: #fff; border-radius: 1.5rem; box-shadow: 0 16px 64px rgba(0,0,0,0.18); border: 1px solid #e7e5e4; overflow: hidden; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+    #chat-widget { position: fixed; bottom: 6.5rem; right: 1.5rem; width: 17rem; max-width: calc(100vw - 3rem); z-index: 950; background: #fff; border-radius: 1.5rem; box-shadow: 0 16px 64px rgba(0,0,0,0.18); border: 1px solid #e7e5e4; overflow: hidden; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
     #chat-widget.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
     .chat-header { background: linear-gradient(135deg, #1c1917, #1e293b); padding: 1rem; display: flex; align-items: center; justify-content: space-between; }
     .chat-header-left { display: flex; align-items: center; gap: 0.75rem; }
@@ -300,6 +300,7 @@
       <a href="/">Home</a>
       <a href="/#services">Services</a>
       <a href="/blog/">Blog</a>
+      <a href="/tools/">Free Tools</a>
       <a href="/#contact">Contact</a>
       <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="nav-cta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -315,6 +316,7 @@
       <a href="/">Home</a>
       <a href="/#services">Services</a>
       <a href="/blog/">Blog</a>
+      <a href="/tools/">Free Tools</a>
       <a href="/#contact">Contact</a>
       <div class="mobile-cta-wrap">
         <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="mobile-cta">
@@ -447,7 +449,7 @@
               <div class="product-image-col"><a href="https://www.grammarly.com/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgXqaQDJPuSJQPcf3SczsXHjouEKhf9w9ra0-dicavFQ&s=10" alt="Grammarly app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 grammarly.com</div>
+                  <div class="our-take-label">ðŸ’¬ grammarly.com</div>
                   <p>Grammarly remains the most widely adopted grammar checker among students, largely because it works everywhere: as a browser extension, a desktop app, and directly inside Google Docs and Word. The free tier catches core spelling, grammar, and punctuation errors in context, correctly telling apart homophones and flagging subject-verb disagreement as you type. Premium adds tone detection, clarity-focused rewrites, and a built-in plagiarism scanner, which is worth considering for a thesis or final paper. For students who want one tool that works across every writing surface, Grammarly is the easiest starting point.</p>
                 </div>
               </div>
@@ -467,7 +469,7 @@
               <div class="product-image-col"><a href="https://quillbot.com/grammar-check" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qqqbl7VpEYUHdCDLj6WWbGnWT8Ew4Fwqc1oaKt4uZEkSlS-uILnj_NJp&s=10" alt="QuillBot app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 quillbot.com/grammar-check</div>
+                  <div class="our-take-label">ðŸ’¬ quillbot.com/grammar-check</div>
                   <p>QuillBot's grammar checker lives in the same dashboard as its paraphrasing and plagiarism tools, which makes it convenient for students who are already using the platform to rework sentences. It catches standard grammar and punctuation issues and offers quick one-click fixes, though its style feedback is less detailed than dedicated tools like ProWritingAid. The free tier covers a reasonable word count per check, with the paid plan removing those limits and adding more advanced rewriting modes.</p>
                 </div>
               </div>
@@ -487,7 +489,7 @@
               <div class="product-image-col"><a href="https://prowritingaid.com/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://media.licdn.com/dms/image/v2/D4E0BAQFvzGX8jwSN8w/company-logo_200_200/company-logo_200_200/0/1721637052004/prowritingaid_logo?e=2147483647&v=beta&t=cIr8Pq59nr5-PvKcQGVUa0TsFWFSBeNnZd7ca9lLzG8" alt="ProWritingAid app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 prowritingaid.com</div>
+                  <div class="our-take-label">ðŸ’¬ prowritingaid.com</div>
                   <p>ProWritingAid goes further than most checkers by generating detailed reports on sentence length variation, overused words, passive voice, and readability scores. This depth makes it especially useful for longer academic work like a dissertation chapter, where consistent style across dozens of pages is hard to self-monitor. It integrates with Word and Google Docs and offers a free tier with a capped number of monthly checks, with a subscription needed for unlimited use and the full suite of reports.</p>
                 </div>
               </div>
@@ -507,7 +509,7 @@
               <div class="product-image-col"><a href="https://www.gingersoftware.com/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://play-lh.googleusercontent.com/t8Hq6zVDFwp7ZCIlccmP06FuYcllBai4CWEgl5kwAMIdoNAmhEm5fbq67ppMYV2efJ3rTcNKtOFxLr5GugL1ww" alt="Ginger Software app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 gingersoftware.com</div>
+                  <div class="our-take-label">ðŸ’¬ gingersoftware.com</div>
                   <p>Ginger is particularly well suited to students writing in a second language, since it doesn't just flag an error but offers a full rephrased sentence alongside the correction. This side-by-side comparison helps writers understand the underlying grammar rule rather than just accepting a fix. The free browser extension handles everyday grammar and spelling checks, while the premium version adds a personal trainer feature that tracks recurring mistakes over time.</p>
                 </div>
               </div>
@@ -527,7 +529,7 @@
               <div class="product-image-col"><a href="https://languagetool.org/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://avatars.githubusercontent.com/u/5187764?s=200&v=4" alt="LanguageTool app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 languagetool.org</div>
+                  <div class="our-take-label">ðŸ’¬ languagetool.org</div>
                   <p>LanguageTool stands out for supporting more than twenty languages, which makes it a good fit for students switching between English coursework and writing in another language. It's open-source at its core, with a browser extension and document integrations that catch grammar, punctuation, and style issues for free up to a daily character limit. The premium tier removes that cap and adds more advanced style suggestions, but the free version alone covers most everyday student writing needs.</p>
                 </div>
               </div>
@@ -559,7 +561,7 @@
 
     <div class="cta-box cta-hidden">
       <h3>Need Help With Your Assignment?</h3>
-      <p>Expert writers ready to help — plagiarism-free, on time, 0% AI content.</p>
+      <p>Expert writers ready to help â€” plagiarism-free, on time, 0% AI content.</p>
       <div class="cta-buttons">
         <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="cta-btn-primary">WhatsApp Us Now</a>
         <a href="/#contact" class="cta-btn-secondary">Place an Order</a>
@@ -637,10 +639,10 @@
         <br/>
         <h3>Our Guarantees</h3>
         <ul>
-          <li><a href="#">🛡️ 0% AI Content</a></li>
-          <li><a href="#">✅ &lt;10% Plagiarism</a></li>
-          <li><a href="#">⏰ On-Time Delivery</a></li>
-          <li><a href="#">🔄 Unlimited Revisions</a></li>
+          <li><a href="#">ðŸ›¡ï¸ 0% AI Content</a></li>
+          <li><a href="#">âœ… &lt;10% Plagiarism</a></li>
+          <li><a href="#">â° On-Time Delivery</a></li>
+          <li><a href="#">ðŸ”„ Unlimited Revisions</a></li>
         </ul>
       </div>
     </div>
@@ -653,7 +655,7 @@
       <p>Get immediate assistance with your assignments anytime, anywhere</p>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="footer-year"></span> Academia Helper. All rights reserved. Professional academic writing services for students worldwide.</p>
+      <p>Â© <span id="footer-year"></span> Academia Helper. All rights reserved. Professional academic writing services for students worldwide.</p>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -676,7 +678,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       </div>
       <div>
-        <div class="chat-title">Need Help? 👋</div>
+        <div class="chat-title">Need Help? ðŸ‘‹</div>
         <div class="chat-subtitle">We are here to assist you!</div>
       </div>
     </div>
@@ -685,23 +687,23 @@
     </button>
   </div>
   <div class="chat-body">
-    <div class="chat-greeting">Hi there! How can we help you excel in your studies today? 🌟</div>
+    <div class="chat-greeting">Hi there! How can we help you excel in your studies today? ðŸŒŸ</div>
     <div class="chat-options">
       <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="chat-option chat-option-wa">
         <div class="chat-option-icon icon-wa">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 📱</div></div>
+        <div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 ðŸ“±</div></div>
       </a>
       <a href="mailto:academiahelp0@gmail.com" class="chat-option chat-option-email">
         <div class="chat-option-icon icon-email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com 📧</div></div>
+        <div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com ðŸ“§</div></div>
       </a>
     </div>
   </div>
-  <div class="chat-footer">🎯 Expert help with essays, reports, and assignments<br/>🌟 UK &amp; USA academic standards · ⚡ Quick response</div>
+  <div class="chat-footer">ðŸŽ¯ Expert help with essays, reports, and assignments<br/>ðŸŒŸ UK &amp; USA academic standards Â· âš¡ Quick response</div>
 </div>
 
 <script>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -86,7 +86,7 @@
     #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(to right, #fbbf24, #78716c, #34d399); z-index: 9999; transition: width 0.1s linear; }
     header { position: fixed; top: 3px; left: 0; right: 0; z-index: 1000; transition: all 0.5s ease; background: #262626; }
     header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 4px 32px rgba(0,0,0,0.12); border-bottom: 1px solid rgba(214,211,209,0.5); }
-    .header-inner { max-width: 1280px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .header-inner { max-width: 1280px; margin: 0 auto; padding: 0.6875rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; text-decoration: none; }
     .logo-icon { padding: 0.625rem; border-radius: 1rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; }
     header.scrolled .logo-icon { background: linear-gradient(135deg, #44403c, #1e293b); border: none; }
@@ -248,7 +248,7 @@
     #fab-dot { position: absolute; top: -2px; right: -2px; width: 1rem; height: 1rem; background: #ef4444; border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
     #fab-dot::after { content: ''; width: 6px; height: 6px; background: #fff; border-radius: 9999px; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.7;transform:scale(1.2)} }
-    #chat-widget { position: fixed; bottom: 6.5rem; right: 1.5rem; width: 20rem; max-width: calc(100vw - 3rem); z-index: 950; background: #fff; border-radius: 1.5rem; box-shadow: 0 16px 64px rgba(0,0,0,0.18); border: 1px solid #e7e5e4; overflow: hidden; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+    #chat-widget { position: fixed; bottom: 6.5rem; right: 1.5rem; width: 17rem; max-width: calc(100vw - 3rem); z-index: 950; background: #fff; border-radius: 1.5rem; box-shadow: 0 16px 64px rgba(0,0,0,0.18); border: 1px solid #e7e5e4; overflow: hidden; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
     #chat-widget.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
     .chat-header { background: linear-gradient(135deg, #1c1917, #1e293b); padding: 1rem; display: flex; align-items: center; justify-content: space-between; }
     .chat-header-left { display: flex; align-items: center; gap: 0.75rem; }
@@ -300,6 +300,7 @@
       <a href="/">Home</a>
       <a href="/#services">Services</a>
       <a href="/blog/">Blog</a>
+      <a href="/tools/">Free Tools</a>
       <a href="/#contact">Contact</a>
       <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="nav-cta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -315,6 +316,7 @@
       <a href="/">Home</a>
       <a href="/#services">Services</a>
       <a href="/blog/">Blog</a>
+      <a href="/tools/">Free Tools</a>
       <a href="/#contact">Contact</a>
       <div class="mobile-cta-wrap">
         <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="mobile-cta">
@@ -447,7 +449,7 @@
               <div class="product-image-col"><a href="https://otter.ai/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc4IxZaj9iJg8lUHHRC1dC5HxIJyhLFm1p7dPgaUgoCFlKeSmp2MU1mbIZ&s=10" alt="Otter.ai app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 otter.ai</div>
+                  <div class="our-take-label">ðŸ’¬ otter.ai</div>
                   <p>Otter.ai transcribes speech to text in real time as a lecture happens, labeling different speakers and letting you highlight key moments as they're said. After class, it generates an automatic summary and lets you search the full transcript for any keyword, which is far faster than scanning handwritten pages. It works well for recorded lectures, seminars, and study group discussions alike. The free tier includes a limited number of transcription minutes per month, with paid plans unlocking longer sessions and more advanced summary features.</p>
                 </div>
               </div>
@@ -467,7 +469,7 @@
               <div class="product-image-col"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyicnT1BEzkLqh5vtmJS-VHX9Tbpft7t7vyrcElQW934I_I_5y8kNuhe4&s=10" alt="Notion app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 notion.com</div>
+                  <div class="our-take-label">ðŸ’¬ notion.com</div>
                   <p>Notion AI builds on top of Notion's existing notes, database, and task management features, adding the ability to summarize a page, generate study questions from your notes, or clean up messy typed notes into a structured outline. This makes it especially useful for students who already organize their coursework, assignments, and notes inside Notion, since the AI features work directly on content you're already keeping there. The free plan includes a limited number of AI actions before requiring a paid add-on.</p>
                 </div>
               </div>
@@ -487,7 +489,7 @@
               <div class="product-image-col"><a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeWFCa0fvFmBcSt-f_xeiTtSLk_hrwOVvvIyDzXV8KQlvDXyZ3KYdGnHC9&s=10" alt="NotebookLM app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 notebooklm.google</div>
+                  <div class="our-take-label">ðŸ’¬ notebooklm.google</div>
                   <p>NotebookLM lets you combine lecture slides, PDF readings, and your own typed notes into a single notebook, then ask questions across all of them together, with answers citing exactly which source they came from. This is particularly useful heading into an exam that draws on multiple lectures and readings, since you can ask it to summarize how a concept was covered across several sessions at once. It also generates audio overview discussions of your material, which some students use as a passive review method. The core tool remains free to use.</p>
                 </div>
               </div>
@@ -507,7 +509,7 @@
               <div class="product-image-col"><a href="https://www.gingerlabs.com/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ygk2YijjTRXp5NiNDK27BDeUbr47L8ajkiIy9UWKfA&s" alt="Notability app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 gingerlabs.com (Notability)</div>
+                  <div class="our-take-label">ðŸ’¬ gingerlabs.com (Notability)</div>
                   <p>Notability is built around handwritten note-taking on an iPad or tablet, but its standout feature is syncing your written notes directly to a recorded audio track, so tapping any word jumps straight to the moment it was said in the lecture. This is ideal for students who prefer writing by hand or sketching diagrams but still want the searchability of a recording behind their notes. It's a one-time purchase rather than a subscription, with a free trial available to test the core features before committing.</p>
                 </div>
               </div>
@@ -527,7 +529,7 @@
               <div class="product-image-col"><a href="https://www.onenote.com/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA0djEngjkC0Yc_eaybtdNj6tL8M1Pp7Bxqg0BnOJR6S_eh6kPda38icE&s=10" alt="OneNote app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 onenote.com</div>
+                  <div class="our-take-label">ðŸ’¬ onenote.com</div>
                   <p>OneNote's Copilot features add note summarization and organization on top of a free, already widely-used notebook app, making it a natural fit for students who write essays in Word and manage schedules in Outlook. It can generate quick summaries of long note pages and help restructure freeform notes into clearer sections. Because it's tied to a Microsoft account many students already have through their university, there's no separate signup required to get started, though some Copilot features may need a Microsoft 365 subscription for full access.</p>
                 </div>
               </div>
@@ -559,7 +561,7 @@
 
     <div class="cta-box cta-hidden">
       <h3>Need Help With Your Assignment?</h3>
-      <p>Expert writers ready to help — plagiarism-free, on time, 0% AI content.</p>
+      <p>Expert writers ready to help â€” plagiarism-free, on time, 0% AI content.</p>
       <div class="cta-buttons">
         <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="cta-btn-primary">WhatsApp Us Now</a>
         <a href="/#contact" class="cta-btn-secondary">Place an Order</a>
@@ -637,10 +639,10 @@
         <br/>
         <h3>Our Guarantees</h3>
         <ul>
-          <li><a href="#">🛡️ 0% AI Content</a></li>
-          <li><a href="#">✅ &lt;10% Plagiarism</a></li>
-          <li><a href="#">⏰ On-Time Delivery</a></li>
-          <li><a href="#">🔄 Unlimited Revisions</a></li>
+          <li><a href="#">ðŸ›¡ï¸ 0% AI Content</a></li>
+          <li><a href="#">âœ… &lt;10% Plagiarism</a></li>
+          <li><a href="#">â° On-Time Delivery</a></li>
+          <li><a href="#">ðŸ”„ Unlimited Revisions</a></li>
         </ul>
       </div>
     </div>
@@ -653,7 +655,7 @@
       <p>Get immediate assistance with your assignments anytime, anywhere</p>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="footer-year"></span> Academia Helper. All rights reserved. Professional academic writing services for students worldwide.</p>
+      <p>Â© <span id="footer-year"></span> Academia Helper. All rights reserved. Professional academic writing services for students worldwide.</p>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -676,7 +678,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       </div>
       <div>
-        <div class="chat-title">Need Help? 👋</div>
+        <div class="chat-title">Need Help? ðŸ‘‹</div>
         <div class="chat-subtitle">We are here to assist you!</div>
       </div>
     </div>
@@ -685,23 +687,23 @@
     </button>
   </div>
   <div class="chat-body">
-    <div class="chat-greeting">Hi there! How can we help you excel in your studies today? 🌟</div>
+    <div class="chat-greeting">Hi there! How can we help you excel in your studies today? ðŸŒŸ</div>
     <div class="chat-options">
       <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="chat-option chat-option-wa">
         <div class="chat-option-icon icon-wa">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 📱</div></div>
+        <div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 ðŸ“±</div></div>
       </a>
       <a href="mailto:academiahelp0@gmail.com" class="chat-option chat-option-email">
         <div class="chat-option-icon icon-email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com 📧</div></div>
+        <div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com ðŸ“§</div></div>
       </a>
     </div>
   </div>
-  <div class="chat-footer">🎯 Expert help with essays, reports, and assignments<br/>🌟 UK &amp; USA academic standards · ⚡ Quick response</div>
+  <div class="chat-footer">ðŸŽ¯ Expert help with essays, reports, and assignments<br/>ðŸŒŸ UK &amp; USA academic standards Â· âš¡ Quick response</div>
 </div>
 
 <script>

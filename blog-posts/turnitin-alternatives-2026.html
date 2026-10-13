@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -86,7 +86,7 @@
     #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(to right, #fbbf24, #78716c, #34d399); z-index: 9999; transition: width 0.1s linear; }
     header { position: fixed; top: 3px; left: 0; right: 0; z-index: 1000; transition: all 0.5s ease; background: #262626; }
     header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 4px 32px rgba(0,0,0,0.12); border-bottom: 1px solid rgba(214,211,209,0.5); }
-    .header-inner { max-width: 1280px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .header-inner { max-width: 1280px; margin: 0 auto; padding: 0.6875rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; text-decoration: none; }
     .logo-icon { padding: 0.625rem; border-radius: 1rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; }
     header.scrolled .logo-icon { background: linear-gradient(135deg, #44403c, #1e293b); border: none; }
@@ -248,7 +248,7 @@
     #fab-dot { position: absolute; top: -2px; right: -2px; width: 1rem; height: 1rem; background: #ef4444; border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
     #fab-dot::after { content: ''; width: 6px; height: 6px; background: #fff; border-radius: 9999px; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.7;transform:scale(1.2)} }
-    #chat-widget { position: fixed; bottom: 6.5rem; right: 1.5rem; width: 20rem; max-width: calc(100vw - 3rem); z-index: 950; background: #fff; border-radius: 1.5rem; box-shadow: 0 16px 64px rgba(0,0,0,0.18); border: 1px solid #e7e5e4; overflow: hidden; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+    #chat-widget { position: fixed; bottom: 6.5rem; right: 1.5rem; width: 17rem; max-width: calc(100vw - 3rem); z-index: 950; background: #fff; border-radius: 1.5rem; box-shadow: 0 16px 64px rgba(0,0,0,0.18); border: 1px solid #e7e5e4; overflow: hidden; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
     #chat-widget.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
     .chat-header { background: linear-gradient(135deg, #1c1917, #1e293b); padding: 1rem; display: flex; align-items: center; justify-content: space-between; }
     .chat-header-left { display: flex; align-items: center; gap: 0.75rem; }
@@ -300,6 +300,7 @@
       <a href="/">Home</a>
       <a href="/#services">Services</a>
       <a href="/blog/">Blog</a>
+      <a href="/tools/">Free Tools</a>
       <a href="/#contact">Contact</a>
       <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="nav-cta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -315,6 +316,7 @@
       <a href="/">Home</a>
       <a href="/#services">Services</a>
       <a href="/blog/">Blog</a>
+      <a href="/tools/">Free Tools</a>
       <a href="/#contact">Contact</a>
       <div class="mobile-cta-wrap">
         <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="mobile-cta">
@@ -447,7 +449,7 @@
               <div class="product-image-col"><a href="https://www.scribbr.com/ai-detector/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT84LOhxIJ0b0L6d7qcFkA1Ohyqyp1yHgatnprkT4if5wBGydOnWC-Sq_2U&s=10" alt="Scribbr app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 scribbr.com/plagiarism-checker</div>
+                  <div class="our-take-label">ðŸ’¬ scribbr.com/plagiarism-checker</div>
                   <p>Scribbr is the standout option for students who specifically want a result close to what their university will see, because it runs on Turnitin's own detection technology rather than a separate proprietary database. That means the similarity score and flagged passages are far more likely to line up with an official institutional scan than any tool built on its own index. It isn't free, pricing is pay-per-use based on document length, but for a thesis, dissertation, or final paper where the stakes are high, that accuracy is usually worth paying for.</p>
                 </div>
               </div>
@@ -467,7 +469,7 @@
               <div class="product-image-col"><a href="https://copyleaks.com/ai-detector" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLF5O3RYnpMlvn7t59Xj6qs4Hhl-pHG4plBXC0gqhz5_tWFLnrMil-QDw&s=10" alt="Copyleaks app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 copyleaks.com</div>
+                  <div class="our-take-label">ðŸ’¬ copyleaks.com</div>
                   <p>Copyleaks scans against a broad database of web and academic sources using its own detection engine, and it has expanded significantly into AI-content detection alongside traditional plagiarism checking. This dual focus makes it useful for students who want to understand not just textual overlap but also how their writing might read to a tool flagging AI-generated content, since some instructors now check for both. It offers a free trial before moving to paid plans, and its reports break down flagged passages by source type.</p>
                 </div>
               </div>
@@ -487,7 +489,7 @@
               <div class="product-image-col"><a href="https://quillbot.com/ai-content-detector?referrer=side_navbar" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qqqbl7VpEYUHdCDLj6WWbGnWT8Ew4Fwqc1oaKt4uZEkSlS-uILnj_NJp&s=10" alt="QuillBot app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 quillbot.com/plagiarism-checker</div>
+                  <div class="our-take-label">ðŸ’¬ quillbot.com/plagiarism-checker</div>
                   <p>QuillBot's plagiarism checker lives inside the same dashboard as its paraphrasing and grammar tools, making it a convenient option for a quick check before submission if you're already using the platform for editing. It scans a broad index of web and academic sources and returns a percentage score with highlighted matches, though it doesn't use Turnitin's own technology, so results may diverge from an official university scan. The free tier covers a limited word count per check, with the paid plan extending that limit.</p>
                 </div>
               </div>
@@ -507,7 +509,7 @@
               <div class="product-image-col"><a href="https://www.grammarly.com/ai-detector" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgXqaQDJPuSJQPcf3SczsXHjouEKhf9w9ra0-dicavFQ&s=10" alt="Grammarly app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 grammarly.com/plagiarism-checker</div>
+                  <div class="our-take-label">ðŸ’¬ grammarly.com/plagiarism-checker</div>
                   <p>Grammarly's plagiarism checker is bundled into its broader writing assistant and scans against a large web index alongside a selection of academic databases. It's a convenient addition for students who already subscribe to Grammarly Premium for grammar and clarity checks, since the plagiarism scan happens in the same workflow without needing a separate account. The feature is reserved for Premium subscribers rather than available on the free tier, so it's most worthwhile if you're already paying for the subscription for its other features.</p>
                 </div>
               </div>
@@ -527,7 +529,7 @@
               <div class="product-image-col"><a href="https://www.duplichecker.com/" target="_blank" rel="noopener noreferrer" class="product-image-link"><div class="product-image-box"><img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/5b334b379af6b70001dbbf2a/0x0.png" alt="Duplichecker app preview" /></div></a></div>
               <div class="product-details-col">
                 <div class="our-take">
-                  <div class="our-take-label">💬 duplichecker.com</div>
+                  <div class="our-take-label">ðŸ’¬ duplichecker.com</div>
                   <p>Duplichecker remains one of the most widely used free options for a quick scan, letting students check large blocks of text against indexed web content at no cost. Its academic database coverage is noticeably thinner than dedicated tools like Scribbr, which makes it a better fit for shorter, lower-stakes assignments than for a thesis or paper headed for publication. The interface is simple and results come back quickly, which is its main advantage over more thorough but slower paid alternatives.</p>
                 </div>
               </div>
@@ -559,7 +561,7 @@
 
     <div class="cta-box cta-hidden">
       <h3>Need Help With Your Assignment?</h3>
-      <p>Expert writers ready to help — plagiarism-free, on time, 0% AI content.</p>
+      <p>Expert writers ready to help â€” plagiarism-free, on time, 0% AI content.</p>
       <div class="cta-buttons">
         <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="cta-btn-primary">WhatsApp Us Now</a>
         <a href="/#contact" class="cta-btn-secondary">Place an Order</a>
@@ -637,10 +639,10 @@
         <br/>
         <h3>Our Guarantees</h3>
         <ul>
-          <li><a href="#">🛡️ 0% AI Content</a></li>
-          <li><a href="#">✅ &lt;10% Plagiarism</a></li>
-          <li><a href="#">⏰ On-Time Delivery</a></li>
-          <li><a href="#">🔄 Unlimited Revisions</a></li>
+          <li><a href="#">ðŸ›¡ï¸ 0% AI Content</a></li>
+          <li><a href="#">âœ… &lt;10% Plagiarism</a></li>
+          <li><a href="#">â° On-Time Delivery</a></li>
+          <li><a href="#">ðŸ”„ Unlimited Revisions</a></li>
         </ul>
       </div>
     </div>
@@ -653,7 +655,7 @@
       <p>Get immediate assistance with your assignments anytime, anywhere</p>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="footer-year"></span> Academia Helper. All rights reserved. Professional academic writing services for students worldwide.</p>
+      <p>Â© <span id="footer-year"></span> Academia Helper. All rights reserved. Professional academic writing services for students worldwide.</p>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -676,7 +678,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       </div>
       <div>
-        <div class="chat-title">Need Help? 👋</div>
+        <div class="chat-title">Need Help? ðŸ‘‹</div>
         <div class="chat-subtitle">We are here to assist you!</div>
       </div>
     </div>
@@ -685,23 +687,23 @@
     </button>
   </div>
   <div class="chat-body">
-    <div class="chat-greeting">Hi there! How can we help you excel in your studies today? 🌟</div>
+    <div class="chat-greeting">Hi there! How can we help you excel in your studies today? ðŸŒŸ</div>
     <div class="chat-options">
       <a href="https://wa.me/8801577128417" target="_blank" rel="noopener noreferrer" class="chat-option chat-option-wa">
         <div class="chat-option-icon icon-wa">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 📱</div></div>
+        <div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 ðŸ“±</div></div>
       </a>
       <a href="mailto:academiahelp0@gmail.com" class="chat-option chat-option-email">
         <div class="chat-option-icon icon-email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com 📧</div></div>
+        <div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com ðŸ“§</div></div>
       </a>
     </div>
   </div>
-  <div class="chat-footer">🎯 Expert help with essays, reports, and assignments<br/>🌟 UK &amp; USA academic standards · ⚡ Quick response</div>
+  <div class="chat-footer">ðŸŽ¯ Expert help with essays, reports, and assignments<br/>ðŸŒŸ UK &amp; USA academic standards Â· âš¡ Quick response</div>
 </div>
 
 <script>

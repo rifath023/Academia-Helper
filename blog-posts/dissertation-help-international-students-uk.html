@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -38,7 +38,7 @@ a{text-decoration:none}
 #scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(to right,#fbbf24,#78716c,#34d399);z-index:9999;transition:width .1s linear}
 header{position:fixed;top:3px;left:0;right:0;z-index:1000;transition:all .5s ease;background:#262626}
 header.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);box-shadow:0 4px 32px rgba(0,0,0,.12);border-bottom:1px solid rgba(214,211,209,.5)}
-.header-inner{max-width:1280px;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.header-inner{max-width:1280px;margin:0 auto;padding:.6875rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:.75rem;cursor:pointer}
 .logo-icon{padding:.625rem;border-radius:1rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);transition:all .3s}
 header.scrolled .logo-icon{background:linear-gradient(135deg,#44403c,#1e293b);border:none}
@@ -93,7 +93,7 @@ header.scrolled .mobile-nav a{color:#44403c}
 .toc nav a:hover{color:#1c1917;background:#e7e5e4}
 .toc nav a.active{background:#1c1917;color:#fff;font-weight:600}
 .toc nav .toc-h3 a{color:#78716c}
-.toc nav .toc-h3 a::before{content:'› ';color:#a8a29e}
+.toc nav .toc-h3 a::before{content:'â€º ';color:#a8a29e}
 .author-box{background:#1c1917;border-radius:1rem;padding:1.5rem;color:#fff;margin-bottom:1.5rem}
 .author-avatar{width:3rem;height:3rem;background:#fbbf24;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:700;color:#1c1917;margin-bottom:.75rem}
 .author-name{font-weight:700;margin-bottom:.25rem}
@@ -152,7 +152,7 @@ article{flex:1;min-width:0}
 .checklist{list-style:none;padding:0;margin:1rem 0}
 .checklist li{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #f5f5f4;color:#44403c;font-size:.9375rem;line-height:1.6}
 .checklist li:last-child{border-bottom:none}
-.checklist li::before{content:'✓';color:#22c55e;font-weight:700;flex-shrink:0;margin-top:.05rem}
+.checklist li::before{content:'âœ“';color:#22c55e;font-weight:700;flex-shrink:0;margin-top:.05rem}
 .step-cards{display:flex;flex-direction:column;gap:1.25rem;margin:1.5rem 0}
 .step-card{border-radius:1rem;padding:1.5rem;border:1px solid #e7e5e4;background:#fafaf9;display:flex;gap:1rem;transition:box-shadow .2s}
 .step-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08)}
@@ -190,7 +190,7 @@ article{flex:1;min-width:0}
 .faq-item{border:1px solid #e7e5e4;border-radius:1rem;margin-bottom:.75rem;overflow:hidden}
 .faq-q{padding:1rem 1.25rem;font-weight:700;color:#1c1917;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#fafaf9;user-select:none}
 .faq-q::after{content:'+';font-size:1.25rem;color:#78716c;transition:transform .2s}
-.faq-item.open .faq-q::after{content:'−'}
+.faq-item.open .faq-q::after{content:'âˆ’'}
 .faq-a{display:none;padding:1rem 1.25rem;color:#44403c;font-size:.9375rem;line-height:1.7;border-top:1px solid #e7e5e4}
 .faq-item.open .faq-a{display:block}
 .cta-box{margin:3rem 0;padding:2.5rem 2rem;background:linear-gradient(135deg,#1c1917 0%,#1e293b 50%,#1c1917 100%);border-radius:1.5rem;text-align:center;color:#fff}
@@ -246,7 +246,7 @@ footer::after{content:'';position:absolute;bottom:5rem;right:5rem;width:24rem;he
 #fab:hover{transform:scale(1.1)}
 #fab svg{width:1.5rem;height:1.5rem}
 #fab-dot{position:absolute;top:-2px;right:-2px;width:1rem;height:1rem;background:#ef4444;border-radius:9999px}
-#chat-widget{position:fixed;bottom:6.5rem;right:1.5rem;width:20rem;max-width:calc(100vw - 3rem);z-index:950;background:#fff;border-radius:1.5rem;box-shadow:0 16px 64px rgba(0,0,0,.18);border:1px solid #e7e5e4;overflow:hidden;opacity:0;transform:translateY(20px) scale(.9);transition:opacity .3s,transform .3s;pointer-events:none}
+#chat-widget{position:fixed;bottom:6.5rem;right:1.5rem;width:17rem;max-width:calc(100vw - 3rem);z-index:950;background:#fff;border-radius:1.5rem;box-shadow:0 16px 64px rgba(0,0,0,.18);border:1px solid #e7e5e4;overflow:hidden;opacity:0;transform:translateY(20px) scale(.9);transition:opacity .3s,transform .3s;pointer-events:none}
 #chat-widget.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
 .chat-header{background:linear-gradient(135deg,#1c1917,#1e293b);padding:1rem;display:flex;align-items:center;justify-content:space-between}
 .chat-header-left{display:flex;align-items:center;gap:.75rem}
@@ -282,14 +282,14 @@ footer::after{content:'';position:absolute;bottom:5rem;right:5rem;width:24rem;he
 <div><div class="logo-name">Academia Helper</div><div class="logo-sub">Expert Writing Services</div></div>
 </a>
 <nav>
-<a href="/">Home</a><a href="/#services">Services</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a>
+<a href="/">Home</a><a href="/#services">Services</a><a href="/blog/">Blog</a><a href="/tools/">Free Tools</a><a href="/#contact">Contact</a>
 <a class="nav-cta" href="https://wa.me/8801577128417" rel="noopener noreferrer" target="_blank"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Chat Now</a>
 </nav>
 <button aria-label="Toggle menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </div>
 <div class="header-inner" style="padding-top:0">
 <div class="mobile-nav" id="mobile-nav">
-<a href="/">Home</a><a href="/#services">Services</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a>
+<a href="/">Home</a><a href="/#services">Services</a><a href="/blog/">Blog</a><a href="/tools/">Free Tools</a><a href="/#contact">Contact</a>
 <a class="mobile-cta" href="https://wa.me/8801577128417" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Contact via WhatsApp</a>
 </div>
 </div>
@@ -366,11 +366,11 @@ footer::after{content:'';position:absolute;bottom:5rem;right:5rem;width:24rem;he
 <h3>Quick Links</h3>
 <ul><li><a href="/">Home</a></li><li><a href="/#services">Services</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li></ul>
 <br/><h3>Guarantees</h3>
-<ul><li><a href="#">🛡️ 0% AI Content</a></li><li><a href="#">✅ &lt;10% Plagiarism</a></li><li><a href="#">⏰ On-Time Delivery</a></li><li><a href="#">🔄 Unlimited Revisions</a></li></ul>
+<ul><li><a href="#">ðŸ›¡ï¸ 0% AI Content</a></li><li><a href="#">âœ… &lt;10% Plagiarism</a></li><li><a href="#">â° On-Time Delivery</a></li><li><a href="#">ðŸ”„ Unlimited Revisions</a></li></ul>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© <span id="footer-year"></span> Academia Helper. All rights reserved.</p>
+<p>Â© <span id="footer-year"></span> Academia Helper. All rights reserved.</p>
 <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Refund Policy</a></div>
 </div>
 </div>
@@ -378,17 +378,17 @@ footer::after{content:'';position:absolute;bottom:5rem;right:5rem;width:24rem;he
 <button aria-label="Open chat" id="fab"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div id="fab-dot"></div></button>
 <div aria-label="Chat support" id="chat-widget" role="dialog">
 <div class="chat-header">
-<div class="chat-header-left"><div class="chat-header-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div><div class="chat-title">Need Help? 👋</div><div class="chat-subtitle">We are here to assist you!</div></div></div>
+<div class="chat-header-left"><div class="chat-header-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div><div class="chat-title">Need Help? ðŸ‘‹</div><div class="chat-subtitle">We are here to assist you!</div></div></div>
 <button aria-label="Close chat" class="chat-close" id="chat-close"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg></button>
 </div>
 <div class="chat-body">
-<div class="chat-greeting">Hi there! How can we help you excel today? 🌟</div>
+<div class="chat-greeting">Hi there! How can we help you excel today? ðŸŒŸ</div>
 <div class="chat-options">
-<a class="chat-option chat-option-wa" href="https://wa.me/8801577128417" rel="noopener noreferrer" target="_blank"><div class="chat-option-icon icon-wa"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 📱</div></div></a>
-<a class="chat-option chat-option-email" href="mailto:academiahelp0@gmail.com"><div class="chat-option-icon icon-email"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div><div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com 📧</div></div></a>
+<a class="chat-option chat-option-wa" href="https://wa.me/8801577128417" rel="noopener noreferrer" target="_blank"><div class="chat-option-icon icon-wa"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div><div class="chat-option-title">WhatsApp Chat</div><div class="chat-option-sub">+8801577128417 ðŸ“±</div></div></a>
+<a class="chat-option chat-option-email" href="mailto:academiahelp0@gmail.com"><div class="chat-option-icon icon-email"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div><div><div class="chat-option-title">Send Email</div><div class="chat-option-sub">academiahelp0@gmail.com ðŸ“§</div></div></a>
 </div>
 </div>
-<div class="chat-footer">🎯 Expert help with essays, dissertations &amp; more<br/>🌟 UK &amp; USA academic standards · ⚡ Quick response</div>
+<div class="chat-footer">ðŸŽ¯ Expert help with essays, dissertations &amp; more<br/>ðŸŒŸ UK &amp; USA academic standards Â· âš¡ Quick response</div>
 </div>
 <script>
 const bar=document.getElementById('scroll-progress');
